@@ -7,6 +7,8 @@ import reduxThunk from 'redux-thunk';
 import { persistStore, autoRehydrate, purgeStoredState } from 'redux-persist-immutable';
 import promise from 'redux-promise';
 
+import rootReducer from '../reducers/rootReducer';
+
 const reduxMiddleware = [reduxThunk];
 
 if (__DEV__) {
@@ -41,6 +43,15 @@ const enhancers = compose(...[
   autoRehydrate()
 ]);
 
+function hotReloading() {
+  if (module.hot) {
+    const reducerPath = './../reducers/rootReducer';
+    module.hot.accept(reducerPath, () => {
+      const nextRootReducer = require(reducerPath).default;
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+}
 
 function setPersistStore() {
   persistStore(store, {
@@ -62,7 +73,7 @@ export function clearPersistedByKeys(keys) {
 export default function configureStore(initialState = Map()) {
   store = createStore(rootReducer, initialState, enhancers);
 
-  // hotReloading();
+  hotReloading();
 
   setPersistStore();
 

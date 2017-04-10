@@ -3,49 +3,54 @@
  */
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  AppRegistry,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
 
-export default class toyDbApp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+import { StackNavigator } from 'react-navigation';
+
+import { Provider } from 'react-redux';
+
+import XhrRequest from './utils/xhrRequest';
+
+import FrameNavigator from './pages/frameNavigator';
+import ProductList from './pages/product/productList';
+import ProductDetail from './pages/product/productDetail';
+import paymentChooser from './pages/payment/paymentChooser';
+
+const ToyDbApp = StackNavigator({
+  Main: {
+    screen: FrameNavigator,
+    navigationOptions: {
+      header: {
+        title: '玩具', // 默认后退标题文字
+        style: {
+          backgroundColor: '#fff'
+        }
+      }
+    }
+  },
+  paymentChooser: {
+    screen: paymentChooser,
+    navigationOptions: {
+      // header: {
+      //   title: '支付选择', // 默认后退标题文字
+      // }
+    }
+  },
+  ProductList: {
+    screen: ProductList,
+    navigationOptions: {}
+  },
+  ProductDetail: {
+    screen: ProductDetail,
+    navigationOptions: {
+      // 建议为空，方便具体页面自定义
+    }
   }
-}
+});
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-};
+XhrRequest.run();
 
-AppRegistry.registerComponent('toyDbApp', () => toyDbApp);
+AppRegistry.registerComponent('toyDbApp', () => ToyDbApp);
