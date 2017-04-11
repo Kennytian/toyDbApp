@@ -7,11 +7,11 @@ import PayWithAli from './payWithAli';
 
 const paymentChooser = TabNavigator({
   PayWithWeChat: {
-    screen: PayWithWeChat,
+    screen: PayWithWeChat
   },
   PayWithAli: {
-    screen: PayWithAli,
-  },
+    screen: PayWithAli
+  }
 }, {
   tabBarOptions: {
     showIcon: false,
@@ -21,9 +21,9 @@ const paymentChooser = TabNavigator({
     swipeEnabled: false,
     lazyLoad: true,
     style: {backgroundColor: 'white', height: 40, padding: 0, margin: 0},
-    labelStyle: {fontSize: 14},
+    labelStyle: {fontSize: 14}
   },
-  tabBarPosition: 'top',
+  tabBarPosition: 'top'
 });
 
 export default paymentChooser;
