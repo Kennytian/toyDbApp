@@ -1,11 +1,9 @@
 import { IS_IOS } from './global';
 
 const CLIENT_ID = IS_IOS ? 2 : 1;
-const ORG_ID = 'M000029';
-const PRODUCT_ID = 'P000261';
+const ACTIVE_OPACITY = 0.8;
 
 export {
   CLIENT_ID,
-  ORG_ID,
-  PRODUCT_ID
+  ACTIVE_OPACITY
 };
