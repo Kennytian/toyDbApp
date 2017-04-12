@@ -15,7 +15,9 @@
     "start:7p": "react-native run-ios --simulator=\"iPhone 7 Plus\"",
     "start:android": "react-native run-android",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "flow": "node_modules/.bin/flow",
+    "flow-stop": "node_modules/.bin/flow stop"
   },
   "dependencies": {
     "immutable": "^3.8.1",
@@ -36,14 +38,17 @@
     "reselect": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.1",
     "babel-jest": "19.0.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "1.9.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "flow-bin": "0.40.0",
     "jest": "19.0.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "16.0.0-alpha.3"

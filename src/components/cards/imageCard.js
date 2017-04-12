@@ -1,3 +1,5 @@
+/* @flow */
+
 import React, { Component, PropTypes } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 
@@ -40,12 +42,9 @@ class ImageCard extends Component {
     onPress: PropTypes.func,
     titlePosition: PropTypes.oneOf(['left', 'center', 'right']),
     source: PropTypes.number.isRequired
-  };
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+    // http://jamestw.logdown.com/posts/257890-257890-reactjs-prop
+  };
 
   _renderTitle() {
     if (this.props.text) {
