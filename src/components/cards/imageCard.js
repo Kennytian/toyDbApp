@@ -12,15 +12,15 @@ const styles = {
   image: {
     height: 120,
     width: DEVICE_WIDTH - 20,
-    borderRadius: 10
+    borderRadius: 6
   },
   title: {
     mask: {
       backgroundColor: Colors.alphaBlack,
       height: 30,
       justifyContent: 'center',
-      borderBottomLeftRadius: Platform.select({ios: 10, android: 0}),
-      borderBottomRightRadius: Platform.select({ios: 10, android: 0}),
+      borderBottomLeftRadius: Platform.select({ios: 6, android: 0}),
+      borderBottomRightRadius: Platform.select({ios: 6, android: 0}),
       marginTop: 120 - 30
     },
     text: {
@@ -81,7 +81,7 @@ class ImageCard extends Component {
     }
 
     return (
-      <TouchableOpacity style={styles.container} disabled={!this.props.onPress} activeOpacity={ACTIVE_OPACITY}>
+      <TouchableOpacity style={this.props.style} disabled={!this.props.onPress} activeOpacity={ACTIVE_OPACITY}>
         <Image style={imageStyle} source={this.props.source} resizeMode={Image.resizeMode.stretch}>
           {this._renderTitle()}
         </Image>

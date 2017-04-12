@@ -26,6 +26,11 @@ export default class Home extends Component {
             跳转到 我的
           </Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('SpecialList')}>
+          <Text style={styles.welcome}>
+            跳转到 专题列表
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => navigate('ProductList', {
           year: 2017,
           amount: 5000,
