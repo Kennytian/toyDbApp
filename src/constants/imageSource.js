@@ -5,7 +5,7 @@ const imageSource = {
 
 
   // temp image, will delete when app publish
-  temp_image_card: require('./../assets/images/temp_image_card.png')
+  temp_image_card: require('./../assets/images/temp_image_card.jpg')
 };
 
 export default imageSource;

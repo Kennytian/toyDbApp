@@ -1,24 +1,26 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Platform, Text, TouchableOpacity } from 'react-native';
 
 import { DEVICE_WIDTH } from '../../../src/constants/global';
 import { ACTIVE_OPACITY } from '../../../src/constants/toyDb';
 import Colors from '../../../src/constants/colors';
 
 const styles = {
+  container: {},
   image: {
     height: 120,
-    width: DEVICE_WIDTH - 20
+    width: DEVICE_WIDTH - 20,
+    borderRadius: 10
   },
   title: {
     mask: {
       backgroundColor: Colors.alphaBlack,
       height: 30,
       justifyContent: 'center',
-      borderBottomLeftRadius: 10,
-      borderBottomRightRadius: 10,
+      borderBottomLeftRadius: Platform.select({ios: 10, android: 0}),
+      borderBottomRightRadius: Platform.select({ios: 10, android: 0}),
       marginTop: 120 - 30
     },
     text: {
@@ -79,11 +81,12 @@ class ImageCard extends Component {
     }
 
     return (
-      <TouchableOpacity disabled={!this.props.onPress} activeOpacity={ACTIVE_OPACITY}>
+      <TouchableOpacity style={styles.container} disabled={!this.props.onPress} activeOpacity={ACTIVE_OPACITY}>
         <Image style={imageStyle} source={this.props.source} resizeMode={Image.resizeMode.stretch}>
           {this._renderTitle()}
         </Image>
       </TouchableOpacity>
+
     );
   }
 }
