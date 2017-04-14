@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux-immutable';
-import { auth }  from './auth';
+import { user }  from './user';
+import { star }  from './star';
 
 const rootReducer = combineReducers({
-  auth
+  user,
+  star
 });
 
 export default rootReducer;

@@ -1,3 +1,5 @@
+import Common from './../api/common';
+
 import * as types from './../constants/actionTypes';
 
 function login(data) {
@@ -11,17 +13,19 @@ export function loginRequest({userName, password, validateCode}) {
   return async function (dispatch) {
     try {
       dispatch(login({
-        isFetching: true
+        isFetching: true,
+        errorMessage: ''
       }));
-
-      let result = {userName: 'Emma', age: 20};
+      let result = await Common.getStars();
       return dispatch(login({
         ...result,
-        isFetching: false
+        isFetching: false,
+        errorMessage: ''
       }));
     } catch (e) {
       dispatch(login({
-        isFetching: false
+        isFetching: false,
+        errorMessage: '网络请求错误' + e.toString()
       }));
       __DEV__ && console.warn('action login:', e);
     }

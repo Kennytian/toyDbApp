@@ -1,12 +1,7 @@
-import { AsyncStorage } from 'react-native';
-
 import { toastShort } from './toast';
 
 function _interceptor(body) {
-  if (body && body.code === 'P100') {
-    AsyncStorage.removeItem('userInfo');
-    // TODO navigate to login
-  }
+
 }
 
 export const makeParams = (method, body) => {

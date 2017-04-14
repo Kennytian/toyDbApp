@@ -7,7 +7,7 @@ const initialState = fromJS({
   data: {}
 });
 
-export function auth(state = initialState, action) {
+export function user(state = initialState, action) {
   switch (action.type) {
     case types.LOGIN:
       if (action.data && action.data.data) {

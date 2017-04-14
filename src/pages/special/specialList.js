@@ -5,11 +5,17 @@ import { FlatList } from 'react-native';
 
 import { connect } from 'react-redux';
 
+import { starRequest } from './../../actions/common';
+
 import { deepCompare } from '../../utils/optimizer';
 import { createDeepEqualSelector } from '../../utils/reselect';
 
-import SpecialListItem  from '../../containers/specialListItem';
+import ErrorView from './../../components/common/errorView';
+import LoadingView from './../../components/common/loadingView';
+
 import imageSource from '../../constants/imageSource';
+
+import SpecialListItem  from '../../containers/specialListItem';
 
 import styles from './../styles';
 
@@ -20,6 +26,10 @@ class SpecialList extends Component {
 
   componentWillMount() {
     __DEV__ && console.debug('SpecialList componentWillMount:', new Date());
+
+    // this.props.dispatch(starRequest('elong', 'stars')).then(resp => {
+    //   console.debug('startRequest', resp);
+    // });
   }
 
   _renderList() {
@@ -39,15 +49,29 @@ class SpecialList extends Component {
       source: imageSource.temp_image_card, text: '我的世界游戏周边'
     }, {key: 'i', source: imageSource.temp_image_card, text: '我的世界游戏周边'}, {key: 'j', source: imageSource.temp_image_card, text: '我的世界游戏周边'}];
     return (
-      <FlatList contentContainerStyle={{alignItems: 'center'}} data={data} renderItem={SpecialListItem}/>
+      <FlatList contentContainerStyle={{alignItems: 'center'}} data={data} renderItem={SpecialListItem} refreshing={false} onRefresh={this._onRefresh}/>
     );
+  }
+
+  _renderErrorView() {
+    return <ErrorView text={this.props.errorMessage}/>;
+  }
+
+  _renderLoadingView() {
+    return <LoadingView />;
   }
 
   render() {
     __DEV__ && console.debug('SpecialList render:', new Date());
-    return (
-      this._renderList()
-    );
+    if (this.props.isFetching && !this.props.errorMessage) {
+      return this._renderLoadingView();
+    }
+
+    if (this.props.errorMessage) {
+      return this._renderErrorView();
+    }
+
+    return this._renderList();
   }
 
   componentDidMount() {
@@ -61,14 +85,20 @@ class SpecialList extends Component {
   componentWillUnmount() {
     __DEV__ && console.debug('SpecialList componentWillUnmount:', new Date());
   }
+
+  _onRefresh = () => {
+    console.debug('onRefresh', new Date());
+  }
+
 }
 
 let mapStateToProps = createDeepEqualSelector(
   [
     state => state.getIn(['auth', 'isFetching']),
-    state => state.getIn(['loginErrCount', 'data', 'count'])
+    state => state.getIn(['loginErrCount', 'data', 'count']),
+    state => state.getIn(['star', 'items'])
   ],
-  (isFetching, errCount) => {
+  (isFetching, errCount, items) => {
     return {
       isFetching,
       errCount

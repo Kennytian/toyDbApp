@@ -1,3 +1,8 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { reducerCreate } from './../reducers/defaultReducer';
+
 import { StackNavigator } from 'react-navigation';
 
 import FrameNavigator from './../pages/frameNavigator';
@@ -9,7 +14,7 @@ import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
 
-const rootRouter = StackNavigator({
+const RootRouter = StackNavigator({
   Main: {
     screen: FrameNavigator,
     navigationOptions: {
@@ -30,4 +35,4 @@ const rootRouter = StackNavigator({
   ProductDetail: {screen: ProductDetail}
 });
 
-export default rootRouter;
+export default RootRouter;
