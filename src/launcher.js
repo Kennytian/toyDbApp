@@ -12,6 +12,8 @@ import XhrRequest from './utils/xhrRequest';
 
 import RootRouter from './routers/rootRouter';
 
+import AppWithNavigationState from './routers/rootRouter';
+
 const store = configureStore();
 const init = new AppInit();
 
@@ -23,7 +25,7 @@ export default class Launcher extends Component {
   render() {
     return (
       <Provider store={store}>
-        <RootRouter />
+        <AppWithNavigationState />
       </Provider>
     );
   }
