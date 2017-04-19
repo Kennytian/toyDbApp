@@ -291,9 +291,9 @@ babel-core@^6.0.0, babel-core@^6.21.0, babel-core@^6.24.1, babel-core@^6.7.2:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-eslint@^7.2.1:
-  version "7.2.1"
-  resolved "http://registry.npm.taobao.org/babel-eslint/download/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
+babel-eslint@^7.2.2:
+  version "7.2.2"
+  resolved "http://registry.npm.taobao.org/babel-eslint/download/babel-eslint-7.2.2.tgz#0da2cbe6554fd0fb069f19674f2db2f9c59270ff"
   dependencies:
     babel-code-frame "^6.22.0"
     babel-traverse "^6.23.1"
@@ -1923,9 +1923,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flow-bin@0.40.0:
-  version "0.40.0"
-  resolved "http://registry.npm.taobao.org/flow-bin/download/flow-bin-0.40.0.tgz#e10d60846d923124e47f548f16ba60fd8baff5a5"
+flow-bin@^0.44.2:
+  version "0.44.2"
+  resolved "http://registry.npm.taobao.org/flow-bin/download/flow-bin-0.44.2.tgz#3893c7db5de043ed82674f327a04b1309db208b5"
 
 flux-standard-action@^0.6.1:
   version "0.6.1"
@@ -2574,9 +2574,9 @@ istanbul-reports@^1.0.2:
   dependencies:
     handlebars "^4.0.3"
 
-jcore-react-native@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/jcore-react-native/download/jcore-react-native-1.0.0.tgz#18df2208d4bb50ec1e0254e2e3a3c69e43543deb"
+jcore-react-native@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/jcore-react-native/download/jcore-react-native-1.1.0.tgz#e48d809077c1373ac8d78e8afaeeeb7eb87e4edd"
 
 jest-changed-files@^19.0.2:
   version "19.0.2"
@@ -2795,9 +2795,9 @@ joi@^6.6.1:
     moment "2.x.x"
     topo "1.x.x"
 
-jpush-react-native@^1.5.6:
-  version "1.5.6"
-  resolved "http://registry.npm.taobao.org/jpush-react-native/download/jpush-react-native-1.5.6.tgz#0e93cff677ce9293306a2dd7a64da98362eac2ca"
+jpush-react-native@^1.6.0:
+  version "1.6.0"
+  resolved "http://registry.npm.taobao.org/jpush-react-native/download/jpush-react-native-1.6.0.tgz#1804f63fc6883a2040fdd72f74d58a3b1488bfb7"
 
 js-tokens@^3.0.0:
   version "3.0.1"
@@ -3947,7 +3947,7 @@ redux-persist-transform-immutable@^4.1.0:
     transit-immutable-js ">= 0.5"
     transit-js ">= 0.8"
 
-redux-persist@^4.0.0:
+redux-persist@^4.0.0, redux-persist@^4.6.0:
   version "4.6.0"
   resolved "http://registry.npm.taobao.org/redux-persist/download/redux-persist-4.6.0.tgz#3994793d5f2f38bf02591c9e693e16bf8eae2728"
   dependencies:
