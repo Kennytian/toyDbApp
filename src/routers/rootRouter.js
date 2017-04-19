@@ -18,4 +18,4 @@ class RootRouter extends Component {
   }
 }
 
-export default connect(state => ({nav: state.navReducer}))(RootRouter);
+export default connect(state => ({nav: state.nav}))(RootRouter);
