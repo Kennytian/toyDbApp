@@ -5,11 +5,11 @@ import { Image } from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
 
-import imageSource from './../constants/imageSource';
+import imageSource from '../constants/imageSource';
 
-import Home from './home/index';
-import Borrowing from './borrowing/index';
-import MyCenter from './myCenter/index';
+import Home from '../pages/home/index';
+import Borrowing from '../pages/borrowing/index';
+import MyCenter from '../pages/myCenter/index';
 
 const styles = {
   icon: {

@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation';
 
-import FrameNavigator from './../pages/frameNavigator';
+import FrameNavigator from './frameNavigator';
 
 import ProductList from './../pages/product/productList';
 import ProductDetail from './../pages/product/productDetail';

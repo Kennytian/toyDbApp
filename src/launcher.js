@@ -10,10 +10,13 @@ import AppInit from './appInit';
 import configureStore from './stores/configureStore';
 import XhrRequest from './utils/xhrRequest';
 
-import RootRouter from './routers/rootRouter';
+//import RootRouter from './routers/rootRouter';
+import RootRouter from './routers/AppNavigator';
 
-const store = configureStore();
+//const store = configureStore();
 const init = new AppInit();
+
+import store from './stores/store';
 
 export default class Launcher extends Component {
   componentWillMount() {
