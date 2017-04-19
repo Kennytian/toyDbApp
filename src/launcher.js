@@ -10,8 +10,7 @@ import AppInit from './appInit';
 import configureStore from './stores/configureStore';
 import XhrRequest from './utils/xhrRequest';
 
-//import RootRouter from './routers/rootRouter';
-import RootRouter from './routers/AppNavigator';
+import RootRouter from './routers/rootRouter';
 
 //const store = configureStore();
 const init = new AppInit();

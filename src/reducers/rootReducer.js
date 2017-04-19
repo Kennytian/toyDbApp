@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { user }  from './user';
 import { star }  from './star';
 
-import RootNavigator from '../routers/rootRouter';
+import RootNavigator from '../routers/pageConfig';
 
 const navReducer = (state, action) => {
   const newState = RootNavigator.router.getStateForAction(action, state);

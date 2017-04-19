@@ -1,33 +1,20 @@
-import { StackNavigator } from 'react-navigation';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addNavigationHelpers } from 'react-navigation';
+import RootNavigator from './pageConfig';
 
-import FrameNavigator from './frameNavigator';
+class RootRouter extends Component {
+  render() {
+    console.log('nav', this.props.nav);
+    return (
+      <RootNavigator
+        navigation={addNavigationHelpers({
+          dispatch: this.props.dispatch,
+          state: this.props.nav
+        })}
+      />
+    );
+  }
+}
 
-import ProductList from './../pages/product/productList';
-import ProductDetail from './../pages/product/productDetail';
-
-import SpecialList from './../pages/special/specialList';
-
-import paymentChooser from './../pages/payment/paymentChooser';
-
-const RootRouter = StackNavigator({
-  Main: {
-    screen: FrameNavigator,
-    navigationOptions: {
-      header: {
-        title: '玩具', // 默认后退标题文字
-        style: {
-          backgroundColor: '#fff'
-        }
-      }
-    }
-  },
-
-  paymentChooser: {screen: paymentChooser},
-
-  SpecialList: {screen: SpecialList},
-
-  ProductList: {screen: ProductList},
-  ProductDetail: {screen: ProductDetail}
-});
-
-export default RootRouter;
+export default connect(state => ({nav: state.navReducer}))(RootRouter);

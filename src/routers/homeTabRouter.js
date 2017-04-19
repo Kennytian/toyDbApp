@@ -19,7 +19,7 @@ const styles = {
   }
 };
 
-const FrameNavigator = TabNavigator({
+const HomeTabRouter = TabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
@@ -72,4 +72,4 @@ const FrameNavigator = TabNavigator({
   }
 });
 
-export default FrameNavigator;
+export default HomeTabRouter;
