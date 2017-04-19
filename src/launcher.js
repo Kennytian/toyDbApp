@@ -7,7 +7,7 @@ import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
 
 import AppInit from './appInit';
-import configureStore from './stores/configureStore';
+//import configureStore from './stores/configureStore';
 import XhrRequest from './utils/xhrRequest';
 
 import RootRouter from './routers/rootRouter';

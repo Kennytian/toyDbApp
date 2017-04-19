@@ -70,7 +70,7 @@ export function clearPersistedByKeys(keys) {
   });
 }
 
-export default function configureStore(initialState = Map()) {
+export default function configureStore(initialState = {}) {
   store = createStore(rootReducer, initialState, enhancers);
 
   hotReloading();

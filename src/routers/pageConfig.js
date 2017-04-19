@@ -24,9 +24,10 @@ const PageConfig = StackNavigator({
 
   paymentChooser: {screen: paymentChooser},
 
+  ProductList: {screen: ProductList},
+
   SpecialList: {screen: SpecialList},
 
-  ProductList: {screen: ProductList},
   ProductDetail: {screen: ProductDetail}
 });
 
