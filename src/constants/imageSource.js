@@ -5,7 +5,22 @@ const imageSource = {
 
 
   // temp image, will delete when app publish
-  temp_image_card: require('./../assets/images/temp_image_card.jpg')
-};
+  temp_image_card: require('./../assets/images/temp_image_card.jpg'),
 
+
+  home: {
+    banner: require('./../assets/images/home/banner.png'),
+    rightBtn: require('./../assets/images/home/rightBtn.png'),
+    tittleImgOne: require('./../assets/images/home/tittleImgOne.png'),
+    tittleImgTwo: require('./../assets/images/home/tittleImgTwo.png'),
+    scan: require('./../assets/images/home/scan.png'),
+    input: require('./../assets/images/home/input.png'),
+    pic_one: require('./../assets/images/home/pic_one.png'),
+    pic_two: require('./../assets/images/home/pic_two.png'),
+    pic_three: require('./../assets/images/home/pic_three.png'),
+    pic_four: require('./../assets/images/home/pic_four.png'),
+    praise:require('./../assets/images/home/praise.png'),
+    search:require('./../assets/images/home/search.png')
+  }
+};
 export default imageSource;
