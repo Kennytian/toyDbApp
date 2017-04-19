@@ -1,8 +1,3 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-import { reducerCreate } from './../reducers/defaultReducer';
-
 import { StackNavigator } from 'react-navigation';
 
 import FrameNavigator from './../pages/frameNavigator';
