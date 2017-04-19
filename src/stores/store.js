@@ -13,22 +13,30 @@ const reduxMiddleware = [reduxThunk];
 
 if (__DEV__) {
   const createLogger = require('redux-logger').createLogger;
+
   const reduxLogger = createLogger({
     collapsed: (getState, action) => (
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_BACK_ACTION' ||
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_FOCUS' ||
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_JUMP' ||
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_PUSH' ||
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_REFRESH' ||
-      action.type === 'REACT_NATIVE_ROUTER_FLUX_RESET'
+      action.type === 'Navigation/NAVIGATE'
     ),
     diff: false,
     duration: true,
     stateTransformer(state) {
-      if (Iterable.isIterable(state)) {
-        return state.toJS();
+      // rootReducer 用了 combineReducers redux-immutable
+      // if (Iterable.isIterable(state)) {
+      //   return state.toJS();
+      // }
+      // return state.toJS();
+
+      // rootReducer 用了 combineReducers redux
+      let newState = {};
+      for (let i of Object.keys(state)) {
+        if (Iterable.isIterable(state[i])) {
+          newState[i] = state[i].toJS();
+        } else {
+          newState[i] = state[i];
+        }
       }
-      return state;
+      return newState;
     }
   });
 
@@ -41,6 +49,7 @@ const enhancers = compose(...[
   autoRehydrate()
 ]);
 
+// const store = createStore(rootReducer, Map(), enhancers);
 const store = createStore(rootReducer, {}, enhancers);
 
 export default store;
