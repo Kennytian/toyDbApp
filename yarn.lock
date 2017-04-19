@@ -3961,6 +3961,10 @@ redux-promise@^0.5.3:
   dependencies:
     flux-standard-action "^0.6.1"
 
+redux-saga@^0.14.6:
+  version "0.14.6"
+  resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.14.6.tgz#bc409aa0edaa4a7234759041cc70da62f37c6f13"
+
 redux-thunk@^2.2.0:
   version "2.2.0"
   resolved "http://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"

@@ -9,7 +9,7 @@ import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
 
-const PageConfig = StackNavigator({
+const PageConfigs = StackNavigator({
   Main: {
     screen: HomeTabRouter,
     navigationOptions: {
@@ -31,4 +31,4 @@ const PageConfig = StackNavigator({
   ProductDetail: {screen: ProductDetail}
 });
 
-export default PageConfig;
+export default PageConfigs;
