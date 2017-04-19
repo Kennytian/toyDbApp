@@ -58,7 +58,7 @@ function setPersistStore() {
     debounce: 200,
     storage: AsyncStorage,
     keyPrefix: 'reduxPersist',
-    blacklist: ['auth', 'userState']
+    blacklist: ['auth', 'userState', 'login']
   });
 }
 
