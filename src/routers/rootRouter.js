@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers } from 'react-navigation';
-import RootNavigator from './pageConfig';
+
+import PageConfigs from './pageConfigs';
 
 class RootRouter extends Component {
   render() {
-    console.log('nav', this.props.nav);
+    __DEV__ && console.debug('nav', this.props.nav);
     return (
-      <RootNavigator
+      <PageConfigs
         navigation={addNavigationHelpers({
           dispatch: this.props.dispatch,
           state: this.props.nav
