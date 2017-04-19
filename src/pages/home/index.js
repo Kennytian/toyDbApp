@@ -6,13 +6,13 @@ import {
   Image,
   TextInput,
   ScrollView,
-  ListView,
+  ListView
 } from 'react-native';
 
 import styles from '../styles';
 
-import imageSource from "./../../constants/imageSource";
-import Colors from "./../../constants/colors"
+import imageSource from './../../constants/imageSource';
+import Colors from './../../constants/colors';
 import Tittle from './../../components/common/tittle';
 import Search from './../../components/common/search';
 
@@ -27,21 +27,21 @@ var
   {key: 'g', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
   {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
   {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-];
+  {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
+  ];
 
 export default class Home extends Component {
   constructor(props){
     super(props);
     this.state={
-      tittleText:"热门专题",
-      hotTittle:"热门内容",
-      rightText:"更多",
-      placeholderText:"请输入关键字",
+      tittleText: '热门专题',
+      hotTittle: '热门内容',
+      rightText: '更多',
+      placeholderText: '请输入关键字',
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
-    }
+    };
   }
 
   componentDidMount() {
@@ -54,9 +54,9 @@ export default class Home extends Component {
   }
 
   onTextValue=(text)=>{
-      this.setState({
-        textvalue:text
-      })
+    this.setState({
+      textvalue: text
+    });
   }
 
   render() {
@@ -123,14 +123,14 @@ export default class Home extends Component {
 
   renderItem=(data)=>{
     return(
-        <View style={{height:70,marginTop:10}}>
-          <TouchableOpacity style={{height:70, width:140,marginLeft:10,}}>
-            <Image source={data.source} style={{justifyContent:'flex-end',alignItems:'center',marginBottom:7}}>
-                <Text style={{color:Colors.white,fontSize:16}}>{data.text}</Text>
+        <View style={{height: 70,marginTop: 10}}>
+          <TouchableOpacity style={{height: 70, width: 140,marginLeft: 10}}>
+            <Image source={data.source} style={{justifyContent: 'flex-end',alignItems: 'center',marginBottom: 7}}>
+                <Text style={{color: Colors.white,fontSize: 16}}>{data.text}</Text>
             </Image>
           </TouchableOpacity>
         </View>
-    )
+    );
   }
 
 }

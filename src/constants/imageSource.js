@@ -19,8 +19,8 @@ const imageSource = {
     pic_two: require('./../assets/images/home/pic_two.png'),
     pic_three: require('./../assets/images/home/pic_three.png'),
     pic_four: require('./../assets/images/home/pic_four.png'),
-    praise:require('./../assets/images/home/praise.png'),
-    search:require('./../assets/images/home/search.png')
+    praise: require('./../assets/images/home/praise.png'),
+    search: require('./../assets/images/home/search.png')
   }
 };
 export default imageSource;

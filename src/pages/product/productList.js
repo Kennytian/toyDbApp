@@ -39,7 +39,7 @@ class ProductList extends Component {
       {key: 'h', source: imageSource.temp_image_card, text: '我的世界游戏周边'},
       {key: 'i', source: imageSource.temp_image_card, text: '我的世界游戏周边'},
       {key: 'j', source: imageSource.temp_image_card, text: '我的世界游戏周边'}
-      ];
+    ];
 
     if (this.props.isFetching) {
       return <LoadingView />;

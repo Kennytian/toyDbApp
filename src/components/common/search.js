@@ -4,38 +4,38 @@ import {
   TouchableOpacity,
   View,
   Image,
-  TextInput,
+  TextInput
 } from 'react-native';
 
-import imageSource from "./../../constants/imageSource";
+import imageSource from './../../constants/imageSource';
 import colors from './../../constants/colors';
 
 const styles={
-  inputImg:{
-    flexDirection:'row',
-    height:29,
-    alignItems:'center',
-    marginLeft:15,
+  inputImg: {
+    flexDirection: 'row',
+    height: 29,
+    alignItems: 'center',
+    marginLeft: 15
   },
-  sourceImg:{
-    marginLeft:15,
+  sourceImg: {
+    marginLeft: 15
   },
-  searchView:{
-    marginTop:10,
-    flexDirection:'row',
-    height:45,
-    alignItems:'center',
+  searchView: {
+    marginTop: 10,
+    flexDirection: 'row',
+    height: 45,
+    alignItems: 'center'
   },
-  textInputView:{
+  textInputView: {
     marginLeft: 13,
     flex: 1,
-    height:40,
-    marginRight:13,
+    height: 40,
+    marginRight: 13
   },
-  scanImg:{
-    marginLeft:13,
+  scanImg: {
+    marginLeft: 13
   }
-}
+};
 
 class Search extends Component {
   constructor(props){

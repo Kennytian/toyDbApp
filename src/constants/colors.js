@@ -7,7 +7,7 @@ const Colors = {
   white: '#FFFFFF',
   alphaBlack: 'rgba(0,0,0,0.5)',
   borderBottom: '#CCC',
-  inputColor:'#C3C3C3',
+  inputColor: '#C3C3C3'
 };
 
 export default Colors;

@@ -6,37 +6,37 @@ import {
   Image
 } from 'react-native';
 
-import imageSource from "./../../constants/imageSource";
+import imageSource from './../../constants/imageSource';
 import colors from './../../constants/colors';
 
 const styles = {
-  main:{
-    flexDirection:'row',
-    height:43,
-    borderBottomColor:colors.borderBottom,
-    borderBottomWidth:0.5,
-    marginLeft:10,
-    marginRight:10,
+  main: {
+    flexDirection: 'row',
+    height: 43,
+    borderBottomColor: colors.borderBottom,
+    borderBottomWidth: 0.5,
+    marginLeft: 10,
+    marginRight: 10
   },
-  mainTittle:{
-    flex:1,
-    flexDirection:'row',
-    alignItems:'center',
+  mainTittle: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
-  rightText:{
-    flexDirection:'row',
-    alignItems:'center',
+  rightText: {
+    flexDirection: 'row',
+    alignItems: 'center'
   },
-  more:{
-    fontSize:15,
-    marginRight:10,
+  more: {
+    fontSize: 15,
+    marginRight: 10
   },
-  hotTittle:{
-    fontSize:15,
-    marginLeft:10,
-    color:'#7ba9f6',
+  hotTittle: {
+    fontSize: 15,
+    marginLeft: 10,
+    color: '#7ba9f6'
   }
-}
+};
 
 class Tittle extends Component {
   render() {
