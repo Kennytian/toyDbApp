@@ -1,8 +1,9 @@
+
+import colors from './../constants/colors';
+
 const styles = {
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
   welcome: {
@@ -10,6 +11,7 @@ const styles = {
     textAlign: 'center',
     margin: 10
   }
+
 };
 
 export default styles;

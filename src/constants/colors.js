@@ -5,7 +5,9 @@ const Colors = {
   brandHover: '#2A9959', // 主色绿选中状态
 
   white: '#FFFFFF',
-  alphaBlack: 'rgba(0,0,0,0.5)'
+  alphaBlack: 'rgba(0,0,0,0.5)',
+  borderBottom: '#CCC',
+  inputColor: '#C3C3C3'
 };
 
 export default Colors;
