@@ -9,15 +9,17 @@ import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
 
+//开发入口
+import DevEntry from '../pages/devEntry/index';
+import OhError from '../pages/devEntry/ohError';
+
 const PageConfigs = StackNavigator({
   Main: {
     screen: HomeTabRouter,
     navigationOptions: {
-      header: {
-        title: '玩具', // 默认后退标题文字
-        style: {
-          backgroundColor: '#fff'
-        }
+      headerTitle: '玩具', // 默认后退标题文字
+      headerStyle: {
+        backgroundColor: '#fff'
       }
     }
   },
@@ -28,7 +30,10 @@ const PageConfigs = StackNavigator({
 
   SpecialList: {screen: SpecialList},
 
-  ProductDetail: {screen: ProductDetail}
+  ProductDetail: {screen: ProductDetail},
+
+  DevEntry: {screen: DevEntry},
+  OhError: {screen: OhError}
 });
 
 export default PageConfigs;

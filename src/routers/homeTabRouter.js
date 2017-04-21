@@ -23,34 +23,28 @@ const HomeTabRouter = TabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
-      tabBar: {
-        label: '主页',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_home_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '主页',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_home_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   },
   Borrowing: {
     screen: Borrowing,
     navigationOptions: {
-      tabBar: {
-        label: '玩具',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_borrowing_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '玩具',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_borrowing_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   },
   MyCenter: {
     screen: MyCenter,
     navigationOptions: {
-      tabBar: {
-        label: '我的',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_mycenter_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '我的',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_mycenter_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   }
 }, {

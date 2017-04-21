@@ -7,7 +7,7 @@ const errorView = () => {
   return (
     <View style={styles.container}>
       <Text>
-        Fail: {this.props.text}
+
       </Text>
     </View>
   );
