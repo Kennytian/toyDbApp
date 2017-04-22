@@ -9,7 +9,7 @@ export default class AppInit {
   }
 
   appDidMount() {
-    this._offlineChecking();
+    // this._offlineChecking();
   }
 
   appWillUnmount() {

@@ -8,7 +8,10 @@ const Colors = {
   alphaBlack: 'rgba(0,0,0,0.5)',
   borderBottom: '#CCC',
   inputColor: '#C3C3C3',
-  bgColor: '#F2F2F2'
+  bgColor: '#F2F2F2',
+
+  textColor: '#535353',
+  borderColor: '#AAAAAA'
 };
 
 export default Colors;

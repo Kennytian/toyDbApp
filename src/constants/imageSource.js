@@ -7,6 +7,10 @@ const imageSource = {
   // temp image, will delete when app publish
   temp_image_card: require('./../assets/images/temp_image_card.jpg'),
 
+  components: {
+    errorIcon: require('./../assets/images/components/common/errorIcon.png')
+  },
+
 
   home: {
     banner: require('./../assets/images/home/banner.png'),
