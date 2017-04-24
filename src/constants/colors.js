@@ -11,7 +11,9 @@ const Colors = {
   bgColor: '#F2F2F2',
 
   textColor: '#535353',
-  borderColor: '#AAAAAA'
+  borderColor: '#AAAAAA',
+
+  tabColor: '#7BA9F6'
 };
 
 export default Colors;

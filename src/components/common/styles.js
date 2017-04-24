@@ -73,6 +73,36 @@ const styles = {
       alignSelf: 'center'
     },
     icon: {}
+  },
+
+  // tabBar 条
+  tabBar: {
+    container: {
+      borderTopWidth: BORDER_WIDTH,
+      borderTopColor: Colors.borderColor
+    },
+    innerWrapper: {
+      borderBottomWidth: BORDER_WIDTH,
+      borderBottomColor: Colors.borderColor,
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginLeft: 10,
+      marginRight: 10,
+      height: 40
+    },
+    button: {
+      fontWeight: '600',
+      flex: 1,
+      textAlign: 'center'
+    },
+    splitLine: {
+      width: BORDER_WIDTH,
+      height: 20,
+      backgroundColor: Colors.borderColor
+    },
+    selected: {
+      color: Colors.tabColor
+    }
   }
 };
 

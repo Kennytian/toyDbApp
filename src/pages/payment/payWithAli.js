@@ -8,12 +8,12 @@ import {
 import styles from './../styles';
 
 class PayWithAli extends Component {
-  static navigationOptions = {
-    title: ({state}) => '支付宝支付'
-  };
+  static navigationOptions = ({navigation}) => ({
+    title: '支付宝支付'
+  });
 
   render() {
-    const {navigate, state, goBack} = this.props.navigation;
+    const {navigate, goBack} = this.props.navigation;
     return (
       <View>
         <Text>用支付宝支付</Text>

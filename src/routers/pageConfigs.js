@@ -9,6 +9,8 @@ import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
 
+import ReviewList from './../pages/reviewList';
+
 //开发入口
 import DevEntry from '../pages/devEntry/index';
 import OhError from '../pages/devEntry/ohError';
@@ -31,6 +33,8 @@ const PageConfigs = StackNavigator({
   SpecialList: {screen: SpecialList},
 
   ProductDetail: {screen: ProductDetail},
+
+  ReviewList: {screen: ReviewList},
 
   DevEntry: {screen: DevEntry},
   OhError: {screen: OhError}
