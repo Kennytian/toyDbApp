@@ -8,6 +8,7 @@ const styles = {
     flex: 1
   },
 
+  // 扩大按钮点击区域
   hitSlop: {
     top: 8,
     right: 8,
@@ -15,6 +16,7 @@ const styles = {
     left: 8
   },
 
+  // 错误页面
   errorView: {
     icon: {
       width: DEVICE_WIDTH - 100,
@@ -40,6 +42,7 @@ const styles = {
     }
   },
 
+  // 搜索条
   searchBar: {
     wrapper: {
       flexDirection: 'row',
@@ -52,17 +55,18 @@ const styles = {
     },
     magnifier: {
       marginLeft: 10,
-      marginRight: 10,
+      marginRight: Platform.select({android: 5, ios: 10}),
       alignSelf: 'center'
     },
     input: {
-      paddingBottom: Platform.select({android: 5}),
+      paddingBottom: Platform.select({android: 5.5}),
       height: 30,
-      width: DEVICE_WIDTH - 60
+      width: DEVICE_WIDTH - 60 - 44
     },
     placeholderTextColor: Colors.inputColor
   },
 
+  // 扫描按钮
   scanButton: {
     container: {
       justifyContent: 'flex-end',

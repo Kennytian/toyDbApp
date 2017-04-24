@@ -6,7 +6,8 @@ import {
   Image,
   TextInput,
   ScrollView,
-  ListView
+  ListView,
+  FlatList
 } from 'react-native';
 
 import styles from '../styles';
@@ -17,6 +18,8 @@ import Tittle from './../../components/common/tittle';
 import Search from './../../components/common/search';
 import SearchBar from '../../components/common/searchBar';
 import ScanButton from '../../components/common/scanButton';
+import ImageCard from '../../components/cards/imageCard';
+
 
 var
   data = [
@@ -86,7 +89,7 @@ export default class Home extends Component {
           titleText={this.state.tittleText}
           rightText={this.state.rightText}
         />
-        <View style={{flex: 1, marginBottom: 20}}>
+        <View style={{flex: 1, marginTop: 10, marginBottom: 20}}>
           <ListView
             dataSource={this.state.dataSource}
             renderRow={this.renderItem}
@@ -131,13 +134,7 @@ export default class Home extends Component {
 
   renderItem = (data) => {
     return (
-      <View style={{height: 70, marginTop: 10}}>
-        <TouchableOpacity style={{height: 70, width: 140, marginLeft: 10}}>
-          <Image source={data.source} style={{justifyContent: 'flex-end', alignItems: 'center', marginBottom: 7}}>
-            <Text style={{color: Colors.white, fontSize: 16}}>{data.text}</Text>
-          </Image>
-        </TouchableOpacity>
-      </View>
+      <ImageCard width={140} height={70} text={data.text} style={{marginLeft: 10}} source={data.source}/>
     );
   }
 

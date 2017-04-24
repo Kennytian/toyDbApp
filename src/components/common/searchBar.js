@@ -13,6 +13,8 @@ const searchBar = (props) => {
       <Image style={styles.searchBar.magnifier} source={imageSource.home.search}/>
       <TextInput
         style={styles.searchBar.input}
+        maxLength={100}
+        clearButtonMode='while-editing'
         underlineColorAndroid="transparent"
         placeholder={props.placeholderText}
         placeholderTextColor={styles.searchBar.placeholderTextColor}
