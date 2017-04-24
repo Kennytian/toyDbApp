@@ -1,7 +1,7 @@
 import { NavigationActions } from 'react-navigation';
 
 export default class RouteDispatcher {
-  static backTo(props, name, subName = '', params = {}) {
+  static navigate(props, name, subName = '', params = {}) {
     if (props && props.navigation && props.navigation.dispatch && name) {
       const navigateAction = NavigationActions.navigate({
         routeName: name,

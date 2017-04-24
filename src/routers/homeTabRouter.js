@@ -60,8 +60,15 @@ const HomeTabRouter = TabNavigator({
     style: {
       backgroundColor: '#fff' // TabBar 背景色
     },
+    iconStyle: {
+      marginTop: 13
+    },
     labelStyle: {
+      marginTop: 0,
       fontSize: 12 // 文字大小
+    },
+    tabStyle: {
+      height: 45
     }
   }
 });
