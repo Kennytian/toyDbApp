@@ -25,9 +25,6 @@ export default class MyCenter extends Component {
             开发入口
           </Text>
         </TouchableOpacity>
-        <ImageCard source={imageSource.temp_image_card} text={'我的世界游戏周边'} titlePosition={'left'} onPress={() => {
-        }}/>
-
       </View>
     );
   }

@@ -10,6 +10,8 @@ import {
 import styles from '../styles';
 
 import ImageCard from '../../components/cards/imageCard';
+import SearchBar from '../../components/common/searchBar';
+import ScanButton from '../../components/common/scanButton';
 import imageSource from '../../constants/imageSource';
 
 export default class DevEntry extends Component {
@@ -24,6 +26,13 @@ export default class DevEntry extends Component {
         <Text style={[styles.welcome, {margin: 0, padding: 0}]} onPress={() => this._navTo('OhError')}>
           进入 OnError 页面
         </Text>
+        <View style={{flexDirection: 'row'}}>
+          <SearchBar placeholderText="请输入关键字" onChangeText={() => {
+          }}/>
+          <ScanButton onPress={() => {
+          }}/>
+        </View>
+
       </View>
     );
   }

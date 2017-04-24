@@ -15,25 +15,27 @@ import imageSource from './../../constants/imageSource';
 import Colors from './../../constants/colors';
 import Tittle from './../../components/common/tittle';
 import Search from './../../components/common/search';
+import SearchBar from '../../components/common/searchBar';
+import ScanButton from '../../components/common/scanButton';
 
 var
-  data=[
-  {key: 'a', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'b', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-  {key: 'c', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'd', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-  {key: 'e', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'f', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-  {key: 'g', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-  {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-  {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
+  data = [
+    {key: 'a', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+    {key: 'b', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+    {key: 'c', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+    {key: 'd', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+    {key: 'e', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+    {key: 'f', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+    {key: 'g', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+    {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+    {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+    {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
   ];
 
 export default class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       tittleText: '热门专题',
       hotTittle: '热门内容',
       rightText: '更多',
@@ -47,13 +49,14 @@ export default class Home extends Component {
   componentDidMount() {
     this.fetchData();
   }
+
   fetchData() {
     this.setState({
       dataSource: this.state.dataSource.cloneWithRows(data)
     });
   }
 
-  onTextValue=(text)=>{
+  onTextValue = (text) => {
     this.setState({
       textvalue: text
     });
@@ -63,29 +66,34 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-          <Search
-            placeholderText={this.state.placeholderText}
-            value={this.state.textValue}
-            onSearchChange={this.onTextValue}
+        <Search
+          placeholderText={this.state.placeholderText}
+          value={this.state.textValue}
+          onSearchChange={this.onTextValue}
+        />
+        <View style={{flexDirection: 'row'}}>
+          <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
+          <ScanButton onPress={() => {
+          }}/>
+        </View>
+        <View>
+          <Image
+            source={imageSource.home.banner}
           />
-          <View>
-            <Image
-              source={imageSource.home.banner}
-            />
-          </View>
-          <Tittle
-            titleImg={imageSource.home.tittleImgOne}
-            titleText={this.state.tittleText}
-            rightText={this.state.rightText}
+        </View>
+        <Tittle
+          titleImg={imageSource.home.tittleImgOne}
+          titleText={this.state.tittleText}
+          rightText={this.state.rightText}
+        />
+        <View style={{flex: 1, marginBottom: 20}}>
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderItem}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
           />
-          <View style={{flex: 1,marginBottom: 20}}>
-            <ListView
-              dataSource={this.state.dataSource}
-              renderRow={this.renderItem}
-              horizontal = {true}
-              showsHorizontalScrollIndicator={false}
-            />
-          </View>
+        </View>
         <Tittle
           titleImg={imageSource.home.tittleImgTwo}
           titleText={this.state.hotTittle}
@@ -121,15 +129,15 @@ export default class Home extends Component {
     );
   }
 
-  renderItem=(data)=>{
-    return(
-        <View style={{height: 70,marginTop: 10}}>
-          <TouchableOpacity style={{height: 70, width: 140,marginLeft: 10}}>
-            <Image source={data.source} style={{justifyContent: 'flex-end',alignItems: 'center',marginBottom: 7}}>
-                <Text style={{color: Colors.white,fontSize: 16}}>{data.text}</Text>
-            </Image>
-          </TouchableOpacity>
-        </View>
+  renderItem = (data) => {
+    return (
+      <View style={{height: 70, marginTop: 10}}>
+        <TouchableOpacity style={{height: 70, width: 140, marginLeft: 10}}>
+          <Image source={data.source} style={{justifyContent: 'flex-end', alignItems: 'center', marginBottom: 7}}>
+            <Text style={{color: Colors.white, fontSize: 16}}>{data.text}</Text>
+          </Image>
+        </TouchableOpacity>
+      </View>
     );
   }
 
