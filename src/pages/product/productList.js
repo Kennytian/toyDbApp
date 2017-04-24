@@ -16,7 +16,7 @@ import imageSource from '../../constants/imageSource';
 
 import SpecialListItem  from '../../containers/specialListItem';
 
-import styles from './../styles';
+import styles from '../../components/common/styles';
 
 class ProductList extends Component {
   static navigationOptions = {

@@ -5,7 +5,7 @@ import {
   View
 } from 'react-native';
 
-import styles from './../styles';
+import styles from '../../components/common/styles';
 
 class PayWithWeChat extends Component {
   static navigationOptions = {

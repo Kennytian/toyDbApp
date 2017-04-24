@@ -6,15 +6,16 @@ import {
   Image,
   TextInput,
   ScrollView,
-  ListView
+  ListView,
 } from 'react-native';
 
-import styles from '../styles';
+import styles from '../../components/common/styles';
 
 import imageSource from './../../constants/imageSource';
 import Colors from './../../constants/colors';
 import Tittle from './../../components/common/tittle';
 import Search from './../../components/common/search';
+import HotContent from './../../components/common/hotContent';
 
 var
   data=[
@@ -38,7 +39,14 @@ export default class Home extends Component {
       hotTittle: '热门内容',
       rightText: '更多',
       placeholderText: '请输入关键字',
+      hotText:"超远距离接吻神器：KISS还是要提高自己的姿势水平",
+      releaseTime:"发布时间",
+      Time:"2017-3-3",
+      number:"1211",
       dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2
+      }),
+      dataSourceAnother: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
     };
@@ -49,7 +57,8 @@ export default class Home extends Component {
   }
   fetchData() {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(data)
+      dataSource: this.state.dataSource.cloneWithRows(data),
+      dataSourceAnother:this.state.dataSource.cloneWithRows(data),
     });
   }
 
@@ -78,19 +87,21 @@ export default class Home extends Component {
             titleText={this.state.tittleText}
             rightText={this.state.rightText}
           />
-          <View style={{flex: 1,marginBottom: 20}}>
             <ListView
               dataSource={this.state.dataSource}
               renderRow={this.renderItem}
               horizontal = {true}
               showsHorizontalScrollIndicator={false}
             />
-          </View>
         <Tittle
           titleImg={imageSource.home.tittleImgTwo}
           titleText={this.state.hotTittle}
         />
-        <Text style={styles.welcome}>
+        <ListView
+          dataSource={this.state.dataSourceAnother}
+          renderRow={this.renderItemAnother}
+        />
+       {/* <Text style={styles.welcome}>
           Welcome to Home!
         </Text>
         <TouchableOpacity onPress={() => navigate('Borrowing')}>
@@ -116,7 +127,7 @@ export default class Home extends Component {
           <Text style={styles.welcome}>
             跳转到 产品
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
       </ScrollView>
     );
   }
@@ -131,6 +142,19 @@ export default class Home extends Component {
           </TouchableOpacity>
         </View>
     );
+  }
+
+  renderItemAnother=(data)=>{
+    return(
+      <HotContent
+        HotImg={data.source}
+        onPrasie={()=>{alert(1)}}
+        hotText={this.state.hotText}
+        number={this.state.number}
+        Time={this.state.Time}
+        releaseTime={this.state.releaseTime}
+      />
+    )
   }
 
 }

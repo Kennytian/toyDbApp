@@ -5,7 +5,7 @@ import {
   View
 } from 'react-native';
 
-import styles from '../styles';
+import styles from '../../components/common/styles';
 
 export default class Borrowing extends Component {
   render() {

@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native';
 
-import styles from './../styles';
+import styles from '../../components/common/styles';
 
 import ImageCard from '../../components/cards/imageCard';
 import imageSource from '../../constants/imageSource';

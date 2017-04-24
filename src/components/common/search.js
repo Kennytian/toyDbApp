@@ -29,7 +29,7 @@ const styles={
   textInputView: {
     marginLeft: 13,
     flex: 1,
-    height: 40,
+    height: 45,
     marginRight: 13
   },
   scanImg: {
