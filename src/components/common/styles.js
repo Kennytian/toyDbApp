@@ -88,7 +88,7 @@ const styles = {
       alignItems: 'center',
       marginLeft: 10,
       marginRight: 10,
-      height: 40
+      height: 37
     },
     button: {
       fontWeight: '600',
