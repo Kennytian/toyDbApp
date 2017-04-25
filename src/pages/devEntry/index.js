@@ -8,6 +8,7 @@ import SearchBar from '../../components/common/searchBar';
 import ScanButton from '../../components/common/scanButton';
 import TabBar from '../../components/common/tabBar';
 import imageSource from '../../constants/imageSource';
+import ReviewCard from '../../components/cards/reviewCard';
 
 const innerStyles = {
   span: {
