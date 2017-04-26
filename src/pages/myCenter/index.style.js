@@ -1,7 +1,6 @@
 import Colors from '../../constants/colors';
 
-
-const styles={
+const styles = {
   myCenterWrap: {
     flex: 1,
     backgroundColor: Colors.bgColor

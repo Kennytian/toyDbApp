@@ -3,14 +3,12 @@ const imageSource = {
   btn_borrowing_hover: require('./../assets/images/btn_borrowing_hover.png'),
   btn_mycenter_hover: require('./../assets/images/btn_mycenter_hover.png'),
 
-
   // temp image, will delete when app publish
   temp_image_card: require('./../assets/images/temp_image_card.jpg'),
 
   components: {
     errorIcon: require('./../assets/images/components/common/errorIcon.png')
   },
-
 
   home: {
     banner: require('./../assets/images/home/banner.png'),
@@ -26,6 +24,7 @@ const imageSource = {
     praise: require('./../assets/images/home/praise.png'),
     search: require('./../assets/images/home/search.png')
   },
+
   myCenter: {
     browsingHistory: require('./../assets/images/myCenter/browsingHistory.png'),
     clean: require('./../assets/images/myCenter/clean.png'),
@@ -35,4 +34,5 @@ const imageSource = {
     rightBtn: require('./../assets/images/myCenter/rightBtn.png')
   }
 };
+
 export default imageSource;

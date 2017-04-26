@@ -80,34 +80,24 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <Search
-          placeholderText={this.state.placeholderText}
-          value={this.state.textValue}
-          onSearchChange={this.onTextValue}
-        />
+        <Search placeholderText={this.state.placeholderText} value={this.state.textValue} onSearchChange={this.onTextValue}/>
         <View style={{flexDirection: 'row'}}>
           <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
           <ScanButton onPress={() => {
           }}/>
         </View>
-        <View>
-          <Image
-            source={imageSource.home.banner}
-          />
-        </View>
+        <View><Image source={imageSource.home.banner}/></View>
         <Tittle
           titleImg={imageSource.home.tittleImgOne}
           titleText={this.state.tittleText}
           rightText={this.state.rightText}
         />
-        <View style={{flex: 1, marginTop: 10, marginBottom: 20}}>
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderItem}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderItem}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        />
         <Tittle
           titleImg={imageSource.home.tittleImgTwo}
           titleText={this.state.hotTittle}
@@ -126,11 +116,13 @@ export default class Home extends Component {
     );
   }
 
-  renderItemAnother=(data)=>{
-    return(
+  renderItemAnother = (data) => {
+    return (
       <HotContent
         HotImg={data.source}
-        onPrasie={()=>{alert(1);}}
+        onPrasie={() => {
+          alert(1);
+        }}
         hotText={this.state.hotText}
         number={this.state.number}
         Time={this.state.Time}
