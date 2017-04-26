@@ -13,7 +13,7 @@ export default class Borrowing extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to Borrowing!
+          Welcome to 玩具库!
         </Text>
         <TouchableOpacity onPress={() => navigate('MyCenter')}>
           <Text style={styles.welcome}>

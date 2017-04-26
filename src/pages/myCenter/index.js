@@ -26,6 +26,7 @@ class MyCenter extends Component {
     alert(1);
   }
   render() {
+    const {navigate} = this.props.navigation;
     return (
      <View style={styles.myCenterWrap}>
         <View style={styles.tittle}>
@@ -44,6 +45,11 @@ class MyCenter extends Component {
          <Text>用户名</Text>
          </View>
        </Image>
+       <TouchableOpacity onPress={() => navigate('DevEntry')}>
+         <Text style={styles.welcome}>
+           开发入口
+         </Text>
+       </TouchableOpacity>
       <View style={styles.main}>
         {this._renderButton(this.ccc, imageSource.myCenter.message, '我的消息')}
         {this._renderButton(this.ccc, imageSource.myCenter.browsingHistory, '浏览记录')}

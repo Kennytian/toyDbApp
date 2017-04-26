@@ -4,7 +4,7 @@ import Colors from '../../constants/colors';
 const styles={
   myCenterWrap: {
     flex: 1,
-    backgroundColor: Colors.myCenterBg
+    backgroundColor: Colors.bgColor
   },
   tittle: {
     height: 50,

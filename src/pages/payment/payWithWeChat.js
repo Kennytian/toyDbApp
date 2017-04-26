@@ -8,12 +8,12 @@ import {
 import styles from '../../components/common/styles';
 
 class PayWithWeChat extends Component {
-  static navigationOptions = {
-    title: ({state}) => '微信支付'
-  }
+  static navigationOptions = ({navigation}) => ({
+    title: '微信支付'
+  });
 
   render() {
-    const {navigate, state, goBack} = this.props.navigation;
+    const {navigate, goBack} = this.props.navigation;
     return (
       <View>
         <Text>用微信支付</Text>

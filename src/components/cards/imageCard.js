@@ -1,35 +1,11 @@
 /* @flow */
 
 import React, { Component, PropTypes } from 'react';
-import { View, Image, Platform, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 
-import { DEVICE_WIDTH } from '../../../src/constants/global';
-import { ACTIVE_OPACITY } from '../../../src/constants/toyDb';
-import Colors from '../../../src/constants/colors';
-
-const styles = {
-  container: {},
-  image: {
-    height: 120,
-    width: DEVICE_WIDTH - 20,
-    borderRadius: 6
-  },
-  title: {
-    mask: {
-      backgroundColor: Colors.alphaBlack,
-      height: 30,
-      justifyContent: 'center',
-      borderBottomLeftRadius: Platform.select({ios: 6, android: 0}),
-      borderBottomRightRadius: Platform.select({ios: 6, android: 0}),
-      marginTop: 120 - 30
-    },
-    text: {
-      fontSize: 16,
-      color: Colors.white,
-      marginLeft: 10
-    }
-  }
-};
+import { ACTIVE_OPACITY } from '../../constants/toyDb';
+import Colors from '../../constants/colors';
+import styles from './styles';
 
 class ImageCard extends Component {
   static defaultProps = {
@@ -50,8 +26,8 @@ class ImageCard extends Component {
 
   _renderTitle() {
     if (this.props.text) {
-      let textStyle = styles.title.text;
-      let maskStyle = styles.title.mask;
+      let textStyle = styles.imageCard.title.text;
+      let maskStyle = styles.imageCard.title.mask;
       if (this.props.height > 50) {
         maskStyle = [maskStyle, {marginTop: this.props.height - 30}];
       }
@@ -72,7 +48,7 @@ class ImageCard extends Component {
   }
 
   render() {
-    let imageStyle = styles.image;
+    let imageStyle = styles.imageCard.image;
     if (this.props.height > 50) {
       imageStyle = [imageStyle, {height: this.props.height}];
     }

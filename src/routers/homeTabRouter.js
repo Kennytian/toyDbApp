@@ -8,7 +8,7 @@ import { TabNavigator } from 'react-navigation';
 import imageSource from '../constants/imageSource';
 
 import Home from '../pages/home/index';
-import Borrowing from '../pages/borrowing/index';
+import Borrowing from '../pages/toyDb/index';
 import MyCenter from '../pages/myCenter/index';
 
 const styles = {
@@ -23,34 +23,28 @@ const HomeTabRouter = TabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
-      tabBar: {
-        label: '主页',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_home_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '主页',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_home_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   },
   Borrowing: {
     screen: Borrowing,
     navigationOptions: {
-      tabBar: {
-        label: '玩具',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_borrowing_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '玩具',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_borrowing_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   },
   MyCenter: {
     screen: MyCenter,
     navigationOptions: {
-      tabBar: {
-        label: '我的',
-        icon: ({tintColor}) => (
-          <Image source={imageSource.btn_mycenter_hover} style={[{tintColor: tintColor}, styles.icon]}/>
-        )
-      }
+      tabBarLabel: '我的',
+      tabBarIcon: ({tintColor}) => (
+        <Image source={imageSource.btn_mycenter_hover} style={[{tintColor: tintColor}, styles.icon]}/>
+      )
     }
   }
 }, {
@@ -66,8 +60,15 @@ const HomeTabRouter = TabNavigator({
     style: {
       backgroundColor: '#fff' // TabBar 背景色
     },
+    iconStyle: {
+      marginTop: 13
+    },
     labelStyle: {
+      marginTop: 0,
       fontSize: 12 // 文字大小
+    },
+    tabStyle: {
+      height: 45
     }
   }
 });
