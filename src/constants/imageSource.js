@@ -21,6 +21,14 @@ const imageSource = {
     pic_four: require('./../assets/images/home/pic_four.png'),
     praise: require('./../assets/images/home/praise.png'),
     search: require('./../assets/images/home/search.png')
+  },
+  myCenter: {
+    browsingHistory: require('./../assets/images/myCenter/browsingHistory.png'),
+    clean: require('./../assets/images/myCenter/clean.png'),
+    headerImg: require('./../assets/images/myCenter/headerImg.png'),
+    message: require('./../assets/images/myCenter/message.png'),
+    set: require('./../assets/images/myCenter/set.png'),
+    rightBtn: require('./../assets/images/myCenter/rightBtn.png')
   }
 };
 export default imageSource;
