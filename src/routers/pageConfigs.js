@@ -9,7 +9,7 @@ import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
 
-import ReviewList from './../pages/reviewList';
+import ReviewList from '../pages/review/reviewList';
 
 //开发入口
 import DevEntry from '../pages/devEntry/index';
