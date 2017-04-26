@@ -1,3 +1,5 @@
+/* @flow */
+
 import React, { Component } from 'react';
 import {
   Text,
@@ -114,33 +116,6 @@ export default class Home extends Component {
           dataSource={this.state.dataSourceAnother}
           renderRow={this.renderItemAnother}
         />
-       {/* <Text style={styles.welcome}>
-          Welcome to Home!
-        </Text>
-        <TouchableOpacity onPress={() => navigate('Borrowing')}>
-          <Text style={styles.welcome}>
-            跳转到 玩具
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigate('MyCenter')}>
-          <Text style={styles.welcome}>
-            跳转到 我的
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigate('SpecialList')}>
-          <Text style={styles.welcome}>
-            跳转到 专题列表
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigate('ProductList', {
-          year: 2017,
-          amount: 5000,
-          name: 'Kenny'
-        })}>
-          <Text style={styles.welcome}>
-            跳转到 产品
-          </Text>
-        </TouchableOpacity>*/}
       </ScrollView>
     );
   }

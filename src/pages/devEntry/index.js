@@ -1,5 +1,7 @@
+/* @flow */
+
 import React, { Component } from 'react';
-import { ScrollView, Image, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Image, Text, View } from 'react-native';
 
 import styles from '../styles';
 
@@ -31,6 +33,7 @@ export default class DevEntry extends Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <ScrollView>
         <View style={[styles.container]}>
@@ -40,6 +43,22 @@ export default class DevEntry extends Component {
             <ScanButton onPress={() => {
             }}/>
           </View>
+          <Text style={styles.welcome} onPress={() => navigate('ProductList', {
+            year: 2017,
+            amount: 5000,
+            name: 'Kenny'
+          })}>
+            跳转到 产品
+          </Text>
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('Borrowing')}>
+            进入 跳转到 玩具
+          </Text>
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('SpecialList')}>
+            跳转到 专题列表
+          </Text>
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ProductList')}>
+            进入 ProductList 页面
+          </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('OhError')}>
             进入 OnError 页面
           </Text>
