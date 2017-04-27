@@ -1,4 +1,4 @@
-package com.toydbapp;
+package com.toyDbApp;
 
 import com.facebook.react.ReactActivity;
 

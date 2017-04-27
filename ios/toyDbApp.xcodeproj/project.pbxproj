@@ -1005,6 +1005,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toyDbApp;
 				PRODUCT_NAME = toyDbApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1022,6 +1023,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toyDbApp;
 				PRODUCT_NAME = toyDbApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
