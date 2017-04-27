@@ -19,7 +19,7 @@ import Colors from './../../constants/colors';
 import Tittle from './../../components/common/tittle';
 import Search from './../../components/common/search';
 import SearchBar from '../../components/common/searchBar';
-import ScanButton from '../../components/common/scanButton';
+import {ScanButton} from '../../components/common/iconButton';
 import ImageCard from '../../components/cards/imageCard';
 
 import HotContent from './../../components/common/hotContent';

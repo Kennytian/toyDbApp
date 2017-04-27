@@ -66,8 +66,8 @@ const styles = {
     placeholderTextColor: Colors.inputColor
   },
 
-  // 扫描按钮
-  scanButton: {
+  // icon 按钮
+  iconButton: {
     container: {
       justifyContent: 'flex-end',
       alignSelf: 'center'

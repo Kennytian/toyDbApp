@@ -19,7 +19,6 @@ const PageConfigs = StackNavigator({
   Main: {
     screen: HomeTabRouter,
     navigationOptions: {
-      headerTitle: '玩具', // 默认后退标题文字
       headerStyle: {
         backgroundColor: '#fff'
       }

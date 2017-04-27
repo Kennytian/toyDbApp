@@ -1,12 +1,18 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Image, ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { Button, Image, ScrollView, Text, View, TouchableOpacity } from 'react-native';
 
 import ImageSource from '../../constants/imageSource';
 import styles from './index.style';
+import { SettingsButton } from '../../components/common/iconButton';
 
 class MyCenter extends Component {
+  static navigationOptions = ({navigation, screenProps}) => ({
+    title: '个人中心',
+    headerRight: <SettingsButton style={{marginRight: 10}} onPress={() => alert(2)}/>
+  });
+
   _renderButton = (func, icon, text) => {
     return (
       <TouchableOpacity style={[styles.public, styles.borderBottom]} onPress={func}>
@@ -31,14 +37,6 @@ class MyCenter extends Component {
     return (
       <ScrollView>
         <View style={styles.myCenterWrap}>
-          <View style={styles.tittle}>
-            <Text style={styles.center}>个人中心</Text>
-            <TouchableOpacity style={styles.setImage} onPress={() => {
-              alert(1);
-            }}>
-              <Image source={ImageSource.myCenter.set}/>
-            </TouchableOpacity>
-          </View>
           <Image style={styles.headerImg} source={ImageSource.myCenter.headerImg}>
             <View style={styles.userName}>
               <Text>用户名</Text>
