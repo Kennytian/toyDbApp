@@ -24,7 +24,7 @@
     "jcore-react-native": "^1.1.0",
     "jpush-react-native": "^1.6.0",
     "react": "16.0.0-alpha.6",
-    "react-native": "^0.43.4",
+    "react-native": "0.44.0",
     "react-native-animatable": "^1.1.1",
     "react-native-root-toast": "^1.0.5",
     "react-navigation": "^1.0.0-beta.9",
@@ -35,7 +35,7 @@
     "redux-persist": "^4.6.0",
     "redux-persist-immutable": "^4.2.0",
     "redux-promise": "^0.5.3",
-    "redux-saga": "^0.14.8",
+    "redux-saga": "^0.15.1",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.0"
   },
@@ -50,7 +50,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "flow-bin": "^0.44.2",
+    "flow-bin": "^0.45.0",
     "jest": "19.0.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "16.0.0-alpha.6"
