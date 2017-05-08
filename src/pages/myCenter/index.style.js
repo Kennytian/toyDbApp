@@ -1,4 +1,5 @@
 import Colors from '../../constants/colors';
+import { DEVICE_WIDTH } from '../../constants/global';
 
 const styles = {
   myCenterWrap: {
@@ -21,7 +22,8 @@ const styles = {
   },
   headerImg: {
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: DEVICE_WIDTH
   },
   userName: {
     marginBottom: 30
