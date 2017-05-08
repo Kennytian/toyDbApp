@@ -68,6 +68,9 @@ export default class DevEntry extends Component {
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('paymentChooser')}>
             进入 paymentChooser 页面
           </Text>
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('PersonalChange')}>
+            进入 个人信息更改 页面
+          </Text>
           <View style={[innerStyles.span]}>
             <TabBar leftText="评论" selectedIndex={this.state.tabSelectedIndex} leftPress={() => {
               this.setState({tabSelectedIndex: 0});

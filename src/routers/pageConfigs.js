@@ -14,6 +14,7 @@ import ReviewList from '../pages/review/reviewList';
 //开发入口
 import DevEntry from '../pages/devEntry/index';
 import OhError from '../pages/devEntry/ohError';
+import PersonalChange from '../pages/myCenter/personalChange';
 
 const PageConfigs = StackNavigator({
   Main: {
@@ -36,7 +37,9 @@ const PageConfigs = StackNavigator({
   ReviewList: {screen: ReviewList},
 
   DevEntry: {screen: DevEntry},
-  OhError: {screen: OhError}
+  OhError: {screen: OhError},
+
+  PersonalChange: {screen: PersonalChange}
 });
 
 export default PageConfigs;
