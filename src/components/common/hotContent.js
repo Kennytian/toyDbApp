@@ -9,16 +9,19 @@ const styles = {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: Colors.borderBottom,
-    margin: 10,
-    paddingBottom: 10
+    marginLeft: 10,
+    marginRight: 10,
+    paddingBottom: 10,
+    paddingTop: 10
   },
   hotImg: {
     width: 103,
     height: 60,
     borderRadius: 6
   },
-  HotView: {
-    marginLeft: 20
+  HotInfoView: {
+    paddingLeft: 20,
+    paddingRight: 103
   },
   hotText: {
     flex: 1,
@@ -36,7 +39,7 @@ class hotContent extends Component {
     return (
       <View style={styles.hotContent}>
         <Image source={this.props.HotImg} style={styles.hotImg}/>
-        <View style={styles.HotView}>
+        <View style={styles.HotInfoView}>
           <Text style={styles.hotText} ellipsizeMode={'tail'} numberOfLines={2}>{this.props.hotText}</Text>
           <View style={styles.praise}>
             <Text style={{color: Colors.gray9}}>{this.props.releaseTime}</Text>
