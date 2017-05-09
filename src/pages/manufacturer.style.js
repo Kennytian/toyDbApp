@@ -9,6 +9,10 @@ const styles = {
     width: DEVICE_WIDTH,
     height: 200
   },
+  holderImageHot: {
+    width: DEVICE_WIDTH,
+    height: 300
+  },
   descText: {
     margin: 10,
     color: Colors.textColor,

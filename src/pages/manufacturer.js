@@ -5,7 +5,6 @@ import { FlatList, ScrollView, Image, Text, View } from 'react-native';
 
 import { connect } from 'react-redux';
 
-
 import { deepCompare } from '../utils/optimizer';
 import { createDeepEqualSelector } from '../utils/reselect';
 
@@ -68,7 +67,7 @@ class Manufacturer extends Component {
           <Image/>
         </View>
         <Title titleImg={imageSource.home.tittleImgTwo} titleText={'热门内容'}/>
-        <Image style={styles.holderImage} source={imageSource.temp_hot_product}></Image>
+        <Image style={styles.holderImageHot} source={imageSource.temp_hot_product}></Image>
       </ScrollView>
     );
   }
