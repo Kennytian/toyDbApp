@@ -50,6 +50,9 @@ export default class DevEntry extends Component {
           })}>
             跳转到 产品
           </Text>
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('Manufacturer')}>
+            进入 跳转到 厂商频道
+          </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('Borrowing')}>
             进入 跳转到 玩具
           </Text>

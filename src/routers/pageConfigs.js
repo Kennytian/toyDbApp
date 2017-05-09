@@ -11,6 +11,8 @@ import paymentChooser from './../pages/payment/paymentChooser';
 
 import ReviewList from '../pages/review/reviewList';
 
+import Manufacturer from '../pages/manufacturer';
+
 //开发入口
 import DevEntry from '../pages/devEntry/index';
 import OhError from '../pages/devEntry/ohError';
@@ -33,6 +35,8 @@ const PageConfigs = StackNavigator({
   SpecialList: {screen: SpecialList},
 
   ProductDetail: {screen: ProductDetail},
+
+  Manufacturer: {screen: Manufacturer},
 
   ReviewList: {screen: ReviewList},
 

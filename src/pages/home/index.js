@@ -12,31 +12,28 @@ import {
   FlatList
 } from 'react-native';
 
-import styles from '../../components/common/styles';
-
 import imageSource from './../../constants/imageSource';
-import Colors from './../../constants/colors';
 import Title from '../../components/common/title';
-import Search from './../../components/common/search';
 import SearchBar from '../../components/common/searchBar';
-import {ScanButton} from '../../components/common/iconButton';
+import { ScanButton } from '../../components/common/iconButton';
 import ImageCard from '../../components/cards/imageCard';
 
 import HotContent from './../../components/common/hotContent';
 
-var
-  data = [
-    {key: 'a', source: imageSource.home.pic_three, text: '世界游戏周边'},
-    {key: 'b', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'c', source: imageSource.home.pic_three, text: '世界游戏周边'},
-    {key: 'd', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'e', source: imageSource.home.pic_three, text: '界游戏周边'},
-    {key: 'f', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'g', source: imageSource.home.pic_three, text: '游戏周边'},
-    {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-    {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
-  ];
+import styles from './index.style';
+
+let data = [
+  {key: 'a', source: imageSource.home.pic_three, text: '世界游戏周边'},
+  {key: 'b', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+  {key: 'c', source: imageSource.home.pic_three, text: '世界游戏周边'},
+  {key: 'd', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+  {key: 'e', source: imageSource.home.pic_three, text: '界游戏周边'},
+  {key: 'f', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+  {key: 'g', source: imageSource.home.pic_three, text: '游戏周边'},
+  {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
+  {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
+  {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
+];
 
 export default class Home extends Component {
   constructor(props) {
@@ -76,17 +73,21 @@ export default class Home extends Component {
     });
   }
 
+  _onScan = () => {
+    alert('扫描功能开发中...');
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <Search placeholderText={this.state.placeholderText} value={this.state.textValue} onSearchChange={this.onTextValue}/>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.searchBarView}>
           <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
-          <ScanButton onPress={() => {
-          }}/>
+          <ScanButton onPress={this._onScan}/>
         </View>
-        <View><Image source={imageSource.home.banner}/></View>
+        <View style={styles.swiperView}>
+          <Image style={styles.swiperHolderImage} source={imageSource.home.banner}/>
+        </View>
         <Title
           titleImg={imageSource.home.tittleImgOne}
           titleText={this.state.tittleText}
@@ -100,7 +101,7 @@ export default class Home extends Component {
         />
         <Title
           titleImg={imageSource.home.tittleImgTwo}
-          titleText={this.state.hotTittle}
+          titleText={'热门内容'}
         />
         <ListView
           dataSource={this.state.dataSourceAnother}

@@ -8,7 +8,8 @@ import { TabNavigator } from 'react-navigation';
 import imageSource from '../constants/imageSource';
 
 import Home from '../pages/home/index';
-import Borrowing from '../pages/toyDb/index';
+//import Borrowing from '../pages/toyDb/index';
+import Borrowing from '../pages/manufacturer';
 import MyCenter from '../pages/myCenter/index';
 
 const styles = {
