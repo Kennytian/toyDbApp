@@ -31,12 +31,17 @@ const styles = {
         justifyContent: 'center',
         borderBottomLeftRadius: Platform.select({ios: 6, android: 0}),
         borderBottomRightRadius: Platform.select({ios: 6, android: 0}),
-        marginTop: 120 - 30
+        bottom: 0,
+        left: 0,
+        position: 'absolute'
       },
       text: {
         fontSize: 16,
         color: Colors.white,
-        marginLeft: 10
+        marginLeft: 10,
+        marginRight: 10,
+        flex: 1,
+        textAlign: 'center'
       }
     }
   },

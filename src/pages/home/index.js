@@ -13,8 +13,6 @@ import styles from '../../components/common/styles';
 import imageSource from './../../constants/imageSource';
 import Title from './../../components/common/title';
 import Search from './../../components/common/search';
-import SearchBar from '../../components/common/searchBar';
-import { ScanButton } from '../../components/common/iconButton';
 import ImageCard from '../../components/cards/imageCard';
 
 import HotContent from './../../components/common/hotContent';
@@ -40,7 +38,6 @@ export default class Home extends Component {
       titleText: '热门专题',
       hotTitle: '热门内容',
       rightText: '更多',
-      placeholderText: '请输入关键字',
       hotText: '超远距离接吻神器：KISS还是要提高自己的姿势水平',
       releaseTime: '发布时间',
       Time: '2017-3-3',
@@ -75,13 +72,7 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <Search placeholderText={this.state.placeholderText} value={this.state.textValue}
-                onSearchChange={this.onTextValue}/>
-        <View style={{flexDirection: 'row'}}>
-          <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
-          <ScanButton onPress={() => {
-          }}/>
-        </View>
+        <Search value={this.state.textValue} onSearchChange={this.onTextValue}/>
         <View><Image source={imageSource.home.banner}/></View>
         <Title
           titleImg={imageSource.home.tittleImgOne}

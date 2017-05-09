@@ -16,6 +16,15 @@ const styles = {
     left: 8
   },
 
+  font: {
+    size18: {
+      fontSize: 18
+    },
+    size16: {
+      fontSize: 16
+    }
+  },
+
   // 错误页面
   errorView: {
     icon: {

@@ -1,26 +1,61 @@
 import React, { Component } from 'react';
 import {
-  Text,
-  TouchableOpacity,
-  View
+  View,
+  Image,
+  ScrollView,
+  ListView
 } from 'react-native';
-
+import Search from './../../components/common/search';
 import styles from '../../components/common/styles';
+import ToyItem from './components/item';
+import data from '../../data/toy';
+let pageStyles = {
+  list: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginLeft: 10
+  }
+};
 
 export default class Borrowing extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2
+      })
+    };
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(data)
+    });
+  }
+
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to 玩具库!
-        </Text>
-        <TouchableOpacity onPress={() => navigate('MyCenter')}>
-          <Text style={styles.welcome}>
-            跳转到 我的
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView style={styles.container}>
+        <Search/>
+        <View style={{}}>
+
+        </View>
+
+        <ListView contentContainerStyle={pageStyles.list}
+                  dataSource={this.state.dataSource}
+                  renderRow={this.renderItem}/>
+      </ScrollView>
+    );
+  }
+
+  renderItem(item) {
+    return (
+      <ToyItem item={item}/>
     );
   }
 }

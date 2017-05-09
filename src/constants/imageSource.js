@@ -34,6 +34,10 @@ const imageSource = {
     message: require('./../assets/images/myCenter/message.png'),
     set: require('./../assets/images/myCenter/set.png'),
     rightBtn: require('./../assets/images/myCenter/rightBtn.png')
+  },
+
+  toyDb: {
+    views: require('../assets/images/toyDb/views@2x.png')
   }
 };
 
