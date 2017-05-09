@@ -16,7 +16,7 @@ import styles from '../../components/common/styles';
 
 import imageSource from './../../constants/imageSource';
 import Colors from './../../constants/colors';
-import Tittle from './../../components/common/tittle';
+import Title from '../../components/common/title';
 import Search from './../../components/common/search';
 import SearchBar from '../../components/common/searchBar';
 import {ScanButton} from '../../components/common/iconButton';
@@ -87,7 +87,7 @@ export default class Home extends Component {
           }}/>
         </View>
         <View><Image source={imageSource.home.banner}/></View>
-        <Tittle
+        <Title
           titleImg={imageSource.home.tittleImgOne}
           titleText={this.state.tittleText}
           rightText={this.state.rightText}
@@ -98,7 +98,7 @@ export default class Home extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
         />
-        <Tittle
+        <Title
           titleImg={imageSource.home.tittleImgTwo}
           titleText={this.state.hotTittle}
         />

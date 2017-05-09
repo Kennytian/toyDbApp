@@ -38,7 +38,7 @@ const styles = {
   }
 };
 
-class Tittle extends Component {
+class Title extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -65,4 +65,4 @@ class Tittle extends Component {
     );
   }
 }
-export default Tittle;
+export default Title;
