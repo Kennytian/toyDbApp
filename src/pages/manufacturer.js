@@ -52,24 +52,23 @@ class Manufacturer extends Component {
 
   _renderContent() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <View>
-            <Image style={styles.holderImage} source={imageSource.temp_legao}>
-              <Text>乐高（LEGO）</Text>
-              <Text> 视频：123</Text>
-            </Image>
-          </View>
-          <View>
-            <Text style={styles.descText}>乐高公司创办于丹麦，至今已有85年的发展历史，追本溯源，还得从它的金字招牌LEGO说起。商标“LEGO”的使用是从1932年开始，其语来自丹麦语“LEg GOdt”，意为“play
-              well”（玩得快乐），并且该名字首先迅速成为乐高公司在Billund地区玩具工厂生产的优质玩具的代名词。的一所红房子中，那里就是乐高开始的地方。</Text>
-          </View>
-          <View style={{flexDirection: 'column'}}>
-            <Text style={styles.descText}>收起</Text>
-            <Image/>
-          </View>
-          <Title titleImg={imageSource.home.tittleImgTwo} titleText={'热门内容'}/>
+      <ScrollView style={styles.container}>
+        <View>
+          <Image style={styles.holderImage} source={imageSource.temp_legao}>
+            <Text>乐高（LEGO）</Text>
+            <Text> 视频：123</Text>
+          </Image>
         </View>
+        <View>
+          <Text style={styles.descText}>乐高公司创办于丹麦，至今已有85年的发展历史，追本溯源，还得从它的金字招牌LEGO说起。商标“LEGO”的使用是从1932年开始，其语来自丹麦语“LEg GOdt”，意为“play
+            well”（玩得快乐），并且该名字首先迅速成为乐高公司在Billund地区玩具工厂生产的优质玩具的代名词。的一所红房子中，那里就是乐高开始的地方。</Text>
+        </View>
+        <View style={{flexDirection: 'column'}}>
+          <Text style={styles.descText}>收起</Text>
+          <Image/>
+        </View>
+        <Title titleImg={imageSource.home.tittleImgTwo} titleText={'热门内容'}/>
+        <Image style={styles.holderImage} source={imageSource.temp_hot_product}></Image>
       </ScrollView>
     );
   }
