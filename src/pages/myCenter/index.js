@@ -1,27 +1,29 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Button, Image, ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { Image, ScrollView, Text, View, TouchableOpacity } from 'react-native';
 
-import ImageSource from '../../constants/imageSource';
-import styles from './index.style';
 import { SettingsButton } from '../../components/common/iconButton';
 import InformationList from '../../components/common/informationList';
+
+import ImageSource from '../../constants/imageSource';
+
+import styles from './index.style';
 
 class MyCenter extends Component {
   static navigationOptions = ({navigation, screenProps}) => ({
     title: '个人中心',
-    headerRight: <SettingsButton style={{marginRight: 10}} onPress={() => alert(2)}/>
+    headerRight: <SettingsButton style={{marginRight: 10}} onPress={() => navigation.navigate('PersonalChange', {})}/>
   });
-
-  ccc = () => {
-    alert(1);
-  };
 
   _navigateTo(name) {
     const {navigate} = this.props.navigation;
     navigate(name);
   }
+
+  ccc = () => {
+    alert('Hello');
+  };
 
   render() {
     const {navigate} = this.props.navigation;
