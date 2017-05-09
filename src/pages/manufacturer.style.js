@@ -7,13 +7,13 @@ const styles = {
   },
   holderImage: {
     width: DEVICE_WIDTH,
-    height: 200,
+    height: 200
   },
   descText: {
     margin: 10,
     color: Colors.textColor,
     lineHeight: 20
-  },
+  }
 };
 
 export default styles;
