@@ -2,24 +2,19 @@
 
 import React, { Component } from 'react';
 import {
-  Text,
-  TouchableOpacity,
   View,
   Image,
-  TextInput,
   ScrollView,
   ListView,
-  FlatList
 } from 'react-native';
 
 import styles from '../../components/common/styles';
 
 import imageSource from './../../constants/imageSource';
-import Colors from './../../constants/colors';
-import Tittle from './../../components/common/tittle';
+import Title from './../../components/common/title';
 import Search from './../../components/common/search';
 import SearchBar from '../../components/common/searchBar';
-import {ScanButton} from '../../components/common/iconButton';
+import { ScanButton } from '../../components/common/iconButton';
 import ImageCard from '../../components/cards/imageCard';
 
 import HotContent from './../../components/common/hotContent';
@@ -42,8 +37,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tittleText: '热门专题',
-      hotTittle: '热门内容',
+      titleText: '热门专题',
+      hotTitle: '热门内容',
       rightText: '更多',
       placeholderText: '请输入关键字',
       hotText: '超远距离接吻神器：KISS还是要提高自己的姿势水平',
@@ -80,16 +75,17 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <Search placeholderText={this.state.placeholderText} value={this.state.textValue} onSearchChange={this.onTextValue}/>
+        <Search placeholderText={this.state.placeholderText} value={this.state.textValue}
+                onSearchChange={this.onTextValue}/>
         <View style={{flexDirection: 'row'}}>
           <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
           <ScanButton onPress={() => {
           }}/>
         </View>
         <View><Image source={imageSource.home.banner}/></View>
-        <Tittle
+        <Title
           titleImg={imageSource.home.tittleImgOne}
-          titleText={this.state.tittleText}
+          titleText={this.state.titleText}
           rightText={this.state.rightText}
         />
         <ListView
@@ -98,9 +94,9 @@ export default class Home extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
         />
-        <Tittle
+        <Title
           titleImg={imageSource.home.tittleImgTwo}
-          titleText={this.state.hotTittle}
+          titleText={this.state.hotTitle}
         />
         <ListView
           dataSource={this.state.dataSourceAnother}
@@ -112,7 +108,7 @@ export default class Home extends Component {
 
   renderItem = (data) => {
     return (
-      <ImageCard width={140} height={70} text={data.text} style={{marginLeft: 10}} source={data.source}/>
+      <ImageCard width={140} height={70} text={data.text} style={{margin: 10}} source={data.source}/>
     );
   }
 

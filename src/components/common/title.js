@@ -28,17 +28,19 @@ const styles = {
     alignItems: 'center'
   },
   more: {
-    fontSize: 15,
-    marginRight: 10
+    fontSize: 16,
+    marginRight: 10,
+    color: '#666'
   },
   hotTittle: {
-    fontSize: 15,
+    fontSize: 18,
+    fontWeight: 'bold',
     marginLeft: 10,
     color: '#7ba9f6'
   }
 };
 
-class Tittle extends Component {
+class Title extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -51,13 +53,13 @@ class Tittle extends Component {
             <Text style={styles.hotTittle}>{this.props.titleText}</Text>
           </View>
           {this.props.rightText ?
-          <TouchableOpacity style={styles.rightText}>
-            <Text style={styles.more}>{this.props.rightText}</Text>
-            <Image
-              style={styles.rightBtn}
-              source={imageSource.home.rightBtn}
-            />
-          </TouchableOpacity>:null
+            <TouchableOpacity style={styles.rightText}>
+              <Text style={styles.more}>{this.props.rightText}</Text>
+              <Image
+                style={styles.rightBtn}
+                source={imageSource.home.rightBtn}
+              />
+            </TouchableOpacity> : null
           }
         </View>
 
@@ -65,4 +67,4 @@ class Tittle extends Component {
     );
   }
 }
-export default Tittle;
+export default Title;

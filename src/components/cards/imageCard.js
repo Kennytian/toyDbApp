@@ -4,7 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 import { ACTIVE_OPACITY } from '../../constants/toyDb';
-import Colors from '../../constants/colors';
 import styles from './styles';
 
 class ImageCard extends Component {
@@ -20,28 +19,14 @@ class ImageCard extends Component {
     onPress: PropTypes.func,
     titlePosition: PropTypes.oneOf(['left', 'center', 'right']),
     source: PropTypes.number.isRequired
-
-    // http://jamestw.logdown.com/posts/257890-257890-reactjs-prop
   };
 
   _renderTitle() {
     if (this.props.text) {
       let textStyle = styles.imageCard.title.text;
-      let maskStyle = styles.imageCard.title.mask;
-      if (this.props.height > 50) {
-        maskStyle = [maskStyle, {marginTop: this.props.height - 30}];
-      }
-
-      if (this.props.titlePosition === 'center') {
-        textStyle = [textStyle, {marginLeft: 0, alignSelf: 'center'}];
-        maskStyle = [maskStyle, {backgroundColor: Colors.transparent, marginTop: 80}];
-      } else if (this.props.titlePosition === 'right') {
-        textStyle = [textStyle, {alignSelf: 'flex-end', marginRight: 10}];
-      }
       return (
-        <View style={maskStyle}>
-          <Text style={textStyle}>{this.props.text}</Text>
-        </View>
+        <Text style={[textStyle, {marginRight: 10, marginTop: 45, backgroundColor: 'transparent', alignSelf: 'center', flex: 1}]}
+              ellipsizeMode={'tail'} numberOfLines={1}>{this.props.text}</Text>
       );
     }
     return null;
