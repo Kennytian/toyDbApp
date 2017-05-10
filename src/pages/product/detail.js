@@ -6,8 +6,9 @@ import colors from '../../constants/colors';
 import styles from './components/style';
 import Header from './components/header';
 import Tab from './components/tab';
-import { DEVICE_WIDTH } from '../../constants/global'
+import { DEVICE_WIDTH } from '../../constants/global';
 
+let imageWidth = DEVICE_WIDTH - 20;
 let pageStyles = {
   info: {
     box: {
@@ -61,17 +62,22 @@ let pageStyles = {
       textAlign: 'center',
       flex: 1
     }
+  },
+  productImage: {
+    width: imageWidth,
+    margin: 10
   }
 };
 
 class ProductDetail extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   static navigationOptions = {
     title: '乐高积木玩具'
   };
-
-  componentWillMount() {
-    __DEV__ && console.debug('SpecialList componentWillMount:', new Date());
-  }
 
   _renderErrorView() {
     return <ErrorView text={this.props.errorMessage}/>;
@@ -95,6 +101,12 @@ class ProductDetail extends Component {
 
 
   _renderContent() {
+    let {imageHeight} = this.state;
+    var imageStyle = pageStyles.productImage;
+    if (imageHeight) {
+      imageStyle = [imageStyle, {height: imageHeight}];
+    }
+
     return (
       <ScrollView style={styles.container}>
         <Header/>
@@ -117,7 +129,8 @@ class ProductDetail extends Component {
           </TouchableOpacity>
         </View>
         <View>
-          <Image source={require('../../data/product/product.png')} style={{width: DEVICE_WIDTH - 20, margin: 10}}/>
+          <Image onLoad={this._onLoaded.bind(this)} source={require('../../data/product/product.png')}
+                 style={imageStyle}/>
         </View>
       </ScrollView>
     );
@@ -126,6 +139,12 @@ class ProductDetail extends Component {
   _navTo(name) {
     const {navigate} = this.props.navigation;
     navigate(name);
+  }
+
+  _onLoaded(evt) {
+    let width = evt.nativeEvent.source.width,
+      height = evt.nativeEvent.source.height;
+    this.setState({imageHeight: imageWidth * height / width});
   }
 }
 
