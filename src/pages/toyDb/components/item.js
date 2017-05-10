@@ -5,7 +5,6 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 import Colors from '../../../constants/colors';
 import styles from '../../../components/common/styles';
-import imageCardStyles from '../../../components/cards/styles';
 import ImageSource from './../../../constants/imageSource';
 import { DEVICE_WIDTH } from '../../../constants/global';
 import ImageCard from '../../../components/cards/imageCard';

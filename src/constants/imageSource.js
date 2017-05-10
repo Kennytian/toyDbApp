@@ -5,8 +5,8 @@ const imageSource = {
 
   // temp image, will delete when app publish
   temp_image_card: require('./../assets/images/temp_image_card.jpg'),
-  temp_legao: require('./../assets/images/temp_legao.png'),
-  temp_hot_product: require('./../assets/images/temp_hot_product.png'),
+  arrow_top: require('./../assets/images/arrow_top@2x.png'),
+  arrow_bot: require('./../assets/images/arrow_bot@2x.png'),
 
   personal: require('./../assets/images/personal.png'),
   change: require('./../assets/images/change.png'),

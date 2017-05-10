@@ -7,31 +7,7 @@ import data from '../../data/toy';
 import imageSource from '../../constants/imageSource';
 import colors from './../../constants/colors';
 import { BORDER_WIDTH } from '../../constants/global';
-
-let pageStyles = {
-  list: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginLeft: 10
-  },
-  filter: {
-    box: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingTop: 10,
-      paddingBottom: 10,
-      marginLeft: 20,
-      marginRight: 20,
-      borderBottomColor: colors.borderBottom,
-      borderBottomWidth: BORDER_WIDTH
-    },
-    item: {
-      flex: 1,
-      justifyContent: 'center',
-      flexDirection: 'row'
-    }
-  }
-};
+import pageStyles from './components/index.style';
 
 export default class Borrowing extends Component {
   constructor(props) {
@@ -76,7 +52,6 @@ export default class Borrowing extends Component {
       </ScrollView>
     );
   }
-
 
   _navTo(name) {
     const {navigate} = this.props.navigation;
