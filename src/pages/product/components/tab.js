@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { BORDER_WIDTH } from '../../../constants/global';
 import colors from '../../../constants/colors';
@@ -21,7 +21,7 @@ let tabStyles = {
     height: 30
   },
   text: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'center',
     flex: 1,
     paddingTop: 6
@@ -34,16 +34,20 @@ let tabStyles = {
 
 class Tab extends Component {
 
+  static propTypes = {
+    onChangeTab: PropTypes.func.isRequired
+  };
+
   render() {
     return (
       <View style={tabStyles.box}>
-        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('ProductDetail')}>
+        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('detail')}>
           <Text style={this.getActiveStyle('detail')}>玩具简介</Text></TouchableOpacity>
-        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('ProductExponent')}>
+        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('exponent')}>
           <Text style={this.getActiveStyle('exponent')}>顽童指数</Text></TouchableOpacity>
-        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('ProductGrade')}>
+        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('grade')}>
           <Text style={this.getActiveStyle('grade')}>用户评分</Text></TouchableOpacity>
-        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('ProductRecommend')}>
+        <TouchableOpacity style={tabStyles.item} onPress={() => this._navTo('recommend')}>
           <Text style={this.getActiveStyle('recommend')}>相关推荐</Text></TouchableOpacity>
       </View>
     );
@@ -54,8 +58,7 @@ class Tab extends Component {
   }
 
   _navTo(name) {
-    const {navigate} = this.props.navigation;
-    navigate(name);
+    this.props.onChangeTab(name);
   }
 }
 

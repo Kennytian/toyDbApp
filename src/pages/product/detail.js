@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Button, ScrollView, Image, Text, View, TouchableOpacity } from 'react-native';
+import { Image, Text, View, TouchableOpacity, LayoutAnimation } from 'react-native';
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 import colors from '../../constants/colors';
-import styles from './components/style';
-import Header from './components/header';
-import Tab from './components/tab';
 import { DEVICE_WIDTH } from '../../constants/global';
 
 let imageWidth = DEVICE_WIDTH - 20;
@@ -75,9 +72,6 @@ class ProductDetail extends Component {
     this.state = {};
   }
 
-  static navigationOptions = {
-    title: '乐高积木玩具'
-  };
 
   _renderErrorView() {
     return <ErrorView text={this.props.errorMessage}/>;
@@ -108,9 +102,7 @@ class ProductDetail extends Component {
     }
 
     return (
-      <ScrollView style={styles.container}>
-        <Header/>
-        <Tab active="detail" navigation={this.props.navigation}/>
+      <View>
         <View style={pageStyles.info.box}>
           <Image source={require('../../data/file/1.png')} style={pageStyles.info.image}/>
           <View style={pageStyles.info.infoRight}>
@@ -129,10 +121,10 @@ class ProductDetail extends Component {
           </TouchableOpacity>
         </View>
         <View>
-          <Image onLoad={this._onLoaded.bind(this)} source={require('../../data/product/product.png')}
+          <Image onLoad={this._onLoaded.bind(this)} resizeMode="contain" source={require('../../data/product/product.png')}
                  style={imageStyle}/>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 

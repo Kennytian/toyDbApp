@@ -2,11 +2,7 @@ import { StackNavigator } from 'react-navigation';
 
 import HomeTabRouter from './homeTabRouter';
 
-import ProductDetail from './../pages/product/detail';
-import ProductExponent from './../pages/product/exponent';
-import ProductGrade from './../pages/product/grade';
-import ProductRecommend from './../pages/product/recommend';
-
+import ProductDetail from './../pages/product/index';
 import SpecialList from './../pages/special/specialList';
 
 import paymentChooser from './../pages/payment/paymentChooser';
@@ -35,9 +31,6 @@ const PageConfigs = StackNavigator({
   SpecialList: {screen: SpecialList},
 
   ProductDetail: {screen: ProductDetail},
-  ProductExponent: {screen: ProductExponent},
-  ProductGrade: {screen: ProductGrade},
-  ProductRecommend: {screen: ProductRecommend},
 
   ManufacturerDetail: {screen: ManufacturerDetail},
 

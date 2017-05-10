@@ -21,10 +21,9 @@ const styles = {
   },
   HotInfoView: {
     paddingLeft: 20,
-    paddingRight: 103
+    flex: 1
   },
   hotText: {
-    flex: 1,
     fontSize: 16
   },
   praise: {
