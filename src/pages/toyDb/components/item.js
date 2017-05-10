@@ -7,7 +7,7 @@ import Colors from '../../../constants/colors';
 import styles from '../../../components/common/styles';
 import imageCardStyles from '../../../components/cards/styles';
 import ImageSource from './../../../constants/imageSource';
-import { BORDER_WIDTH, DEVICE_WIDTH } from '../../../constants/global';
+import { DEVICE_WIDTH } from '../../../constants/global';
 
 const pageStyles = {
   item: {
@@ -43,7 +43,7 @@ class ToyItem extends Component {
     let {item} = this.props;
     let textStyle = imageCardStyles.imageCard.title.text;
     return (
-      <View style={imageCardStyles.imageCard.mask}>
+      <View style={imageCardStyles.imageCard.title.mask}>
         <Text style={textStyle} ellipsizeMode={'tail'} numberOfLines={1}>{item.title}</Text>
       </View>
     );

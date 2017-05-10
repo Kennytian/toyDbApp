@@ -29,11 +29,14 @@ const styles = {
         backgroundColor: Colors.alphaBlack,
         height: 30,
         justifyContent: 'center',
+        alignItems: 'center',
         borderBottomLeftRadius: Platform.select({ios: 6, android: 0}),
         borderBottomRightRadius: Platform.select({ios: 6, android: 0}),
         bottom: 0,
         left: 0,
-        position: 'absolute'
+        right: 0,
+        position: 'absolute',
+        flexDirection: 'row'
       },
       text: {
         fontSize: 16,

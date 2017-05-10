@@ -1,10 +1,9 @@
-
 import colors from './../constants/colors';
 
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF'
+    backgroundColor: 'white'
   },
   welcome: {
     fontSize: 17,

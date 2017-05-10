@@ -5,7 +5,8 @@ import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
 
 const styles = {
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
 
   // 扩大按钮点击区域

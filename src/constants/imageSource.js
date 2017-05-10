@@ -40,7 +40,9 @@ const imageSource = {
   },
 
   toyDb: {
-    views: require('../assets/images/toyDb/views@2x.png')
+    views: require('../assets/images/toyDb/views@2x.png'),
+    select: require('../assets/images/toyDb/select@2x.png'),
+    filter: require('../assets/images/toyDb/filter@2x.png')
   }
 };
 
