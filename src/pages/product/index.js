@@ -16,7 +16,7 @@ class ProductDetail extends Component {
   constructor() {
     super();
     this.state = {
-      tab: 'grade'
+      tab: 'detail'
     };
   }
 
