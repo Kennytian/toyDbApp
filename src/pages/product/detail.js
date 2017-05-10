@@ -1,22 +1,68 @@
-/* @flow */
-
 import React, { Component } from 'react';
-import { FlatList, ScrollView, Image, Text, View } from 'react-native';
-
-import { deepCompare } from '../../utils/optimizer';
-
+import { Button, ScrollView, Image, Text, View, TouchableOpacity } from 'react-native';
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
-import Title from '../../components/common/title';
 import colors from '../../constants/colors';
-import imageSource from '../../constants/imageSource';
-import globalStyles from '../../components/common/styles';
 import styles from './components/style';
-import data from '../../data/toy';
-import ToyItem from '../toyDb/components/item';
-import toyListStyles from '../toyDb/components/index.style';
 import Header from './components/header';
 import Tab from './components/tab';
+import { DEVICE_WIDTH } from '../../constants/global'
+
+let pageStyles = {
+  info: {
+    box: {
+      margin: 10,
+      flexDirection: 'row'
+    },
+    image: {
+      width: 110,
+      height: 100,
+      borderRadius: 20
+    },
+    infoRight: {
+      paddingLeft: 10,
+      flex: 1
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      color: colors.gray6
+    },
+    category: {
+      color: colors.gray6,
+      marginTop: 5,
+      marginBottom: 5
+    },
+    desc: {
+      color: colors.gray6,
+      lineHeight: 18
+    }
+  },
+  ctrl: {
+    box: {
+      margin: 10,
+      flexDirection: 'row'
+    },
+    btn: {
+      flex: 1,
+      borderRadius: 6,
+      height: 34,
+      backgroundColor: '#91b8f8',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    btnPrimary: {
+      backgroundColor: '#ff6b6b',
+      marginRight: 10
+    },
+    text: {
+      color: 'white',
+      fontSize: 16,
+      textAlign: 'center',
+      flex: 1
+    }
+  }
+};
 
 class ProductDetail extends Component {
   static navigationOptions = {
@@ -53,45 +99,33 @@ class ProductDetail extends Component {
       <ScrollView style={styles.container}>
         <Header/>
         <Tab active="detail" navigation={this.props.navigation}/>
+        <View style={pageStyles.info.box}>
+          <Image source={require('../../data/file/1.png')} style={pageStyles.info.image}/>
+          <View style={pageStyles.info.infoRight}>
+            <Text style={pageStyles.info.title}>乐高积木</Text>
+            <Text style={pageStyles.info.category}>益智 | 遥控 | 拼装 | 电动</Text>
+            <Text style={pageStyles.info.desc}>通过一段极其夸张的开头动画，《喷射侠》简单明了地交代了这款游戏的背景故事。有一天，某个在油漆工厂上班的普通工人意外发现了老板的秘密。</Text>
+          </View>
+        </View>
+        <View style={pageStyles.ctrl.box}>
+          <TouchableOpacity onPress={() => {
+          }} style={[pageStyles.ctrl.btn, pageStyles.ctrl.btnPrimary]}>
+            <Text style={pageStyles.ctrl.text}>立即购买</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => this._navTo('ManufacturerDetail')}
+                            style={[pageStyles.ctrl.btn]}>
+            <Text style={pageStyles.ctrl.text}>厂商频道</Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <Image source={require('../../data/product/product.png')} style={{width: DEVICE_WIDTH - 20, margin: 10}}/>
+        </View>
       </ScrollView>
-    );
-  }
-
-  componentDidMount() {
-    __DEV__ && console.debug('SpecialList componentDidMount:', new Date());
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return deepCompare(this, nextProps, nextState);
-  }
-
-  componentWillUnmount() {
-    __DEV__ && console.debug('SpecialList componentWillUnmount:', new Date());
-  }
-
-  _renderList() {
-    return (
-      <FlatList contentContainerStyle={toyListStyles.list} data={data} renderItem={({index, item}) => {
-        if (index < 4) {
-          return this._renderItem(item);
-        }
-        return null;
-      }}/>
     );
   }
 
   _navTo(name) {
     const {navigate} = this.props.navigation;
     navigate(name);
-  }
-
-  _renderItem(item) {
-    console.log(item);
-    return (
-      <ToyItem item={item} onPressManufacturer={() => {
-        this._navTo('ManufacturerDetail');
-      }}/>
-    );
   }
 }
 

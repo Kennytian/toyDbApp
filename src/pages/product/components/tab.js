@@ -7,7 +7,7 @@ let tabStyles = {
   box: {
     backgroundColor: 'white',
     borderWidth: BORDER_WIDTH,
-    borderColor: colors.borderGray,
+    borderColor: '#b5b5b5',
     margin: 10,
     borderRadius: 30,
     overflow: 'hidden',
@@ -15,16 +15,16 @@ let tabStyles = {
     alignItems: 'center'
   },
   item: {
-    flex: 1
+    flex: 1,
+    borderRadius: 30,
+    overflow: 'hidden',
+    height: 30
   },
   text: {
     fontSize: 16,
-    flex: 1,
     textAlign: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    height: 30,
-    lineHeight: 25
+    flex: 1,
+    paddingTop: 6
   },
   active: {
     backgroundColor: '#91b8f8',
