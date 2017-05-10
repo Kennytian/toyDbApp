@@ -2,8 +2,10 @@ import { StackNavigator } from 'react-navigation';
 
 import HomeTabRouter from './homeTabRouter';
 
-import ProductList from './../pages/product/productList';
-import ProductDetail from './../pages/product/productDetail';
+import ProductDetail from './../pages/product/detail';
+import ProductExponent from './../pages/product/exponent';
+import ProductGrade from './../pages/product/grade';
+import ProductRecommend from './../pages/product/recommend';
 
 import SpecialList from './../pages/special/specialList';
 
@@ -30,11 +32,12 @@ const PageConfigs = StackNavigator({
 
   paymentChooser: {screen: paymentChooser},
 
-  ProductList: {screen: ProductList},
-
   SpecialList: {screen: SpecialList},
 
   ProductDetail: {screen: ProductDetail},
+  ProductExponent: {screen: ProductExponent},
+  ProductGrade: {screen: ProductGrade},
+  ProductRecommend: {screen: ProductRecommend},
 
   ManufacturerDetail: {screen: ManufacturerDetail},
 

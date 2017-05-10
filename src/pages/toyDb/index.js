@@ -62,7 +62,7 @@ export default class Borrowing extends Component {
     return (
       <ToyItem item={item} onPressManufacturer={() => {
         this._navTo('ManufacturerDetail');
-      }}/>
+      }} onPress={() => this._navTo('ProductDetail')}/>
     );
   }
 }

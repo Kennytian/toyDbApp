@@ -38,7 +38,7 @@ class ToyItem extends Component {
   render() {
     let {item, onPressManufacturer} = this.props;
     return (
-      <TouchableOpacity style={pageStyles.item} disabled={!this.props.onPress}>
+      <TouchableOpacity style={pageStyles.item} onPress={this.props.onPress}>
         <ImageCard width={'auto'} height={90} source={item.source} text={item.title}/>
         <View style={pageStyles.info}>
           <Text style={[styles.size16, {color: Colors.gray6}]} onPress={onPressManufacturer}>厂家:{item.company}</Text>

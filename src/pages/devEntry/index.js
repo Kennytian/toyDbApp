@@ -59,8 +59,8 @@ export default class DevEntry extends Component {
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('SpecialList')}>
             跳转到 专题列表
           </Text>
-          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ProductList')}>
-            进入 ProductList 页面
+          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ProductDetail')}>
+            进入 ProductDetail 页面
           </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('OhError')}>
             进入 OnError 页面
