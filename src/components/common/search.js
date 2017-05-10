@@ -13,10 +13,12 @@ import colors from './../../constants/colors';
 
 const styles = {
   searchView: {
-    marginTop: 10,
+    marginTop: 25,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10
+    paddingBottom: 10,
+    borderBottomWidth: BORDER_WIDTH,
+    borderBottomColor: colors.borderGray
   },
   inputImg: {
     flexDirection: 'row',

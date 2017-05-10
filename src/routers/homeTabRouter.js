@@ -22,7 +22,7 @@ const styles = {
 
 const HomeTabRouter = TabNavigator({
   Home: {
-    screen: ProductDetail,
+    screen: Home,
     navigationOptions: {
       tabBarLabel: '主页',
       tabBarIcon: ({tintColor}) => (
