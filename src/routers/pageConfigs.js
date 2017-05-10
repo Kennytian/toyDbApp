@@ -5,8 +5,6 @@ import HomeTabRouter from './homeTabRouter';
 import ProductDetail from './../pages/product/index';
 import SpecialList from './../pages/special/specialList';
 
-import paymentChooser from './../pages/payment/paymentChooser';
-
 import ReviewList from '../pages/review/reviewList';
 
 import ManufacturerDetail from '../pages/manufacturer/detail';
@@ -25,8 +23,6 @@ const PageConfigs = StackNavigator({
       }
     }
   },
-
-  paymentChooser: {screen: paymentChooser},
 
   SpecialList: {screen: SpecialList},
 

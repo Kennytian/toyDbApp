@@ -43,33 +43,24 @@ export default class DevEntry extends Component {
             <ScanButton onPress={() => {
             }}/>
           </View>
-          <Text style={styles.welcome} onPress={() => navigate('ProductList', {
+          <Text style={styles.welcome} onPress={() => navigate('ProductDetail', {
             year: 2017,
             amount: 5000,
             name: 'Kenny'
           })}>
-            跳转到 产品
+            跳转到 产品详情
           </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ManufacturerDetail')}>
             进入 跳转到 厂商频道
           </Text>
-          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('Borrowing')}>
-            进入 跳转到 玩具
-          </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('SpecialList')}>
             跳转到 专题列表
-          </Text>
-          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ProductDetail')}>
-            进入 ProductDetail 页面
           </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('OhError')}>
             进入 OnError 页面
           </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('ReviewList')}>
             进入 我的消息 页面
-          </Text>
-          <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('paymentChooser')}>
-            进入 paymentChooser 页面
           </Text>
           <Text style={[styles.welcome, innerStyles.span]} onPress={() => this._navTo('PersonalChange')}>
             进入 个人信息更改 页面
