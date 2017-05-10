@@ -10,6 +10,10 @@ import { BORDER_WIDTH } from '../../constants/global';
 import pageStyles from './components/index.style';
 
 export default class Borrowing extends Component {
+  static navigationOptions = {
+    header: null
+  };
+
   constructor(props) {
     super(props);
     this.state = {
