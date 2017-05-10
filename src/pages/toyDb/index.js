@@ -54,7 +54,6 @@ export default class Borrowing extends Component {
   }
 
   render() {
-    const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
         <Search/>
@@ -71,14 +70,24 @@ export default class Borrowing extends Component {
 
         <ListView contentContainerStyle={pageStyles.list}
                   dataSource={this.state.dataSource}
-                  renderRow={this.renderItem}/>
+                  renderRow={(item) => {
+                    return this.renderItem(item);
+                  }}/>
       </ScrollView>
     );
   }
 
+
+  _navTo(name) {
+    const {navigate} = this.props.navigation;
+    navigate(name);
+  }
+
   renderItem(item) {
     return (
-      <ToyItem item={item}/>
+      <ToyItem item={item} onPressManufacturer={() => {
+        this._navTo('ManufacturerDetail');
+      }}/>
     );
   }
 }

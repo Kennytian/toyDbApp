@@ -53,7 +53,7 @@ class Title extends Component {
             <Text style={styles.hotTittle}>{this.props.titleText}</Text>
           </View>
           {this.props.rightText ?
-            <TouchableOpacity style={styles.rightText}>
+            <TouchableOpacity style={styles.rightText} onPress={this.props.onPressRight}>
               <Text style={styles.more}>{this.props.rightText}</Text>
               <Image
                 style={styles.rightBtn}

@@ -78,6 +78,7 @@ export default class Home extends Component {
           titleImg={imageSource.home.tittleImgOne}
           titleText={this.state.titleText}
           rightText={this.state.rightText}
+          onPressRight={() => navigate('SpecialList')}
         />
         <ListView
           dataSource={this.state.dataSource}

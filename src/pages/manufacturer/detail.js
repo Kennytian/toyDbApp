@@ -5,19 +5,17 @@ import { FlatList, ScrollView, Image, Text, View } from 'react-native';
 
 import { connect } from 'react-redux';
 
-import { deepCompare } from '../utils/optimizer';
-import { createDeepEqualSelector } from '../utils/reselect';
+import { deepCompare } from '../../utils/optimizer';
+import { createDeepEqualSelector } from '../../utils/reselect';
 
-import ErrorView from './../components/common/errorView';
-import LoadingView from './../components/common/loadingView';
-import Title from '../components/common/title';
+import ErrorView from './../../components/common/errorView';
+import LoadingView from './../../components/common/loadingView';
+import Title from '../../components/common/title';
 
 
-import imageSource from '../constants/imageSource';
+import imageSource from '../../constants/imageSource';
 
-import SpecialListItem  from '../containers/specialListItem';
-
-import styles from './manufacturer.style';
+import styles from './detail.style';
 
 class Manufacturer extends Component {
   static navigationOptions = {

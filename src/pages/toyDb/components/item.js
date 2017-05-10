@@ -37,12 +37,12 @@ class ToyItem extends Component {
   };
 
   render() {
-    let {item} = this.props;
+    let {item, onPressManufacturer} = this.props;
     return (
       <TouchableOpacity style={pageStyles.item} disabled={!this.props.onPress}>
         <ImageCard width={'auto'} height={90} source={item.source} text={item.title}/>
         <View style={pageStyles.info}>
-          <Text style={[styles.size16, {color: Colors.gray6}]}>厂家:{item.company}</Text>
+          <Text style={[styles.size16, {color: Colors.gray6}]} onPress={onPressManufacturer}>厂家:{item.company}</Text>
           <View style={pageStyles.views}>
             <Image source={ImageSource.toyDb.views} style={{top: 4}}/>
             <Text style={{marginLeft: 5, color: Colors.gray9}}>{item.views}</Text></View>
@@ -51,6 +51,7 @@ class ToyItem extends Component {
 
     );
   }
+
 }
 
 export default ToyItem;

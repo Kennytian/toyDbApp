@@ -11,7 +11,7 @@ import paymentChooser from './../pages/payment/paymentChooser';
 
 import ReviewList from '../pages/review/reviewList';
 
-import Manufacturer from '../pages/manufacturer';
+import ManufacturerDetail from '../pages/manufacturer/detail';
 
 //开发入口
 import DevEntry from '../pages/devEntry/index';
@@ -36,7 +36,7 @@ const PageConfigs = StackNavigator({
 
   ProductDetail: {screen: ProductDetail},
 
-  Manufacturer: {screen: Manufacturer},
+  ManufacturerDetail: {screen: ManufacturerDetail},
 
   ReviewList: {screen: ReviewList},
 

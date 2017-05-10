@@ -1,5 +1,5 @@
-import Colors from '../constants/colors';
-import { DEVICE_WIDTH } from '../constants/global';
+import Colors from '../../constants/colors';
+import { DEVICE_WIDTH } from '../../constants/global';
 
 const styles = {
   container: {
