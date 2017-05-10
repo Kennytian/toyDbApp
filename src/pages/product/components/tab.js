@@ -16,15 +16,16 @@ let tabStyles = {
   },
   item: {
     flex: 1,
-    borderRadius: 30,
+    borderRadius: 28,
     overflow: 'hidden',
-    height: 30
+    height: 28
   },
   text: {
     fontSize: 15,
     textAlign: 'center',
     flex: 1,
-    paddingTop: 6
+    paddingTop: 6,
+    color: colors.gray6
   },
   active: {
     backgroundColor: '#91b8f8',

@@ -43,6 +43,11 @@ const imageSource = {
     views: require('../assets/images/toyDb/views@2x.png'),
     select: require('../assets/images/toyDb/select@2x.png'),
     filter: require('../assets/images/toyDb/filter@2x.png')
+  },
+
+  product: {
+    star: require('../assets/images/product/star@2x.png'),
+    starGray: require('../assets/images/product/star_gray@2x.png')
   }
 };
 
