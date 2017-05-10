@@ -8,6 +8,7 @@ import styles from '../../../components/common/styles';
 import imageCardStyles from '../../../components/cards/styles';
 import ImageSource from './../../../constants/imageSource';
 import { DEVICE_WIDTH } from '../../../constants/global';
+import ImageCard from '../../../components/cards/imageCard';
 
 const pageStyles = {
   item: {
@@ -16,12 +17,8 @@ const pageStyles = {
   },
   info: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  imageStyle: {
-    width: 'auto',
-    height: 90,
-    marginBottom: 10
+    justifyContent: 'space-between',
+    marginTop: 8
   },
   views: {
     flexDirection: 'row'
@@ -39,24 +36,11 @@ class ToyItem extends Component {
     item: PropTypes.object.isRequired
   };
 
-  _renderTitle() {
-    let {item} = this.props;
-    let textStyle = imageCardStyles.imageCard.title.text;
-    return (
-      <View style={imageCardStyles.imageCard.title.mask}>
-        <Text style={textStyle} ellipsizeMode={'tail'} numberOfLines={1}>{item.title}</Text>
-      </View>
-    );
-  }
-
   render() {
-    let imageStyle = imageCardStyles.imageCard.image;
     let {item} = this.props;
     return (
       <TouchableOpacity style={pageStyles.item} disabled={!this.props.onPress}>
-        <Image style={[imageStyle, pageStyles.imageStyle]} source={item.source} resizeMode={Image.resizeMode.stretch}>
-          {this._renderTitle()}
-        </Image>
+        <ImageCard width={'auto'} height={90} source={item.source} text={item.title}/>
         <View style={pageStyles.info}>
           <Text style={[styles.size16, {color: Colors.gray6}]}>厂家:{item.company}</Text>
           <View style={pageStyles.views}>

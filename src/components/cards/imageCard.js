@@ -9,12 +9,13 @@ import styles from './styles';
 class ImageCard extends Component {
   static defaultProps = {
     titlePosition: 'left',
+    hasMask: true,
     onPress: null
   };
 
   static propTypes = {
     height: PropTypes.number,
-    width: PropTypes.number,
+    width: PropTypes.any,
     text: PropTypes.string,
     onPress: PropTypes.func,
     titlePosition: PropTypes.oneOf(['left', 'center', 'right']),
@@ -22,11 +23,18 @@ class ImageCard extends Component {
   };
 
   _renderTitle() {
-    if (this.props.text) {
+    let {text, hasMask} = this.props;
+    if (text) {
       let textStyle = styles.imageCard.title.text;
+      let maskStyle;
+      if (!hasMask) {
+        maskStyle = {backgroundColor: 'transparent'};
+      }
       return (
-        <Text style={[textStyle, {marginRight: 10, marginTop: 45, backgroundColor: 'transparent', alignSelf: 'center', flex: 1}]}
-              ellipsizeMode={'tail'} numberOfLines={1}>{this.props.text}</Text>
+        <View style={[styles.imageCard.title.mask, maskStyle]}>
+          <Text style={textStyle}
+                ellipsizeMode={'tail'} numberOfLines={1}>{this.props.text}</Text>
+        </View>
       );
     }
     return null;
@@ -34,16 +42,11 @@ class ImageCard extends Component {
 
   render() {
     let imageStyle = styles.imageCard.image;
-    if (this.props.height > 50) {
-      imageStyle = [imageStyle, {height: this.props.height}];
-    }
-    if (this.props.width > 60) {
-      imageStyle = [imageStyle, {width: this.props.width}];
-    }
+    let {width, height} = this.props;
 
     return (
       <TouchableOpacity style={this.props.style} disabled={!this.props.onPress} activeOpacity={ACTIVE_OPACITY}>
-        <Image style={imageStyle} source={this.props.source} resizeMode={Image.resizeMode.stretch}>
+        <Image style={[imageStyle, {width, height}]} source={this.props.source} resizeMode={Image.resizeMode.stretch}>
           {this._renderTitle()}
         </Image>
       </TouchableOpacity>
