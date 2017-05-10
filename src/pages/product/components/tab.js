@@ -34,7 +34,6 @@ let tabStyles = {
 
 class Tab extends Component {
 
-
   render() {
     return (
       <View style={tabStyles.box}>

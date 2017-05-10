@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
+import Header from './components/header';
+import Tab from './components/tab';
 
 class Exponent extends Component {
   static navigationOptions = {
@@ -7,7 +9,13 @@ class Exponent extends Component {
   };
 
   render() {
-    return <Text>相关推荐</Text>;
+    return (
+      <View>
+        <Header/>
+        <Tab active="recommend" navigation={this.props.navigation}/>
+        <Text>相关推荐</Text>
+      </View>
+    );
   }
 }
 

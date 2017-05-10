@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
+import Header from './components/header';
+import Tab from './components/tab';
 
 class Exponent extends Component {
   static navigationOptions = {
@@ -7,7 +9,13 @@ class Exponent extends Component {
   };
 
   render() {
-    return <Text>顽童指数</Text>;
+    return (
+      <View>
+        <Header/>
+        <Tab active="exponent" navigation={this.props.navigation}/>
+        <Text>童顽指数</Text>
+      </View>
+    );
   }
 }
 
