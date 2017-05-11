@@ -11,9 +11,10 @@ import ManufacturerDetail from '../pages/manufacturer/detail';
 
 //开发入口
 import DevEntry from '../pages/devEntry/index';
-import OhError from '../pages/devEntry/ohError';
+import Error from '../pages/error';
 import MyMessage from '../pages/myCenter/message';
 import MyProfile from '../pages/myCenter/profile';
+import MyViewHistory from '../pages/myCenter/viewHistroy';
 
 const PageConfigs = StackNavigator({
   Main: {
@@ -35,10 +36,11 @@ const PageConfigs = StackNavigator({
   ReviewList: {screen: ReviewList},
 
   DevEntry: {screen: DevEntry},
-  OhError: {screen: OhError},
+  Error: {screen: Error},
 
   MyMessage: {screen: MyMessage},
-  MyProfile: {screen: MyProfile}
+  MyProfile: {screen: MyProfile},
+  MyViewHistory: {screen: MyViewHistory}
 });
 
 export default PageConfigs;

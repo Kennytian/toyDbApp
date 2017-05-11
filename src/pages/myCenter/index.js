@@ -48,7 +48,7 @@ class MyCenter extends Component {
               rightBtn={ImageSource.myCenter.rightBtn}
             />
             <InformationList
-              press={this.ccc}
+              press={() => this._navigateTo('Error')}
               icon={ImageSource.myCenter.clean}
               text="清理缓存"
               rightBtn={ImageSource.myCenter.rightBtn}

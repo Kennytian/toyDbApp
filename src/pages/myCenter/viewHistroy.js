@@ -5,6 +5,7 @@ import {
   View
 } from 'react-native';
 
+
 import ImageSource from './../../constants/imageSource';
 
 class PageComponent extends Component {
@@ -14,8 +15,9 @@ class PageComponent extends Component {
   }
 
   static navigationOptions = {
-    title: '我的消息'
+    title: '浏览记录'
   };
+
   render() {
     return (
       <View>

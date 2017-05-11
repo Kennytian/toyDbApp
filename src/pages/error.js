@@ -1,16 +1,5 @@
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  Image,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-import styles from '../styles';
-import RouteDispatcher from '../../utils/routeDispather';
-
-import ErrorView from '../../components/common/errorView';
+import ErrorView from '../components/common/errorView';
 
 export default class OhError extends Component {
   _navTo(name) {
@@ -18,7 +7,6 @@ export default class OhError extends Component {
     navigate(name);
   }
 
-  //RouteDispatcher.backTo(this.props, 'Main', 'MyCenter');
   render() {
     const {goBack} = this.props.navigation;
     return (
