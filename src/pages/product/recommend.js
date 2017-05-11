@@ -47,8 +47,8 @@ class Exponent extends Component {
     return (
       <HotContent
         HotImg={data.source}
-        onPrasie={() => {
-          alert(1);
+        onPress={() => {
+          this.props.navigation.navigate('SpecialDetail');
         }}
         hotText={this.state.hotText}
         number={this.state.number}
