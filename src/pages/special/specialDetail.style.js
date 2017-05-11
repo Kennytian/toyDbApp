@@ -5,7 +5,7 @@ let pageStyles = {
     flex: 1,
     padding: 10,
     backgroundColor: 'white',
-    paddingBottom: 30,
+    paddingBottom: 30
   },
   title: {
     color: colors.gray3,
