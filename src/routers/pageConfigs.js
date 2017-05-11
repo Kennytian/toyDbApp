@@ -7,13 +7,13 @@ import SpecialList from './../pages/special/specialList';
 import SpecialDetail from './../pages/special/specialDetail';
 
 import ReviewList from '../pages/review/reviewList';
-
 import ManufacturerDetail from '../pages/manufacturer/detail';
 
 //开发入口
 import DevEntry from '../pages/devEntry/index';
 import OhError from '../pages/devEntry/ohError';
-import PersonalChange from '../pages/myCenter/personalChange';
+import MyMessage from '../pages/myCenter/message';
+import MyProfile from '../pages/myCenter/profile';
 
 const PageConfigs = StackNavigator({
   Main: {
@@ -37,7 +37,8 @@ const PageConfigs = StackNavigator({
   DevEntry: {screen: DevEntry},
   OhError: {screen: OhError},
 
-  PersonalChange: {screen: PersonalChange}
+  MyMessage: {screen: MyMessage},
+  MyProfile: {screen: MyProfile}
 });
 
 export default PageConfigs;

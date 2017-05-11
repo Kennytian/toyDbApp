@@ -26,7 +26,6 @@ class MyCenter extends Component {
   };
 
   render() {
-    const {navigate} = this.props.navigation;
     return (
       <ScrollView>
         <View style={styles.myCenterWrap}>
@@ -37,19 +36,13 @@ class MyCenter extends Component {
           </Image>
           <View style={styles.main}>
             <InformationList
-              press={() => this._navigateTo('DevEntry')}
-              icon={ImageSource.myCenter.message}
-              text="开发入口"
-              rightBtn={ImageSource.myCenter.rightBtn}
-            />
-            <InformationList
-              press={this.ccc}
+              press={() => this._navigateTo('MyMessage')}
               icon={ImageSource.myCenter.message}
               text="我的消息"
               rightBtn={ImageSource.myCenter.rightBtn}
             />
             <InformationList
-              press={this.ccc}
+              press={() => this._navigateTo('MyViewHistory')}
               icon={ImageSource.myCenter.browsingHistory}
               text="浏览记录"
               rightBtn={ImageSource.myCenter.rightBtn}

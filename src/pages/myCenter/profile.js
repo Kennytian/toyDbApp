@@ -10,7 +10,7 @@ import {
 import InformationList from './../../components/common/informationList';
 
 import ImageSource from './../../constants/imageSource';
-import styles from './personalChange.style';
+import styles from './profile.style';
 
 class PersonalChange extends Component {
 

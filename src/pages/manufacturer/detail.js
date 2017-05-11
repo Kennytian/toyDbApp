@@ -106,11 +106,10 @@ class Manufacturer extends Component {
   }
 
   _renderItem(item) {
-    console.log(item);
     return (
       <ToyItem item={item} onPressManufacturer={() => {
         this._navTo('ManufacturerDetail');
-      }}/>
+      }} onPress={() => this._navTo('ProductDetail')}/>
     );
   }
 }
