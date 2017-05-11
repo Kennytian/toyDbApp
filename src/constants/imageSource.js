@@ -12,7 +12,9 @@ const imageSource = {
   change: require('./../assets/images/change.png'),
 
   components: {
-    errorIcon: require('./../assets/images/components/common/errorIcon.png')
+    errorIcon: require('./../assets/images/components/common/errorIcon.png'),
+    zan: require('../assets/images/home/zan@2x.png'),
+    zanActive: require('../assets/images/home/zan_active@2x.png')
   },
 
   home: {
@@ -26,7 +28,7 @@ const imageSource = {
     pic_two: require('./../assets/images/home/pic_two.png'),
     pic_three: require('./../assets/images/home/pic_three.png'),
     pic_four: require('./../assets/images/home/pic_four.png'),
-    praise: require('./../assets/images/home/praise.png'),
+    praise: require('./../assets/images/home/zan@2x.png'),
     search: require('./../assets/images/home/search.png')
   },
 

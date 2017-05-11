@@ -5,7 +5,8 @@ import {
   View,
   Image,
   ScrollView,
-  ListView
+  ListView,
+  TouchableOpacity
 } from 'react-native';
 
 import styles from '../../components/common/styles';
@@ -90,8 +91,10 @@ export default class Home extends Component {
 
   renderItem = (data) => {
     return (
-      <ImageCard width={140} height={70} hasMask={false} text={data.text} titlePosition="center"
-                 style={{marginLeft: 10, marginBottom: 10, marginTop: 10}} source={data.source}/>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('SpecialDetail')}>
+        <ImageCard width={140} height={70} hasMask={false} text={data.text} titlePosition="center"
+                   style={{marginLeft: 10, marginBottom: 10, marginTop: 10}} source={data.source}/>
+      </TouchableOpacity>
     );
   }
 

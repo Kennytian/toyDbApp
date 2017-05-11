@@ -23,6 +23,12 @@ const styles = {
     left: 4
   },
 
+  icon: {
+    width: 18,
+    height: 18,
+    marginRight: 5
+  },
+
   font: {
     size18: {
       fontSize: 18

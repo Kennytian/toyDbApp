@@ -9,7 +9,7 @@ import { createDeepEqualSelector } from '../../utils/reselect';
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 
-import SpecialListItem  from '../../containers/specialListItem';
+import specialListItem  from '../../containers/specialListItem';
 import data from '../../data/special';
 
 class SpecialList extends Component {
@@ -22,8 +22,10 @@ class SpecialList extends Component {
   }
 
   _renderList() {
+    var {navigation} = this.props;
     return (
-      <FlatList contentContainerStyle={{alignItems: 'center'}} data={data} renderItem={SpecialListItem}
+      <FlatList contentContainerStyle={{alignItems: 'center'}} data={data}
+                renderItem={({item}) => specialListItem(item, navigation)}
                 refreshing={false} onRefresh={this._onRefresh}/>
     );
   }

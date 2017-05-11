@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import ImageCard from './../components/cards/imageCard';
 
 const styles = {
@@ -7,9 +8,11 @@ const styles = {
   }
 };
 
-const SpecialListItem = ({item}) => {
+const SpecialListItem = (item, navigation) => {
   return (
-    <ImageCard style={styles.container} text={item.text} source={item.source}/>
+    <TouchableOpacity onPress={() => navigation.navigate('SpecialDetail')}>
+      <ImageCard style={styles.container} text={item.text} source={item.source}/>
+    </TouchableOpacity>
   );
 };
 

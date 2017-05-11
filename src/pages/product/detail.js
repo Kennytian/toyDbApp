@@ -4,6 +4,7 @@ import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 import colors from '../../constants/colors';
 import { DEVICE_WIDTH } from '../../constants/global';
+import AutoSizeImage from '../../components/autoSizeImage';
 
 let imageWidth = DEVICE_WIDTH - 20;
 let pageStyles = {
@@ -67,11 +68,6 @@ let pageStyles = {
 };
 
 class ProductDetail extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
 
   _renderErrorView() {
     return <ErrorView text={this.props.errorMessage}/>;
@@ -95,11 +91,6 @@ class ProductDetail extends Component {
 
 
   _renderContent() {
-    let {imageHeight} = this.state;
-    var imageStyle = pageStyles.productImage;
-    if (imageHeight) {
-      imageStyle = [imageStyle, {height: imageHeight}];
-    }
 
     return (
       <View>
@@ -121,8 +112,8 @@ class ProductDetail extends Component {
           </TouchableOpacity>
         </View>
         <View>
-          <Image onLoad={this._onLoaded.bind(this)} resizeMode="contain" source={require('../../data/product/product.png')}
-                 style={imageStyle}/>
+          <AutoSizeImage source={require('../../data/product/product.png')} style={pageStyles.productImage}
+                         width={DEVICE_WIDTH - 20}/>
         </View>
       </View>
     );
@@ -131,12 +122,6 @@ class ProductDetail extends Component {
   _navTo(name) {
     const {navigate} = this.props.navigation;
     navigate(name);
-  }
-
-  _onLoaded(evt) {
-    let width = evt.nativeEvent.source.width,
-      height = evt.nativeEvent.source.height;
-    this.setState({imageHeight: imageWidth * height / width});
   }
 }
 

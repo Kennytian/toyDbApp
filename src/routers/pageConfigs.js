@@ -4,6 +4,7 @@ import HomeTabRouter from './homeTabRouter';
 
 import ProductDetail from './../pages/product/index';
 import SpecialList from './../pages/special/specialList';
+import SpecialDetail from './../pages/special/specialDetail';
 
 import ReviewList from '../pages/review/reviewList';
 
@@ -25,6 +26,7 @@ const PageConfigs = StackNavigator({
   },
 
   SpecialList: {screen: SpecialList},
+  SpecialDetail: {screen: SpecialDetail},
 
   ProductDetail: {screen: ProductDetail},
 
