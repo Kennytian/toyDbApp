@@ -24,16 +24,16 @@ class ProductDetail extends Component {
     var contentNode;
     switch (this.state.tab) {
       case 'detail':
-        contentNode = <Detail/>;
+        contentNode = <Detail {...this.props}/>;
         break;
       case 'exponent':
-        contentNode = <Exponent/>;
+        contentNode = <Exponent {...this.props}/>;
         break;
       case 'grade':
-        contentNode = <Grade/>;
+        contentNode = <Grade {...this.props}/>;
         break;
       case 'recommend':
-        contentNode = <Recommend/>;
+        contentNode = <Recommend {...this.props}/>;
         break;
     }
     return (

@@ -112,8 +112,7 @@ class ProductDetail extends Component {
           </TouchableOpacity>
         </View>
         <View>
-          <AutoSizeImage source={require('../../data/product/product.png')} style={pageStyles.productImage}
-                         width={DEVICE_WIDTH - 20}/>
+          <AutoSizeImage source={require('../../data/product/product.png')} style={pageStyles.productImage} width={DEVICE_WIDTH - 20}/>
         </View>
       </View>
     );

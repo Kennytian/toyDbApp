@@ -24,7 +24,8 @@ const styles = {
     flex: 1
   },
   hotText: {
-    fontSize: 16
+    fontSize: 16,
+    height: 40
   },
   praise: {
     flexDirection: 'row',
@@ -36,21 +37,19 @@ const styles = {
 class hotContent extends Component {
   render() {
     return (
-      <View style={styles.hotContent}>
+      <TouchableOpacity style={styles.hotContent} onPress={this.props.onPress}>
         <Image source={this.props.HotImg} style={styles.hotImg}/>
         <View style={styles.HotInfoView}>
           <Text style={styles.hotText} ellipsizeMode={'tail'} numberOfLines={2}>{this.props.hotText}</Text>
           <View style={styles.praise}>
             <Text style={{color: Colors.gray9}}>{this.props.releaseTime}</Text>
             <Text style={{marginLeft: 10, color: Colors.gray9}}>{this.props.Time}</Text>
-            <TouchableOpacity hitSlop={{top: 8, left: 8, right: 8, bottom: 8}} style={{marginLeft: 30}}
-                              onPress={this.props.onPrasie}>
-              <Image source={ImageSource.home.praise}/>
-            </TouchableOpacity>
+            <Image source={ImageSource.components.zan} hitSlop={{top: 8, left: 8, right: 8, bottom: 8}}
+                   style={{marginLeft: 30}}/>
             <Text style={{marginLeft: 5, color: Colors.gray9}}>{this.props.number}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

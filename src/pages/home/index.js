@@ -64,7 +64,8 @@ export default class Home extends Component {
     return (
       <ScrollView style={styles.container}>
         <Search value={this.state.textValue} onSearchChange={this.onTextValue}/>
-        <View><Image source={imageSource.home.banner}/></View>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('SpecialDetail')}>
+          <Image source={imageSource.home.banner}/></TouchableOpacity>
         <Title
           titleImg={imageSource.home.tittleImgOne}
           titleText={this.state.titleText}
@@ -102,8 +103,8 @@ export default class Home extends Component {
     return (
       <HotContent
         HotImg={data.source}
-        onPrasie={() => {
-          alert(1);
+        onPress={() => {
+          this.props.navigation.navigate('SpecialDetail');
         }}
         hotText={this.state.hotText}
         number={this.state.number}
