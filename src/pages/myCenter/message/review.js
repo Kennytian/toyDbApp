@@ -39,9 +39,9 @@ class PageComponent extends Component {
 
   render() {
     return (
-      <ScrollView style={pageStyles.container}>
+      <View style={pageStyles.container}>
         {this._renderList()}
-      </ScrollView>
+      </View>
     );
   }
 

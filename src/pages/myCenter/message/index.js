@@ -1,51 +1,41 @@
 import React, { Component } from 'react';
-import { TabNavigator } from 'react-navigation';
-import colors from '../../../constants/colors';
-import { BORDER_WIDTH } from '../../../constants/global';
+import { View, LayoutAnimation, ScrollView } from 'react-native';
+import TabBar from '../../../components/common/tabBar';
 import Support from './support';
 import Review from './review';
 
-let tabStyles = {
-  box: {
-    backgroundColor: 'white',
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderBottomColor: colors.borderBottom,
-    borderBottomWidth: BORDER_WIDTH,
-    height: 40
-  },
-  item: {
-    fontWeight: 'bold',
-    fontSize: 16
+class PageComponent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tabActiveIndex: 0
+    };
   }
-};
 
-const PageComponent = TabNavigator({
-  Review: {
-    screen: Review,
-    navigationOptions: {
-      tabBarLabel: '评论'
+  render() {
+    let tabs = [
+      {key: 'review', label: '评论', onPress: this.onChangeTab.bind(this)},
+      {key: 'support', label: '点赞', onPress: this.onChangeTab.bind(this)}
+    ];
+    let {tabActiveIndex} = this.state;
+    let contentNode = <Review {...this.props}/>;
+    if (tabActiveIndex === 1) {
+      contentNode = <Support {...this.props}/>;
     }
-  },
-  Support: {
-    screen: Support,
-    navigationOptions: {
-      tabBarLabel: '点赞'
-    }
+
+    return (
+      <ScrollView>
+        <TabBar tabs={tabs} active={this.state.tabActiveIndex}/>
+        {contentNode}
+      </ScrollView>
+    );
   }
-}, {
-  tabBarOptions: {
-    showIcon: false,
-    showLabel: true,
-    activeTintColor: '#7ba9f6',
-    inactiveTintColor: '#666', // 文字和图片默认颜色
-    animationEnabled: true,
-    swipeEnabled: false,
-    lazyLoad: true,
-    style: tabStyles.box,
-    labelStyle: tabStyles.item
-  },
-  tabBarPosition: 'top'
-});
+
+  onChangeTab(index) {
+    console.log(index);
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    this.setState({tabActiveIndex: index});
+  }
+}
 
 export default PageComponent;
