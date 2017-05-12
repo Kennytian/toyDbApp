@@ -1,10 +1,9 @@
 let styles = {
   container: {
     flex: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 10,
-    backgroundColor: 'white'
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 20
   }
 };
 
