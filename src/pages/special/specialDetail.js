@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, Text, ScrollView, TouchableOpacity } from 'react-native';
 import pageStyles from './specialDetail.style';
-import AutoSizeImage from '../../components/autoSizeImage';
+import AutoSizeImage from '../../components/common/autoSizeImage';
 import { DEVICE_WIDTH } from '../../constants/global';
 import imageSource from '../../constants/imageSource';
 import styles from '../../components/common/styles';

@@ -4,7 +4,7 @@ import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 import colors from '../../constants/colors';
 import { DEVICE_WIDTH } from '../../constants/global';
-import AutoSizeImage from '../../components/autoSizeImage';
+import AutoSizeImage from '../../components/common/autoSizeImage';
 
 let imageWidth = DEVICE_WIDTH - 20;
 let pageStyles = {
