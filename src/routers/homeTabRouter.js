@@ -10,7 +10,6 @@ import imageSource from '../constants/imageSource';
 import Home from '../pages/home/index';
 import Borrowing from '../pages/toyDb/index';
 import MyCenter from '../pages/myCenter/index';
-import SpecialDetail from '../pages/special/specialDetail';
 
 const styles = {
   icon: {
@@ -22,7 +21,7 @@ const styles = {
 
 const HomeTabRouter = TabNavigator({
   Home: {
-    screen: Home,
+    screen: MyCenter,
     navigationOptions: {
       tabBarLabel: '主页',
       tabBarIcon: ({tintColor}) => (

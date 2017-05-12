@@ -12,7 +12,7 @@ import ManufacturerDetail from '../pages/manufacturer/detail';
 //开发入口
 import DevEntry from '../pages/devEntry/index';
 import Error from '../pages/error';
-import MyMessage from '../pages/myCenter/message';
+import MyMessage from '../pages/myCenter/message/index';
 import MyProfile from '../pages/myCenter/profile';
 import MyViewHistory from '../pages/myCenter/viewHistroy';
 

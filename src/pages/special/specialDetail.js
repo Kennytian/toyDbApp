@@ -47,11 +47,12 @@ class SpecialDetail extends Component {
             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => {
             }}>
               <Image source={imageSource.components.zan} style={[styles.icon, pageStyles.footCtrl.icon]}/>
-              <Text>2023</Text>
+              <Text>2023</Text>:
             </TouchableOpacity>
           </View>
           <View style={pageStyles.footCtrl.item}>
             <TouchableOpacity onPress={() => {
+              this.props.navigation.navigate('ReviewList');
             }}>
               <Text>评论</Text>
             </TouchableOpacity>

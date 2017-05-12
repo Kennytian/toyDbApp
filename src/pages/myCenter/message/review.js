@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native';
-
-import ImageSource from './../../constants/imageSource';
+import { Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import styles from './style';
 
 class PageComponent extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   static navigationOptions = {
     title: '我的消息'
   };
+
   render() {
     return (
-      <View>
+      <ScrollView style={styles.container}>
 
-      </View>
+      </ScrollView>
     );
   }
 
