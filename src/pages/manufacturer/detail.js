@@ -2,11 +2,8 @@
 
 import React, { Component } from 'react';
 import { FlatList, ScrollView, Image, Text, View } from 'react-native';
-
 import { connect } from 'react-redux';
-
 import { deepCompare } from '../../utils/optimizer';
-
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 import Title from '../../components/common/title';
