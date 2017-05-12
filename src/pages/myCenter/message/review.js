@@ -35,9 +35,6 @@ class Item extends Component {
 }
 
 class PageComponent extends Component {
-  static navigationOptions = {
-    title: '我的消息'
-  };
 
   render() {
     return (

@@ -5,6 +5,9 @@ import Support from './support';
 import Review from './review';
 
 class PageComponent extends Component {
+  static navigationOptions = {
+    title: '我的消息'
+  };
   constructor() {
     super();
     this.state = {
