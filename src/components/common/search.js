@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
+import { Platform } from 'react-native';
+
 import {
   Text,
   TouchableOpacity,
@@ -13,7 +15,7 @@ import colors from './../../constants/colors';
 
 const styles = {
   searchView: {
-    marginTop: 25,
+    marginTop: Platform.select({ios: 25, android: 8}),
     flexDirection: 'row',
     alignItems: 'center',
     paddingBottom: 10,

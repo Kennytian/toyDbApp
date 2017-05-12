@@ -8,6 +8,45 @@ let styles = {
     backgroundColor: colors.white,
     marginTop: 10
   },
+  reviewOnly: {
+    container: {
+      borderBottomWidth: BORDER_WIDTH,
+      borderBottomColor: colors.borderColor,
+      flexDirection: 'row',
+      marginLeft: 10,
+      marginRight: 10,
+      paddingLeft: 0,
+      paddingRight: 0,
+      marginTop: 0
+    },
+    info: {
+      marginTop: 10,
+      marginBottom: 10,
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+    bottomRow: {
+      justifyContent: 'flex-end',
+      marginTop: 5
+    }
+  },
+  avatar: {
+    box: {
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+      overflow: 'hidden'
+    },
+    image: {
+      width: 40,
+      height: 40,
+      borderRadius: 20
+    }
+  },
+  avatarRight: {
+    marginLeft: 10,
+    flex: 1
+  },
   textRow1: {
     fontSize: 14,
     fontWeight: '300',
@@ -40,10 +79,13 @@ let styles = {
   },
   bottomRow: {
     container: {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+    ctrlBox: {
       flexDirection: 'row'
     },
     date: {
-      flex: 2,
       fontSize: 13,
       fontWeight: '300',
       color: colors.borderColor
@@ -51,7 +93,6 @@ let styles = {
     like: {
       wrapper: {
         flexDirection: 'row',
-        flex: 0.6,
         alignItems: 'center'
       },
       icon: {
@@ -67,7 +108,7 @@ let styles = {
     },
     reply: {
       wrapper: {
-        flex: 0.25
+        marginLeft: 20
       },
       text: {
         fontSize: 13,

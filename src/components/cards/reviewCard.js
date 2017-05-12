@@ -24,23 +24,25 @@ class ReviewCard extends Component {
 
   render() {
     return (
-      <View style={[styles.container, this.props.containerStyle]}>
-        <Text style={styles.textRow1}>{this.props.reviewerName}回复了你的评论</Text>
-        <View style={styles.splitLine}/>
-        <Text style={styles.textRow2}>评论内容：{this.props.reviewContent}</Text>
-        <View style={styles.reply}>
-          <Text style={styles.textRow3}>{this.props.replyContent}</Text>
+      <View style={[styles.container, styles.reviewOnly.container]}>
+        <View style={styles.avatar.box}>
+          <Image source={require('../../data/file/1.png')} style={styles.avatar.image}/>
         </View>
-        <View style={styles.splitLine}/>
-        <View style={styles.bottomRow.container}>
-          <Text style={styles.bottomRow.date}>{this.props.replyDate}</Text>
-          <TouchableOpacity style={styles.bottomRow.like.wrapper} disabled={!this.props.onLikePress} onPress={this.props.onLikePress}>
-            <Image style={styles.bottomRow.like.icon} source={ImageSource.home.praise}/>
-            <Text style={styles.bottomRow.like.count}>{this.props.likeCount}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity hitSlop={styles.hitSlop} style={styles.bottomRow.reply.wrapper} disabled={!this.props.onReplyPress} onPress={this.props.onReplyPress}>
-            <Text style={styles.bottomRow.reply.text}>回复</Text>
-          </TouchableOpacity>
+        <View style={styles.avatarRight}>
+          <View style={styles.reviewOnly.info}>
+            <Text style={styles.textRow1}>{this.props.reviewerName}</Text>
+            <Text style={styles.bottomRow.date}>{this.props.replyDate}</Text>
+          </View>
+          <Text style={styles.textRow2}>{this.props.reviewContent}</Text>
+          <View style={[styles.bottomRow.container, styles.reviewOnly.bottomRow]}>
+            <TouchableOpacity style={styles.bottomRow.like.wrapper} disabled={!this.props.onLikePress} onPress={this.props.onLikePress}>
+              <Image style={styles.bottomRow.like.icon} source={ImageSource.home.praise}/>
+              <Text style={styles.bottomRow.like.count}>{this.props.likeCount}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity hitSlop={styles.hitSlop} style={styles.bottomRow.reply.wrapper} disabled={!this.props.onReplyPress} onPress={this.props.onReplyPress}>
+              <Text style={styles.bottomRow.reply.text}>回复</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );

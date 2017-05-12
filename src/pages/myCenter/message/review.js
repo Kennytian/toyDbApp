@@ -19,13 +19,15 @@ class Item extends Component {
         <View style={styles.splitLine}/>
         <View style={styles.bottomRow.container}>
           <Text style={styles.bottomRow.date}>{item.replyDate}</Text>
-          <TouchableOpacity style={styles.bottomRow.like.wrapper} disabled={!item.onLikePress} onPress={item.onLikePress}>
-            <Image style={styles.bottomRow.like.icon} source={imageSource.components.zan}/>
-            <Text style={styles.bottomRow.like.count}>{item.likeCount}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity hitSlop={styles.hitSlop} style={styles.bottomRow.reply.wrapper} disabled={!item.onReplyPress} onPress={item.onReplyPress}>
-            <Text style={styles.bottomRow.reply.text}>回复</Text>
-          </TouchableOpacity>
+          <View style={styles.bottomRow.ctrlBox}>
+            <TouchableOpacity style={styles.bottomRow.like.wrapper} disabled={!item.onLikePress} onPress={item.onLikePress}>
+              <Image style={styles.bottomRow.like.icon} source={imageSource.components.zan}/>
+              <Text style={styles.bottomRow.like.count}>{item.likeCount}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity hitSlop={styles.hitSlop} style={styles.bottomRow.reply.wrapper} disabled={!item.onReplyPress} onPress={item.onReplyPress}>
+              <Text style={styles.bottomRow.reply.text}>回复</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );

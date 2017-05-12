@@ -5,7 +5,7 @@ import ReviewListItem  from '../../containers/reviewListItem';
 
 class ReviewList extends Component {
   static navigationOptions = ({navigation}) => ({
-    title: '消息列表'
+    title: '评论'
   });
 
   state = {
@@ -20,7 +20,7 @@ class ReviewList extends Component {
   _renderList() {
 
     return (
-      <FlatList contentContainerStyle={{alignItems: 'center'}} data={data}
+      <FlatList contentContainerStyle={{backgroundColor: 'white'}} data={data}
                 renderItem={ReviewListItem} refreshing={false} onRefresh={this._onRefresh}/>
     );
   }

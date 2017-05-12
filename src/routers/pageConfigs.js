@@ -10,7 +10,6 @@ import ReviewList from '../pages/review/reviewList';
 import ManufacturerDetail from '../pages/manufacturer/detail';
 
 //开发入口
-import DevEntry from '../pages/devEntry/index';
 import Error from '../pages/error';
 import MyMessage from '../pages/myCenter/message/index';
 import MyProfile from '../pages/myCenter/profile';
@@ -35,7 +34,6 @@ const PageConfigs = StackNavigator({
 
   ReviewList: {screen: ReviewList},
 
-  DevEntry: {screen: DevEntry},
   Error: {screen: Error},
 
   MyMessage: {screen: MyMessage},
