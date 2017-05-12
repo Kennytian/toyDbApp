@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Image } from 'react-native';
 
 class AutoSizeImage extends Component {
@@ -8,7 +8,7 @@ class AutoSizeImage extends Component {
   }
 
   static propTyps = {
-    width: React.PropTypes.number.isRequired
+    width: PropTypes.number.isRequired
   };
 
   render() {
@@ -17,13 +17,11 @@ class AutoSizeImage extends Component {
       style = [style, {height: height}];
     }
 
-
     return <Image {...this.props} style={style} resizeMode="contain" onLoad={this._onLoaded.bind(this)}/>;
   }
 
   _onLoaded(evt) {
-    let width = evt.nativeEvent.source.width,
-      height = evt.nativeEvent.source.height;
+    let {width, height} = evt.nativeEvent.source;
     this.setState({height: this.props.width * height / width});
   }
 }

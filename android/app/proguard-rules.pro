@@ -58,9 +58,13 @@
 
 -keepattributes Signature
 -keepattributes *Annotation*
+-dontwarn com.squareup.okhttp.**
+-keep class com.squareup.okhttp.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+
+-dontwarn okhttp3.**
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
--dontwarn okhttp3.**
 
 # okio
 
@@ -68,3 +72,4 @@
 -dontwarn java.nio.file.*
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
 -dontwarn okio.**
+-keep class okio.** { *; }
