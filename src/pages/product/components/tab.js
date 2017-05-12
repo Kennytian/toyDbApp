@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { BORDER_WIDTH } from '../../../constants/global';
 import colors from '../../../constants/colors';
+let borderRadius = 15;
 
 let tabStyles = {
   box: {
@@ -9,23 +10,24 @@ let tabStyles = {
     borderWidth: BORDER_WIDTH,
     borderColor: '#b5b5b5',
     margin: 10,
-    borderRadius: 30,
+    borderRadius: borderRadius,
     overflow: 'hidden',
     flexDirection: 'row',
     alignItems: 'center'
   },
   item: {
     flex: 1,
-    borderRadius: 28,
     overflow: 'hidden',
-    height: 28
+    borderRadius: borderRadius
   },
   text: {
     fontSize: 15,
     textAlign: 'center',
     flex: 1,
-    paddingTop: 6,
-    color: colors.gray6
+    color: colors.gray6,
+    borderRadius: borderRadius,
+    height: 28,
+    paddingTop: 5
   },
   active: {
     backgroundColor: '#91b8f8',

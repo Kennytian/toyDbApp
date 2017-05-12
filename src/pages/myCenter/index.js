@@ -13,17 +13,13 @@ import styles from './index.style';
 class MyCenter extends Component {
   static navigationOptions = ({navigation, screenProps}) => ({
     title: '个人中心',
-    headerRight: <SettingsButton style={{marginRight: 10}} onPress={() => navigation.navigate('PersonalChange', {})}/>
+    headerRight: <SettingsButton style={{marginRight: 10}} onPress={() => navigation.navigate('MyProfile', {})}/>
   });
 
   _navigateTo(name) {
     const {navigate} = this.props.navigation;
     navigate(name);
   }
-
-  ccc = () => {
-    alert('Hello');
-  };
 
   render() {
     return (
