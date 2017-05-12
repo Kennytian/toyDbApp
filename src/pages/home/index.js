@@ -2,50 +2,33 @@
 
 import React, { Component } from 'react';
 import {
-  Text,
-  TouchableOpacity,
   View,
   Image,
-  TextInput,
   ScrollView,
   ListView,
-  FlatList
+  TouchableOpacity
 } from 'react-native';
 
 import styles from '../../components/common/styles';
 
 import imageSource from './../../constants/imageSource';
-import Colors from './../../constants/colors';
-import Tittle from './../../components/common/tittle';
+import Title from './../../components/common/title';
 import Search from './../../components/common/search';
-import SearchBar from '../../components/common/searchBar';
-import {ScanButton} from '../../components/common/iconButton';
 import ImageCard from '../../components/cards/imageCard';
-
 import HotContent from './../../components/common/hotContent';
-
-var
-  data = [
-    {key: 'a', source: imageSource.home.pic_three, text: '世界游戏周边'},
-    {key: 'b', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'c', source: imageSource.home.pic_three, text: '世界游戏周边'},
-    {key: 'd', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'e', source: imageSource.home.pic_three, text: '界游戏周边'},
-    {key: 'f', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'g', source: imageSource.home.pic_three, text: '游戏周边'},
-    {key: 'h', source: imageSource.home.pic_four, text: '我的世界游戏周边'},
-    {key: 'i', source: imageSource.home.pic_three, text: '我的世界游戏周边'},
-    {key: 'j', source: imageSource.home.pic_four, text: '我的世界游戏周边'}
-  ];
+import data from '../../data/recommend';
 
 export default class Home extends Component {
+  static navigationOptions = {
+    header: null
+  };
+
   constructor(props) {
     super(props);
     this.state = {
-      tittleText: '热门专题',
-      hotTittle: '热门内容',
+      titleText: '热门专题',
+      hotTitle: '热门内容',
       rightText: '更多',
-      placeholderText: '请输入关键字',
       hotText: '超远距离接吻神器：KISS还是要提高自己的姿势水平',
       releaseTime: '发布时间',
       Time: '2017-3-3',
@@ -80,17 +63,14 @@ export default class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <Search placeholderText={this.state.placeholderText} value={this.state.textValue} onSearchChange={this.onTextValue}/>
-        <View style={{flexDirection: 'row'}}>
-          <SearchBar placeholderText="请输入关键字" onChangeText={this.onTextValue}/>
-          <ScanButton onPress={() => {
-          }}/>
-        </View>
-        <View><Image source={imageSource.home.banner}/></View>
-        <Tittle
+        <Search value={this.state.textValue} onSearchChange={this.onTextValue}/>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('SpecialDetail')}>
+          <Image source={imageSource.home.banner}/></TouchableOpacity>
+        <Title
           titleImg={imageSource.home.tittleImgOne}
-          titleText={this.state.tittleText}
+          titleText={this.state.titleText}
           rightText={this.state.rightText}
+          onPressRight={() => navigate('SpecialList')}
         />
         <ListView
           dataSource={this.state.dataSource}
@@ -98,9 +78,9 @@ export default class Home extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
         />
-        <Tittle
+        <Title
           titleImg={imageSource.home.tittleImgTwo}
-          titleText={this.state.hotTittle}
+          titleText={this.state.hotTitle}
         />
         <ListView
           dataSource={this.state.dataSourceAnother}
@@ -112,7 +92,10 @@ export default class Home extends Component {
 
   renderItem = (data) => {
     return (
-      <ImageCard width={140} height={70} text={data.text} style={{marginLeft: 10}} source={data.source}/>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('SpecialDetail')}>
+        <ImageCard width={140} height={70} hasMask={false} text={data.text} titlePosition="center"
+                   style={{marginLeft: 10, marginBottom: 10, marginTop: 10}} source={data.source}/>
+      </TouchableOpacity>
     );
   }
 
@@ -120,8 +103,8 @@ export default class Home extends Component {
     return (
       <HotContent
         HotImg={data.source}
-        onPrasie={() => {
-          alert(1);
+        onPress={() => {
+          this.props.navigation.navigate('SpecialDetail');
         }}
         hotText={this.state.hotText}
         number={this.state.number}
@@ -130,5 +113,4 @@ export default class Home extends Component {
       />
     );
   }
-
 }

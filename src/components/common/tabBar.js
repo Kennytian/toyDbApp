@@ -1,26 +1,38 @@
-/* @flow */
-
-import React  from 'react';
-import { View, Text } from 'react-native';
+import React, { Component }  from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-const tabBar = (props) => {
-  if (!props || !props.leftText || !props.rightText) {
-    throw new Error('leftText or rightText is not special');
-  }
+class TabBar extends Component {
 
-  let selectedIndex = props.selectedIndex || 0;
+  static propsTypes = {
+    tabs: React.PropTypes.array.isRequired,
+    activeIndex: React.PropTypes.number
+  };
 
-  return (
-    <View style={styles.tabBar.container}>
-      <View style={styles.tabBar.innerWrapper}>
-        <Text style={[styles.tabBar.button, selectedIndex === 0 && styles.tabBar.selected]} onPress={props.leftPress}>{props.leftText}</Text>
-        <View style={styles.tabBar.splitLine}/>
-        <Text style={[styles.tabBar.button, selectedIndex === 1 && styles.tabBar.selected]} onPress={props.rightPress}>{props.rightText}</Text>
+  render() {
+    var {tabs, activeIndex = 0} = this.props;
+    return (
+      <View style={styles.tabBar.container}>
+        <View style={styles.tabBar.innerWrapper}>
+          {
+            tabs.map(function (item, index) {
+              return (
+                <View key={item.key} style={styles.tabBar.item}>
+                  {index !== 0 ? <View style={styles.tabBar.splitLine}/> : null}
+                  <TouchableOpacity onPress={item.onPress.bind(null, index)} style={styles.tabBar.itemTouch}>
+                    <Text style={[styles.tabBar.button, activeIndex === index && styles.tabBar.selected]}>
+                      <Text style={styles.tabBar.label}>{item.label}</Text>
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              );
+            })
+          }
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
-export default tabBar;
+export default TabBar;

@@ -5,7 +5,8 @@ import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
 
 const styles = {
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
 
   // 扩大按钮点击区域
@@ -14,6 +15,27 @@ const styles = {
     right: 8,
     bottom: 8,
     left: 8
+  },
+  hitSlopSm: {
+    top: 4,
+    right: 4,
+    bottom: 4,
+    left: 4
+  },
+
+  icon: {
+    width: 18,
+    height: 18,
+    marginRight: 5
+  },
+
+  font: {
+    size18: {
+      fontSize: 18
+    },
+    size16: {
+      fontSize: 16
+    }
   },
 
   // 错误页面
@@ -78,27 +100,42 @@ const styles = {
   // tabBar 条
   tabBar: {
     container: {
-      borderTopWidth: BORDER_WIDTH,
-      borderTopColor: Colors.borderColor
+      backgroundColor: Colors.white
     },
     innerWrapper: {
       borderBottomWidth: BORDER_WIDTH,
-      borderBottomColor: Colors.borderColor,
+      borderBottomColor: Colors.borderGray,
       flexDirection: 'row',
       alignItems: 'center',
       marginLeft: 10,
-      marginRight: 10,
-      height: 37
+      marginRight: 10
+    },
+    item: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    itemTouch: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      paddingTop: 10,
+      paddingBottom: 10
     },
     button: {
       fontWeight: '600',
       flex: 1,
-      textAlign: 'center'
+      textAlign: 'center',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    label: {
+      textAlign: 'center',
+      flex: 1
     },
     splitLine: {
       width: BORDER_WIDTH,
       height: 20,
-      backgroundColor: Colors.borderColor
+      backgroundColor: Colors.borderGray
     },
     selected: {
       color: Colors.tabColor

@@ -29,87 +29,23 @@ const styles = {
         backgroundColor: Colors.alphaBlack,
         height: 30,
         justifyContent: 'center',
+        alignItems: 'center',
         borderBottomLeftRadius: Platform.select({ios: 6, android: 0}),
         borderBottomRightRadius: Platform.select({ios: 6, android: 0}),
-        marginTop: 120 - 30
+        bottom: 0,
+        left: 0,
+        right: 0,
+        position: 'absolute',
+        flexDirection: 'row'
       },
       text: {
         fontSize: 16,
         color: Colors.white,
-        marginLeft: 10
-      }
-    }
-  },
-
-  // 评论 Card
-  reviewCard: {
-    container: {
-      padding: 9,
-      borderRadius: 5
-    },
-    textRow1: {
-      fontSize: 10.5,
-      fontWeight: '300'
-    },
-    textRow2: {
-      fontSize: 11,
-      fontWeight: '300',
-      lineHeight: 12
-    },
-    splitLine: {
-      marginTop: 8,
-      marginBottom: 8,
-      height: BORDER_WIDTH,
-      backgroundColor: Colors.borderColor
-    },
-    reply: {
-      marginTop: 5,
-      backgroundColor: Colors.borderBottom,
-      padding: 5,
-      borderRadius: 5
-    },
-    textRow3: {
-      fontSize: 11,
-      fontWeight: '400',
-      lineHeight: 15
-    },
-    bottomRow: {
-      container: {
-        flexDirection: 'row',
-        marginBottom: -4
-      },
-      date: {
-        flex: 2,
-        fontSize: 9,
-        fontWeight: '300',
-        color: Colors.borderColor
-      },
-      like: {
-        wrapper: {
-          flexDirection: 'row',
-          flex: 0.8,
-          alignItems: 'center'
-        },
-        icon: {
-          marginRight: 3,
-          width: 12,
-          height: 12
-        },
-        count: {
-          fontSize: 9,
-          fontWeight: '300',
-          color: Colors.borderColor
-        }
-      },
-      reply: {
-        wrapper: {
-          flex: 0.25
-        },
-        text: {
-          fontSize: 9,
-          fontWeight: '300',
-          color: Colors.tabColor
-        }
+        marginLeft: 10,
+        marginRight: 10,
+        flex: 1,
+        textAlign: 'left',
+        backgroundColor: 'transparent'
       }
     }
   }

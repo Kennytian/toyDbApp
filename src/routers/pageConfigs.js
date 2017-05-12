@@ -2,18 +2,18 @@ import { StackNavigator } from 'react-navigation';
 
 import HomeTabRouter from './homeTabRouter';
 
-import ProductList from './../pages/product/productList';
-import ProductDetail from './../pages/product/productDetail';
-
+import ProductDetail from './../pages/product/index';
 import SpecialList from './../pages/special/specialList';
-
-import paymentChooser from './../pages/payment/paymentChooser';
+import SpecialDetail from './../pages/special/specialDetail';
 
 import ReviewList from '../pages/review/reviewList';
+import ManufacturerDetail from '../pages/manufacturer/detail';
 
 //开发入口
-import DevEntry from '../pages/devEntry/index';
-import OhError from '../pages/devEntry/ohError';
+import Error from '../pages/error';
+import MyMessage from '../pages/myCenter/message/index';
+import MyProfile from '../pages/myCenter/profile';
+import MyViewHistory from '../pages/myCenter/viewHistroy';
 
 const PageConfigs = StackNavigator({
   Main: {
@@ -25,18 +25,20 @@ const PageConfigs = StackNavigator({
     }
   },
 
-  paymentChooser: {screen: paymentChooser},
-
-  ProductList: {screen: ProductList},
-
   SpecialList: {screen: SpecialList},
+  SpecialDetail: {screen: SpecialDetail},
 
   ProductDetail: {screen: ProductDetail},
 
+  ManufacturerDetail: {screen: ManufacturerDetail},
+
   ReviewList: {screen: ReviewList},
 
-  DevEntry: {screen: DevEntry},
-  OhError: {screen: OhError}
+  Error: {screen: Error},
+
+  MyMessage: {screen: MyMessage},
+  MyProfile: {screen: MyProfile},
+  MyViewHistory: {screen: MyViewHistory}
 });
 
 export default PageConfigs;

@@ -58,7 +58,7 @@ import com.android.build.OutputFile
  *   inputExcludes: ["android/**", "ios/**"],
  *
  *   // override which node gets called and with what additional arguments
- *   nodeExecutableAndArgs: ["node"]
+ *   nodeExecutableAndArgs: ["node"],
  *
  *   // supply additional arguments to the packager
  *   extraPackagerArgs: []
@@ -82,18 +82,38 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+Properties keyProps = new Properties()
+keyProps.load(project.rootProject.file('./keystores/release.keystore.properties').newDataInputStream())
+
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "com.toyDbApp"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 1010
         versionName "1.0.1"
+        multiDexEnabled true
         ndk {
             abiFilters "armeabi-v7a", "x86"
+        }
+        manifestPlaceholders = [
+                JPUSH_APPKEY: "your key here",
+                APP_CHANNEL : "google play"
+        ]
+    }
+    signingConfigs {
+        String proDir = projectDir
+        debug {
+
+        }
+        release {
+            keyAlias keyProps['keyAlias']
+            keyPassword keyProps['keyPassword']
+            storePassword keyProps['storePassword']
+            storeFile file(proDir + keyProps['storeFile'])
         }
     }
     splits {
@@ -105,17 +125,46 @@ android {
         }
     }
     buildTypes {
-        release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources enableProguardInReleaseBuilds
+            signingConfig signingConfigs.debug
         }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
+        }
+    }
+    productFlavors {
+        wantong {}
+        // xiaomi {}
+        // qh360 {}
+        // baidu {}
+        // wandoujia {}
+        // add more ...
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [APP_CHANNEL: name]
     }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName = ''
+            if (outputFile != null && outputFile.name != null && outputFile.name.endsWith('.apk')) {
+                fileName = "${keyProps['keyAlias']}_${variant.productFlavors[0].name}_v${defaultConfig.versionName}_${variant.buildType.name}.apk"
+            }
+            output.outputFile = new File(outputFile.parent, fileName)
+
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -123,11 +172,14 @@ android {
             }
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
+    compile 'com.android.support:appcompat-v7:23.4.0'
     compile "com.facebook.react:react-native:+"  // From node_modules
 }
 

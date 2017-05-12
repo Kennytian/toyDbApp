@@ -5,9 +5,16 @@ const imageSource = {
 
   // temp image, will delete when app publish
   temp_image_card: require('./../assets/images/temp_image_card.jpg'),
+  arrow_top: require('./../assets/images/arrow_top@2x.png'),
+  arrow_bot: require('./../assets/images/arrow_bot@2x.png'),
+
+  personal: require('./../assets/images/personal.png'),
+  change: require('./../assets/images/change.png'),
 
   components: {
-    errorIcon: require('./../assets/images/components/common/errorIcon.png')
+    errorIcon: require('./../assets/images/components/common/errorIcon.png'),
+    zan: require('../assets/images/home/zan@2x.png'),
+    zanActive: require('../assets/images/home/zan_active@2x.png')
   },
 
   home: {
@@ -21,7 +28,7 @@ const imageSource = {
     pic_two: require('./../assets/images/home/pic_two.png'),
     pic_three: require('./../assets/images/home/pic_three.png'),
     pic_four: require('./../assets/images/home/pic_four.png'),
-    praise: require('./../assets/images/home/praise.png'),
+    praise: require('./../assets/images/home/zan@2x.png'),
     search: require('./../assets/images/home/search.png')
   },
 
@@ -32,6 +39,17 @@ const imageSource = {
     message: require('./../assets/images/myCenter/message.png'),
     set: require('./../assets/images/myCenter/set.png'),
     rightBtn: require('./../assets/images/myCenter/rightBtn.png')
+  },
+
+  toyDb: {
+    views: require('../assets/images/toyDb/views@2x.png'),
+    select: require('../assets/images/toyDb/select@2x.png'),
+    filter: require('../assets/images/toyDb/filter@2x.png')
+  },
+
+  product: {
+    star: require('../assets/images/product/star@2x.png'),
+    starGray: require('../assets/images/product/star_gray@2x.png')
   }
 };
 

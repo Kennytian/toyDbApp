@@ -1,4 +1,5 @@
 import Colors from '../../constants/colors';
+import { DEVICE_WIDTH } from '../../constants/global';
 
 const styles = {
   myCenterWrap: {
@@ -21,33 +22,14 @@ const styles = {
   },
   headerImg: {
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: DEVICE_WIDTH
   },
   userName: {
     marginBottom: 30
   },
   main: {
     marginTop: 10
-  },
-  public: {
-    height: 40,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Colors.white
-  },
-  borderBottom: {
-    borderBottomWidth: 0.5,
-    borderBottomColor: Colors.borderBottom
-  },
-  mypic: {
-    marginLeft: 11
-  },
-  mytext: {
-    marginLeft: 13,
-    flex: 1
-  },
-  arrows: {
-    marginRight: 15
   },
   exit: {
     height: 40,

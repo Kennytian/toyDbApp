@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
+import { Platform } from 'react-native';
+
 import {
   Text,
   TouchableOpacity,
@@ -10,65 +13,73 @@ import {
 import imageSource from './../../constants/imageSource';
 import colors from './../../constants/colors';
 
-const styles={
+const styles = {
+  searchView: {
+    marginTop: Platform.select({ios: 25, android: 8}),
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 10,
+    borderBottomWidth: BORDER_WIDTH,
+    borderBottomColor: colors.borderGray
+  },
   inputImg: {
     flexDirection: 'row',
-    height: 29,
     alignItems: 'center',
-    marginLeft: 15
+    marginLeft: 15,
+    flex: 1
   },
   sourceImg: {
     marginLeft: 15
   },
-  searchView: {
-    marginTop: 10,
-    flexDirection: 'row',
-    height: 45,
-    alignItems: 'center'
-  },
   textInputView: {
     marginLeft: 13,
     flex: 1,
-    height: 45,
+    height: 30,
     marginRight: 13
   },
   scanImg: {
-    marginLeft: 13
+    marginLeft: 13,
+    marginRight: 10
   }
 };
 
 class Search extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
   render() {
 
     return (
-        <View style={styles.searchView}>
-          <Image style={styles.inputImg} source={imageSource.home.input}>
-            <TouchableOpacity>
-              <Image style={styles.sourceImg} source={imageSource.home.search}>
-              </Image>
-            </TouchableOpacity>
-            <TextInput
-              style={styles.textInputView}
-              underlineColorAndroid="transparent"
-              placeholder={this.props.placeholderText}
-              keyboardType="numeric"
-              placeholderTextColor={colors.inputColor}
-              value={this.props.value}
-              onChangeText={(text) => {this.props.onSearchChange(text);}}
-            />
-          </Image>
+      <View style={styles.searchView}>
+        <Image style={styles.inputImg} source={imageSource.home.input}>
           <TouchableOpacity>
-            <Image
-              style={styles.scanImg}
-              source={imageSource.home.scan}
-            />
+            <Image style={styles.sourceImg} source={imageSource.home.search}></Image>
           </TouchableOpacity>
-        </View>
+          <TextInput
+            style={styles.textInputView}
+            underlineColorAndroid="transparent"
+            placeholder='输入关键词'
+            keyboardType="numeric"
+            placeholderTextColor={colors.inputColor}
+            value={this.props.value}
+            onChangeText={(text) => {
+              this.onSearchChange(text);
+            }}
+          />
+        </Image>
+        <TouchableOpacity>
+          <Image
+            style={styles.scanImg}
+            source={imageSource.home.scan}
+          />
+        </TouchableOpacity>
+      </View>
     );
+  }
+
+  onSearchChange() {
+
   }
 }
 
