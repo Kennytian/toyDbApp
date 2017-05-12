@@ -16,7 +16,7 @@ class SpecialDetail extends Component {
       <View style={pageStyles.container}>
         <ScrollView>
           <Text style={pageStyles.title}>
-            超远距离接吻神器：KISS还是要提高自己的姿势水平
+            超远距离接吻神器KISS还是要提高自己的姿势水平
           </Text>
           <Text style={pageStyles.info}>发表时间：2017-3-3</Text>
           <View>
@@ -47,7 +47,7 @@ class SpecialDetail extends Component {
             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => {
             }}>
               <Image source={imageSource.components.zan} style={[styles.icon, pageStyles.footCtrl.icon]}/>
-              <Text>2023</Text>:
+              <Text>2023</Text>
             </TouchableOpacity>
           </View>
           <View style={pageStyles.footCtrl.item}>
