@@ -104,9 +104,6 @@ android {
                 APP_CHANNEL : "google play"
         ]
     }
-    dexOptions {
-        jumboMode = true
-    }
     signingConfigs {
         String proDir = projectDir
         debug {
@@ -159,15 +156,11 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def outputFile = output.outputFile
-            def fileName = outputFile.name
-            if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                if (variant.buildType.name.equals('release')) {
-                    fileName = "${variant.productFlavors[0].name}_v${defaultConfig.versionName}_release.apk"
-                } else if (variant.buildType.name.equals('debug')) {
-                    fileName = "${keyProps['keyAlias']}_v${defaultConfig.versionName}_${variant.productFlavors[0].name}_debug.apk"
-                }
+            def fileName = ''
+            if (outputFile != null && outputFile.name != null && outputFile.name.endsWith('.apk')) {
+                fileName = "${keyProps['keyAlias']}_${variant.productFlavors[0].name}_v${defaultConfig.versionName}_${variant.buildType.name}.apk"
             }
-            output.outputFile = new File(outputFile.parent, "toyDbApp_" + fileName)
+            output.outputFile = new File(outputFile.parent, fileName)
 
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits

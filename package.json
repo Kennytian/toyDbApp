@@ -13,7 +13,7 @@
     "start:6sp": "react-native run-ios --simulator=\"iPhone 6s Plus\"",
     "start:7": "react-native run-ios --simulator=\"iPhone 7\"",
     "start:7p": "react-native run-ios --simulator=\"iPhone 7 Plus\"",
-    "start:android": "react-native run-android",
+    "start:android": "react-native run-android --variant Wantongdebug",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "flow": "node_modules/.bin/flow",
