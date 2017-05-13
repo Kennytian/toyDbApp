@@ -47,7 +47,7 @@ const styles = {
     },
     phone: {
       fontSize: 18,
-      flex: 1,
+      flex: 1
     },
     btn: {
       wrapper: {

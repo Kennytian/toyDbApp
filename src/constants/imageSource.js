@@ -53,7 +53,7 @@ const imageSource = {
   },
 
   auth: {
-    bg: require('../assets/images/auth/bg@2x.png'),
+    bg: require('../assets/images/auth/bg@2x.png')
   }
 };
 
