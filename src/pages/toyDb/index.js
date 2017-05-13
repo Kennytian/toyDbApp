@@ -5,7 +5,7 @@ import styles from '../../components/common/styles';
 import ToyItem from './components/item';
 import data from '../../data/toy';
 import imageSource from '../../constants/imageSource';
-import colors from './../../constants/colors';
+import Colors from './../../constants/colors';
 import { BORDER_WIDTH } from '../../constants/global';
 import pageStyles from './components/index.style';
 
@@ -42,7 +42,7 @@ export default class Borrowing extends Component {
             <Text>热度</Text>
             <Image source={imageSource.toyDb.select} style={{marginLeft: 5}}/>
           </View>
-          <View style={[pageStyles.filter.item, {borderLeftColor: colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}>
+          <View style={[pageStyles.filter.item, {borderLeftColor: Colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}>
             <Text>筛选</Text>
             <Image source={imageSource.toyDb.filter} style={{marginLeft: 5}}/>
           </View>

@@ -1,4 +1,4 @@
-import colors from '../../constants/colors';
+import Colors from '../../constants/colors';
 
 let pageStyles = {
   container: {
@@ -8,7 +8,7 @@ let pageStyles = {
     paddingBottom: 30
   },
   title: {
-    color: colors.gray3,
+    color: Colors.gray3,
     fontSize: 16,
     marginTop: 5,
     marginBottom: 5,
@@ -16,13 +16,13 @@ let pageStyles = {
     lineHeight: 20
   },
   info: {
-    color: colors.gray6,
+    color: Colors.gray6,
     fontSize: 13,
     marginBottom: 20
   },
   mainFont: {
     fontSize: 16,
-    color: colors.gray6,
+    color: Colors.gray6,
     lineHeight: 20,
     marginBottom: 10
   },

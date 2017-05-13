@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { BORDER_WIDTH } from '../../../constants/global';
-import colors from '../../../constants/colors';
+import Colors from '../../../constants/colors';
 let borderRadius = 15;
 
 let tabStyles = {
@@ -24,7 +24,7 @@ let tabStyles = {
     fontSize: 15,
     textAlign: 'center',
     flex: 1,
-    color: colors.gray6,
+    color: Colors.gray6,
     borderRadius: borderRadius,
     height: 28,
     paddingTop: 5

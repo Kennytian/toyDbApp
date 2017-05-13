@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, Text, View, TouchableOpacity, LayoutAnimation } from 'react-native';
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
-import colors from '../../constants/colors';
+import Colors from '../../constants/colors';
 import { DEVICE_WIDTH } from '../../constants/global';
 import AutoSizeImage from '../../components/common/autoSizeImage';
 
@@ -25,15 +25,15 @@ let pageStyles = {
     title: {
       fontSize: 16,
       fontWeight: 'bold',
-      color: colors.gray6
+      color: Colors.gray6
     },
     category: {
-      color: colors.gray6,
+      color: Colors.gray6,
       marginTop: 5,
       marginBottom: 5
     },
     desc: {
-      color: colors.gray6,
+      color: Colors.gray6,
       lineHeight: 18
     }
   },

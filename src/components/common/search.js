@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import imageSource from './../../constants/imageSource';
-import colors from './../../constants/colors';
+import Colors from './../../constants/colors';
 
 const styles = {
   searchView: {
@@ -20,7 +20,7 @@ const styles = {
     alignItems: 'center',
     paddingBottom: 10,
     borderBottomWidth: BORDER_WIDTH,
-    borderBottomColor: colors.borderGray
+    borderBottomColor: Colors.borderGray
   },
   inputImg: {
     flexDirection: 'row',
@@ -61,7 +61,7 @@ class Search extends Component {
             underlineColorAndroid="transparent"
             placeholder='输入关键词'
             keyboardType="numeric"
-            placeholderTextColor={colors.inputColor}
+            placeholderTextColor={Colors.inputColor}
             value={this.props.value}
             onChangeText={(text) => {
               this.onSearchChange(text);

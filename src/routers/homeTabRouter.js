@@ -8,9 +8,9 @@ import { TabNavigator } from 'react-navigation';
 import imageSource from '../constants/imageSource';
 
 import Home from '../pages/home/index';
-import Borrowing from '../pages/toyDb/index';
+//import Borrowing from '../pages/toyDb/index';
 import MyCenter from '../pages/myCenter/index';
-import ProductDetail from '../pages/product/index';
+import Borrowing from '../pages/auth/login';
 
 const styles = {
   icon: {

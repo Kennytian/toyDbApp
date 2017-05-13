@@ -40,7 +40,7 @@ const styles = {
   },
   exitText: {
     fontSize: 15,
-    color: Colors.exit
+    color: Colors.tabColor
   }
 };
 export default styles;

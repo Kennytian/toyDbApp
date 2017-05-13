@@ -7,13 +7,13 @@ import {
 } from 'react-native';
 
 import imageSource from './../../constants/imageSource';
-import colors from './../../constants/colors';
+import Colors from './../../constants/colors';
 
 const styles = {
   main: {
     flexDirection: 'row',
     height: 43,
-    borderBottomColor: colors.borderBottom,
+    borderBottomColor: Colors.borderGray,
     borderBottomWidth: 0.5,
     marginLeft: 10,
     marginRight: 10

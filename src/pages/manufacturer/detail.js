@@ -7,7 +7,7 @@ import { deepCompare } from '../../utils/optimizer';
 import ErrorView from './../../components/common/errorView';
 import LoadingView from './../../components/common/loadingView';
 import Title from '../../components/common/title';
-import colors from '../../constants/colors';
+import Colors from '../../constants/colors';
 import imageSource from '../../constants/imageSource';
 import globalStyles from '../../components/common/styles';
 import styles from './detail.style';
@@ -53,7 +53,7 @@ class Manufacturer extends Component {
             <View style={styles.banner.mask}>
               <Image style={styles.banner.logo} source={require('../../data/file/legao_logo.png')}/>
               <Text style={styles.banner.title}>乐高（LEGO）</Text>
-              <Text style={{color: colors.gray6}}>视频：123</Text>
+              <Text style={{color: Colors.gray6}}>视频：123</Text>
             </View>
           </Image>
         </View>
@@ -62,7 +62,7 @@ class Manufacturer extends Component {
             乐高公司创办于丹麦，至今已有85年的发展历史，追本溯源，还得从它的金字招牌LEGO说起。商标“LEGO”的使用是从1932年开始，其语来自丹麦语“LEg GOdt”，意为“play
             well”（玩得快乐），并且该名字首先迅速成为乐高公司在Billund地区玩具工厂生产的优质玩具的代名词。的一所红房子中，那里就是乐高开始的地方。</Text>
           <View style={styles.desc.ctrl}>
-            <Text style={{color: colors.gray9}}>收起</Text>
+            <Text style={{color: Colors.gray9}}>收起</Text>
             <Image source={imageSource.arrow_bot} style={globalStyles.hitSlopSm}/>
           </View>
         </View>

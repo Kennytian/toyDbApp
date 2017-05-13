@@ -19,7 +19,7 @@ const styles = {
   },
   borderBottom: {
     borderBottomWidth: 0.5,
-    borderBottomColor: Colors.borderBottom
+    borderBottomColor: Colors.borderGray
   },
   mypic: {
     marginLeft: 11

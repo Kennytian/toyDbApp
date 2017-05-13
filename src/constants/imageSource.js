@@ -50,6 +50,10 @@ const imageSource = {
   product: {
     star: require('../assets/images/product/star@2x.png'),
     starGray: require('../assets/images/product/star_gray@2x.png')
+  },
+
+  auth: {
+    bg: require('../assets/images/auth/bg@2x.png'),
   }
 };
 

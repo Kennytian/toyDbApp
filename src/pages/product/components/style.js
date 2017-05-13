@@ -1,5 +1,5 @@
 import { BORDER_WIDTH } from '../../../constants/global';
-import colors from '../../../constants/colors';
+import Colors from '../../../constants/colors';
 
 let styles = {
   container: {
@@ -48,7 +48,7 @@ let styles = {
     },
     label: {
       marginRight: 20,
-      color: colors.gray6,
+      color: Colors.gray6,
       fontSize: 14
     },
     score: {
@@ -58,7 +58,7 @@ let styles = {
       textAlign: 'center'
     },
     tip: {
-      color: colors.gray6,
+      color: Colors.gray6,
       fontSize: 14,
       textAlign: 'center'
     },
@@ -86,7 +86,7 @@ let styles = {
   font: {
     margin: 10,
     marginBottom: 0,
-    color: colors.gray6,
+    color: Colors.gray6,
     lineHeight: 18
   }
 };

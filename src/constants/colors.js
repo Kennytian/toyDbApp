@@ -6,19 +6,16 @@ const Colors = {
 
   white: '#FFFFFF',
   alphaBlack: 'rgba(0,0,0,0.5)',
-  borderBottom: '#CCC',
   borderColor: '#AAAAAA',
   borderGray: '#cccccc',
 
   inputColor: '#C3C3C3',
-  exit: '#7BA9F6',
   bgColor: '#F2F2F2',
   textColor: '#535353',
   tabColor: '#7BA9F6',
   gray3: '#333',
   gray6: '#666',
-  gray9: '#999',
-  grayC: '#ccc'
+  gray9: '#999'
 };
 
 export default Colors;

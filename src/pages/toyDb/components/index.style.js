@@ -1,5 +1,5 @@
 import { BORDER_WIDTH } from '../../../constants/global';
-import colors from './../../../constants/colors';
+import Colors from './../../../constants/colors';
 
 let pageStyles = {
   list: {
@@ -15,7 +15,7 @@ let pageStyles = {
       paddingBottom: 10,
       marginLeft: 20,
       marginRight: 20,
-      borderBottomColor: colors.borderBottom,
+      borderBottomColor: Colors.borderGray,
       borderBottomWidth: BORDER_WIDTH
     },
     item: {

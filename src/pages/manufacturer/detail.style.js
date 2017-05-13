@@ -1,4 +1,4 @@
-import colors from '../../constants/colors';
+import Colors from '../../constants/colors';
 import { DEVICE_WIDTH, BORDER_WIDTH } from '../../constants/global';
 
 const styles = {
@@ -38,13 +38,13 @@ const styles = {
       backgroundColor: 'white'
     },
     text: {
-      color: colors.textColor,
+      color: Colors.textColor,
       lineHeight: 20
     },
     ctrl: {
       justifyContent: 'center',
       flexDirection: 'row',
-      borderTopColor: colors.borderGray,
+      borderTopColor: Colors.borderGray,
       borderTopWidth: BORDER_WIDTH,
       paddingTop: 6,
       marginTop: 10

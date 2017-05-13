@@ -1,17 +1,17 @@
-import colors from '../../constants/colors';
+import Colors from '../../constants/colors';
 import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
 
 let styles = {
   container: {
     padding: 10,
     borderRadius: 5,
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     marginTop: 10
   },
   reviewOnly: {
     container: {
       borderBottomWidth: BORDER_WIDTH,
-      borderBottomColor: colors.borderColor,
+      borderBottomColor: Colors.borderColor,
       flexDirection: 'row',
       marginLeft: 10,
       marginRight: 10,
@@ -50,7 +50,7 @@ let styles = {
   textRow1: {
     fontSize: 14,
     fontWeight: '300',
-    color: colors.gray6
+    color: Colors.gray6
   },
   textRow2: {
     fontSize: 14.5,
@@ -62,11 +62,11 @@ let styles = {
     marginTop: 8,
     marginBottom: 8,
     height: BORDER_WIDTH,
-    backgroundColor: colors.borderColor
+    backgroundColor: Colors.borderColor
   },
   reply: {
     marginTop: 5,
-    backgroundColor: colors.borderBottom,
+    backgroundColor: Colors.borderGray,
     padding: 10,
     paddingTop: 6,
     borderRadius: 5
@@ -75,7 +75,7 @@ let styles = {
     fontSize: 14.5,
     fontWeight: '400',
     lineHeight: 18,
-    color: colors.gray3
+    color: Colors.gray3
   },
   bottomRow: {
     container: {
@@ -88,7 +88,7 @@ let styles = {
     date: {
       fontSize: 13,
       fontWeight: '300',
-      color: colors.borderColor
+      color: Colors.borderColor
     },
     like: {
       wrapper: {
@@ -103,7 +103,7 @@ let styles = {
       count: {
         fontSize: 13,
         fontWeight: '300',
-        color: colors.borderColor
+        color: Colors.borderColor
       }
     },
     reply: {
@@ -113,7 +113,7 @@ let styles = {
       text: {
         fontSize: 13,
         fontWeight: '300',
-        color: colors.tabColor
+        color: Colors.tabColor
       }
     }
   }
