@@ -1,43 +1,42 @@
 import Colors from '../../constants/colors';
-import { DEVICE_WIDTH, BORDER_WIDTH, DEVICE_HEIGHT } from '../../constants/global';
+import { DEVICE_WIDTH, BORDER_WIDTH, DEVICE_HEIGHT, IS_ANDROID } from '../../constants/global';
 import { ACTIVE_OPACITY } from '../../constants/toyDb';
 
 const styles = {
-  container: {
-    width: DEVICE_WIDTH,
-    height: DEVICE_HEIGHT
-  },
-
   underline: 'transparent',
   keyboardType: 'numeric',
   placeholderTextColor: Colors.borderColor,
   activeOpacity: ACTIVE_OPACITY,
 
+  container: {
+    paddingTop: IS_ANDROID ? '30%' : '50%',
+    width: DEVICE_WIDTH,
+    height: DEVICE_HEIGHT
+  },
+
   phoneNumView: {
-    wrapper: {
+    container: {
       width: DEVICE_WIDTH - 70,
       flexDirection: 'row',
       alignSelf: 'center',
       height: 40
     },
-    code: {
-      width: 55,
-      fontSize: 18,
+    wrapper: {
       borderBottomWidth: BORDER_WIDTH,
       borderBottomColor: Colors.tabColor
     },
+    code: {
+      width: 55,
+      fontSize: 18
+    },
     phone: {
-      fontSize: 18,
-      flex: 1,
-      marginLeft: 25,
-      borderBottomWidth: BORDER_WIDTH,
-      borderBottomColor: Colors.tabColor
+      fontSize: 18
     }
   },
 
   validateCodeView: {
     wrapper: {
-      marginTop: 10,
+      marginTop: 20,
       width: DEVICE_WIDTH - 70,
       flexDirection: 'row',
       alignSelf: 'center',
@@ -53,24 +52,23 @@ const styles = {
       wrapper: {
         backgroundColor: Colors.tabColor,
         borderRadius: 5,
+        padding: IS_ANDROID ? 4 : 8,
         alignSelf: 'center',
         justifyContent: 'center'
       },
       text: {
         color: Colors.white,
         alignSelf: 'center',
-        fontSize: 13,
-        padding: 2
+        fontSize: 13
       }
     }
   },
-
 
   loginButton: {
     wrapper: {
       backgroundColor: Colors.tabColor,
       width: DEVICE_WIDTH - 70,
-      marginTop: 20,
+      marginTop: 40,
       height: 40,
       borderRadius: 5,
       alignSelf: 'center',

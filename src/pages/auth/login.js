@@ -25,9 +25,13 @@ class Login extends Component {
 
   _renderPhoneNumView() {
     return (
-      <View style={styles.phoneNumView.wrapper}>
-        <TextInput placeholder="+86" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.phoneNumView.code} keyboardType={styles.keyboardType} maxLength={3}/>
-        <TextInput placeholder="请输入手机号" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.phoneNumView.phone} keyboardType={styles.keyboardType} maxLength={11} clearButtonMode={'always'}/>
+      <View style={styles.phoneNumView.container}>
+        <View style={styles.phoneNumView.wrapper}>
+          <TextInput placeholder="+86" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.phoneNumView.code} keyboardType={styles.keyboardType} maxLength={3}/>
+        </View>
+        <View style={[styles.phoneNumView.wrapper, {marginLeft: 25, flex: 1}]}>
+          <TextInput placeholder="请输入手机号" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.phoneNumView.phone} keyboardType={styles.keyboardType} maxLength={11} clearButtonMode={'while-editing'}/>
+        </View>
       </View>
     );
   }
@@ -35,7 +39,8 @@ class Login extends Component {
   _renderValidateCodeView() {
     return (
       <View style={styles.validateCodeView.wrapper}>
-        <TextInput placeholder="请输入验证码" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.validateCodeView.phone} keyboardType={styles.keyboardType} maxLength={11} clearButtonMode={'always'}/>
+        <TextInput placeholder="请输入验证码" placeholderTextColor={styles.placeholderTextColor} underlineColorAndroid={styles.underline} style={styles.validateCodeView.phone}
+                   keyboardType={styles.keyboardType} maxLength={11} clearButtonMode={'while-editing'}/>
         <TouchableOpacity style={styles.validateCodeView.btn.wrapper} activeOpacity={styles.activeOpacity}>
           <Text style={styles.validateCodeView.btn.text}>获取验证码</Text>
         </TouchableOpacity>
@@ -50,7 +55,6 @@ class Login extends Component {
       </TouchableOpacity>
     );
   }
-
 
   render() {
     return (
