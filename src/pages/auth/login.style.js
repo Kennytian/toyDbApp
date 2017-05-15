@@ -23,13 +23,16 @@ const styles = {
     },
     wrapper: {
       borderBottomWidth: BORDER_WIDTH,
-      borderBottomColor: Colors.tabColor
+      borderBottomColor: Colors.tabColor,
+      justifyContent: 'center'
     },
     code: {
+      flex: 1,
       width: 55,
       fontSize: 18
     },
     phone: {
+      flex: 1,
       fontSize: 18
     }
   },
