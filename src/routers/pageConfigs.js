@@ -17,6 +17,9 @@ import MyViewHistory from '../pages/myCenter/viewHistroy';
 
 const PageConfigs = StackNavigator({
     Main: {
+        screen: Login
+    },
+    Home: {
         screen: HomeTabRouter,
         navigationOptions: {
             headerStyle: {
@@ -24,7 +27,6 @@ const PageConfigs = StackNavigator({
             }
         }
     },
-
     Login: {screen: Login},
     SpecialList: {screen: SpecialList},
     SpecialDetail: {screen: SpecialDetail},
