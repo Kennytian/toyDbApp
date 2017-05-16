@@ -29,10 +29,10 @@
     "no-undef": 2,
     "no-constant-condition": 1,
     "no-unused-vars": 0,
-    "indent": [2, 2, {
-        "SwitchCase": 1
-      }
-    ],
+    //    "indent": [2, 2, {
+    //        "SwitchCase": 1
+    //      }
+    //    ],
     "no-use-before-define": [2, {
         "functions": false,
         "classes": false

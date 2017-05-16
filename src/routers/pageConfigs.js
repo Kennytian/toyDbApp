@@ -15,11 +15,13 @@ import MyMessage from '../pages/myCenter/message/index';
 import MyProfile from '../pages/myCenter/profile';
 import MyViewHistory from '../pages/myCenter/viewHistroy';
 
+import HotSearch from '../pages/toyDb/search/hot';
+
 const PageConfigs = StackNavigator({
+    // Main: {
+    //     screen: Login
+    // },
     Main: {
-        screen: Login
-    },
-    Home: {
         screen: HomeTabRouter,
         navigationOptions: {
             headerStyle: {
@@ -41,7 +43,10 @@ const PageConfigs = StackNavigator({
 
     MyMessage: {screen: MyMessage},
     MyProfile: {screen: MyProfile},
-    MyViewHistory: {screen: MyViewHistory}
+    MyViewHistory: {screen: MyViewHistory},
+
+    HotSearch: {screen: HotSearch}
+
 });
 
 export default PageConfigs;

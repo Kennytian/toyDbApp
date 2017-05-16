@@ -10,63 +10,62 @@ import { BORDER_WIDTH } from '../../constants/global';
 import pageStyles from './components/index.style';
 
 export default class Borrowing extends Component {
-  static navigationOptions = {
-    header: null
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2
-      })
+    static navigationOptions = {
+        header: null
     };
-  }
 
-  componentDidMount() {
-    this.fetchData();
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSource: new ListView.DataSource({
+                rowHasChanged: (row1, row2) => row1 !== row2
+            })
+        };
+    }
 
-  fetchData() {
-    this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(data)
-    });
-  }
+    componentDidMount() {
+        this.fetchData();
+    }
 
-  render() {
-    return (
-      <ScrollView style={styles.container}>
-        <Search/>
-        <View style={pageStyles.filter.box}>
-          <View style={pageStyles.filter.item}>
-            <Text>热度</Text>
-            <Image source={imageSource.toyDb.select} style={{marginLeft: 5}}/>
-          </View>
-          <View style={[pageStyles.filter.item, {borderLeftColor: Colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}>
-            <Text>筛选</Text>
-            <Image source={imageSource.toyDb.filter} style={{marginLeft: 5}}/>
-          </View>
-        </View>
+    fetchData() {
+        this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(data)
+        });
+    }
 
-        <ListView contentContainerStyle={pageStyles.list}
-                  dataSource={this.state.dataSource}
-                  renderRow={(item) => {
-                    return this.renderItem(item);
-                  }}/>
-      </ScrollView>
-    );
-  }
+    render() {
+        return (
+            <ScrollView style={styles.container}>
+                <Search/>
+                <View style={pageStyles.filter.box}>
+                    <TouchableOpacity style={pageStyles.filter.item} onPress={() => this._navTo('HotSearch')}>
+                        <Text>热度</Text>
+                        <Image source={imageSource.toyDb.select} style={pageStyles.filter.icon}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[pageStyles.filter.item, {borderLeftColor: Colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}>
+                        <Text>筛选</Text>
+                        <Image source={imageSource.toyDb.filter} style={pageStyles.filter.icon}/>
+                    </TouchableOpacity>
+                </View>
+                <ListView contentContainerStyle={pageStyles.list}
+                          dataSource={this.state.dataSource}
+                          renderRow={(item) => {
+                              return this.renderItem(item);
+                          }}/>
+            </ScrollView>
+        );
+    }
 
-  _navTo(name) {
-    const {navigate} = this.props.navigation;
-    navigate(name);
-  }
+    _navTo(name) {
+        const {navigate} = this.props.navigation;
+        navigate(name);
+    }
 
-  renderItem(item) {
-    return (
-      <ToyItem item={item} onPressManufacturer={() => {
-        this._navTo('ManufacturerDetail');
-      }} onPress={() => this._navTo('ProductDetail')}/>
-    );
-  }
+    renderItem(item) {
+        return (
+            <ToyItem item={item} onPressManufacturer={() => {
+                this._navTo('ManufacturerDetail');
+            }} onPress={() => this._navTo('ProductDetail')}/>
+        );
+    }
 }
