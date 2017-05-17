@@ -18,39 +18,40 @@ import MyViewHistory from '../pages/myCenter/viewHistroy';
 import Search from '../pages/toyDb/search/index';
 import SearchFilter from '../pages/toyDb/search/filter';
 import SearchResult from '../pages/toyDb/search/result';
+import ScanPreview from '../pages/scan/index';
 
 const PageConfigs = StackNavigator({
-    Main: {
-        screen: Login
-    },
-    Home: {
-        screen: HomeTabRouter,
-        navigationOptions: {
-            headerStyle: {
-                backgroundColor: '#fff'
-            }
-        }
-    },
-    Login: {screen: Login},
-    SpecialList: {screen: SpecialList},
-    SpecialDetail: {screen: SpecialDetail},
+  Main: {
+    screen: Login
+  },
+  Home: {
+    screen: HomeTabRouter,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#fff'
+      }
+    }
+  },
+  Login: {screen: Login},
+  SpecialList: {screen: SpecialList},
+  SpecialDetail: {screen: SpecialDetail},
 
-    ProductDetail: {screen: ProductDetail},
+  ProductDetail: {screen: ProductDetail},
 
-    ManufacturerDetail: {screen: ManufacturerDetail},
+  ManufacturerDetail: {screen: ManufacturerDetail},
 
-    ReviewList: {screen: ReviewList},
+  ReviewList: {screen: ReviewList},
 
-    Error: {screen: Error},
+  Error: {screen: Error},
 
-    MyMessage: {screen: MyMessage},
-    MyProfile: {screen: MyProfile},
-    MyViewHistory: {screen: MyViewHistory},
+  MyMessage: {screen: MyMessage},
+  MyProfile: {screen: MyProfile},
+  MyViewHistory: {screen: MyViewHistory},
 
-    Search: {screen: Search},
-    SearchFilter: {screen: SearchFilter},
-    SearchResult: {screen: SearchResult}
-
+  Search: {screen: Search},
+  SearchFilter: {screen: SearchFilter},
+  SearchResult: {screen: SearchResult},
+  ScanPreview: {screen: ScanPreview}
 });
 
 export default PageConfigs;
