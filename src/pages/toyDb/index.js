@@ -10,9 +10,11 @@ import { BORDER_WIDTH } from '../../constants/global';
 import pageStyles from './components/index.style';
 
 export default class Borrowing extends Component {
-    static navigationOptions = {
-        header: <Search/>
-    };
+    static navigationOptions = (({navigation}) => {
+        return {
+            header: <Search navigation={navigation}/>
+        };
+    });
 
     constructor(props) {
         super(props);

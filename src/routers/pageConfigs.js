@@ -17,6 +17,7 @@ import MyViewHistory from '../pages/myCenter/viewHistroy';
 
 import Search from '../pages/toyDb/search/index';
 import SearchFilter from '../pages/toyDb/search/filter';
+import SearchResult from '../pages/toyDb/search/result';
 
 const PageConfigs = StackNavigator({
     // Main: {
@@ -47,7 +48,8 @@ const PageConfigs = StackNavigator({
     MyViewHistory: {screen: MyViewHistory},
 
     Search: {screen: Search},
-    SearchFilter: {screen: SearchFilter}
+    SearchFilter: {screen: SearchFilter},
+    SearchResult: {screen: SearchResult}
 
 });
 

@@ -5,7 +5,7 @@ let pageStyles = {
     list: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginLeft: 10
+        paddingLeft: 10
     },
     filter: {
         box: {

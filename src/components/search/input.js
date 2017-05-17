@@ -30,15 +30,10 @@ class Search extends Component {
                            keyboardType="numeric"
                            placeholderTextColor={Colors.inputColor}
                            value={this.props.value}
-                           onChangeText={(text) => {
-                               this.onSearchChange(text);
-                           }}/>
+                           returnKeyType="search"
+                           onSubmitEditing={this.props.onSubmit}/>
             </Image>
         );
-    }
-
-    onSearchChange() {
-
     }
 }
 

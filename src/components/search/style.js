@@ -1,6 +1,5 @@
-import { BORDER_WIDTH, DEVICE_WIDTH } from '../../constants/global';
 import { Platform } from 'react-native';
-import Colors from '../../constants/colors';
+import colors from '../../constants/colors';
 
 const styles = {
     searchView: {
