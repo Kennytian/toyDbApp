@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native';
-import pageStyles from './hot.style';
+import pageStyles from './index.style';
 import data from '../../../data/search/hot';
-import Search from '../../../components/common/search';
+import Search from './../../../components/search/searchCancel';
 
 class PageComponent extends Component {
     static navigationOptions = {

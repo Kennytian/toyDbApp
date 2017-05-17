@@ -14,14 +14,14 @@ import styles from '../../components/common/styles';
 
 import imageSource from './../../constants/imageSource';
 import Title from './../../components/common/title';
-import Search from './../../components/common/search';
+import Search from './../../components/search/searchScan';
 import ImageCard from '../../components/cards/imageCard';
 import HotContent from './../../components/common/hotContent';
 import data from '../../data/recommend';
 
 export default class Home extends Component {
     static navigationOptions = {
-        header: <Search onSearchChange={this.onTextValue}/>
+        header: <Search/>
     };
 
     constructor(props) {
@@ -51,12 +51,6 @@ export default class Home extends Component {
         this.setState({
             dataSource: this.state.dataSource.cloneWithRows(data),
             dataSourceAnother: this.state.dataSource.cloneWithRows(data)
-        });
-    }
-
-    onTextValue = (text) => {
-        this.setState({
-            textvalue: text
         });
     }
 

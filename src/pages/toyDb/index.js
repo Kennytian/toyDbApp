@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import Search from './../../components/common/search';
+import Search from './../../components/search/searchScan';
 import styles from '../../components/common/styles';
 import ToyItem from './components/item';
 import data from '../../data/toy';
