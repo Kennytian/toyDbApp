@@ -20,9 +20,11 @@ import HotContent from './../../components/common/hotContent';
 import data from '../../data/recommend';
 
 export default class Home extends Component {
-    static navigationOptions = {
-        header: <Search/>
-    };
+    static navigationOptions = (({navigation}) => {
+        return {
+            header: <Search navigation={navigation}/>
+        };
+    });
 
     constructor(props) {
         super(props);
@@ -94,12 +96,16 @@ export default class Home extends Component {
         );
     }
 
+    toNav(name) {
+        this.props.navigation.navigate(name);
+    }
+
     renderItemAnother = (data) => {
         return (
             <HotContent
                 HotImg={data.source}
                 onPress={() => {
-                    this.props.navigation.navigate('SpecialDetail');
+                    this.toNav('SpecialDetail');
                 }}
                 hotText={this.state.hotText}
                 number={this.state.number}

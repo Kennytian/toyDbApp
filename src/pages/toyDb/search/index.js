@@ -5,14 +5,15 @@ import data from '../../../data/search/hot';
 import Search from './../../../components/search/searchCancel';
 
 class PageComponent extends Component {
-    static navigationOptions = {
-        header: null
-    };
+    static navigationOptions = (({navigation}) => {
+        return {
+            header: <Search navigation={navigation}/>
+        };
+    });
 
     render() {
         return (
             <View style={pageStyles.container}>
-                <Search/>
                 <Text style={pageStyles.title}>热门搜索</Text>
                 <View style={pageStyles.content}>
                     {this._renderList()}

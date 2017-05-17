@@ -8,13 +8,13 @@ const styles = {
         flexDirection: 'row',
         alignItems: 'center',
         paddingBottom: 10,
-        borderBottomWidth: BORDER_WIDTH,
-        borderBottomColor: Colors.borderGray
+        paddingLeft: 15,
+        paddingRight: 15
     },
     inputImg: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: 15,
+        marginRight: 12,
         flex: 1
     },
     sourceImg: {
@@ -26,10 +26,7 @@ const styles = {
         height: 30,
         marginRight: 13
     },
-    scanImg: {
-        marginLeft: 13,
-        marginRight: 10
-    }
+    searchCancel: {}
 };
 
 export default styles;

@@ -11,12 +11,16 @@ class Search extends Component {
         super(props);
     }
 
+    static propTypes = {
+        navigation: React.PropTypes.object
+    };
+
     render() {
 
         return (
             <View style={styles.searchView}>
-                <SearchInput/>
-                <TouchableOpacity>
+                <SearchInput autoFocus={true}/>
+                <TouchableOpacity style={styles.searchCancel} onPress={() => this.props.navigation.goBack()}>
                     <Text>取消</Text>
                 </TouchableOpacity>
             </View>

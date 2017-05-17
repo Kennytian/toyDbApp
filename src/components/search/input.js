@@ -23,6 +23,7 @@ class Search extends Component {
                     <Image style={styles.sourceImg} source={imageSource.home.search}/>
                 </TouchableOpacity>
                 <TextInput onFocus={this.props.onFocus}
+                           autoFocus={this.props.autoFocus}
                            style={styles.textInputView}
                            underlineColorAndroid="transparent"
                            placeholder='输入关键词'

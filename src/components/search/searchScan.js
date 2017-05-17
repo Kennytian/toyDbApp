@@ -12,18 +12,18 @@ class Search extends Component {
         super(props);
     }
 
+    static propTypes = {
+        navigation: React.PropTypes.object
+    };
+
     render() {
 
         return (
             <View style={styles.searchView}>
-                <SearchInput onFocus={this._onFocus}/>
+                <SearchInput onFocus={() => this.props.navigation.navigate('Search')}/>
                 <SearchScan/>
             </View>
         );
-    }
-
-    _onFocus() {
-        this.props.navigation.navigation('Search');
     }
 }
 
