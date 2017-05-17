@@ -38,11 +38,12 @@ export default class Borrowing extends Component {
             <ScrollView style={styles.container}>
                 <Search/>
                 <View style={pageStyles.filter.box}>
-                    <TouchableOpacity style={pageStyles.filter.item} onPress={() => this._navTo('HotSearch')}>
+                    <TouchableOpacity style={pageStyles.filter.item} onPress={() => this._navTo('SearchHot')}>
                         <Text>热度</Text>
                         <Image source={imageSource.toyDb.select} style={pageStyles.filter.icon}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[pageStyles.filter.item, {borderLeftColor: Colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}>
+                    <TouchableOpacity style={[pageStyles.filter.item, {borderLeftColor: Colors.borderColor, borderLeftWidth: BORDER_WIDTH}]}
+                                      onPress={() => this._navTo('SearchFilter')}>
                         <Text>筛选</Text>
                         <Image source={imageSource.toyDb.filter} style={pageStyles.filter.icon}/>
                     </TouchableOpacity>

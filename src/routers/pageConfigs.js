@@ -15,7 +15,8 @@ import MyMessage from '../pages/myCenter/message/index';
 import MyProfile from '../pages/myCenter/profile';
 import MyViewHistory from '../pages/myCenter/viewHistroy';
 
-import HotSearch from '../pages/toyDb/search/hot';
+import SearchHot from '../pages/toyDb/search/hot';
+import SearchFilter from '../pages/toyDb/search/filter';
 
 const PageConfigs = StackNavigator({
     // Main: {
@@ -45,7 +46,8 @@ const PageConfigs = StackNavigator({
     MyProfile: {screen: MyProfile},
     MyViewHistory: {screen: MyViewHistory},
 
-    HotSearch: {screen: HotSearch}
+    SearchHot: {screen: SearchHot},
+    SearchFilter: {screen: SearchFilter}
 
 });
 
