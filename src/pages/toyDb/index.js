@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text, TouchableOpacity, ListView, ScrollView } from 'react-native';
+import { View, Image, Text, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import Search from './../../components/common/search';
 import styles from '../../components/common/styles';
 import ToyItem from './components/item';
@@ -11,34 +11,21 @@ import pageStyles from './components/index.style';
 
 export default class Borrowing extends Component {
     static navigationOptions = {
-        header: null
+        header: <Search/>
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            dataSource: new ListView.DataSource({
-                rowHasChanged: (row1, row2) => row1 !== row2
-            })
+            data: data
         };
-    }
-
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    fetchData() {
-        this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(data)
-        });
     }
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <Search/>
+            <View style={styles.container}>
                 <View style={pageStyles.filter.box}>
-                    <TouchableOpacity style={pageStyles.filter.item} onPress={() => this._navTo('SearchHot')}>
+                    <TouchableOpacity style={pageStyles.filter.item} onPress={() => this._searchByHot()}>
                         <Text>热度</Text>
                         <Image source={imageSource.toyDb.select} style={pageStyles.filter.icon}/>
                     </TouchableOpacity>
@@ -48,13 +35,22 @@ export default class Borrowing extends Component {
                         <Image source={imageSource.toyDb.filter} style={pageStyles.filter.icon}/>
                     </TouchableOpacity>
                 </View>
-                <ListView contentContainerStyle={pageStyles.list}
-                          dataSource={this.state.dataSource}
-                          renderRow={(item) => {
+                <FlatList contentContainerStyle={pageStyles.list}
+                          data={this.state.data}
+                          renderItem={({item}) => {
                               return this.renderItem(item);
                           }}/>
-            </ScrollView>
+            </View>
         );
+    }
+
+    _searchByHot() {
+        let {isHot} = this.state;
+        var newData = [].concat(data);
+        newData.sort(function (a, b) {
+            return isHot ? a.views - b.views : b.views - a.views;
+        });
+        this.setState({data: newData, isHot: !isHot});
     }
 
     _navTo(name) {

@@ -21,7 +21,7 @@ const styles = {
 
 const HomeTabRouter = TabNavigator({
     Home: {
-        screen: Borrowing,
+        screen: Home,
         navigationOptions: {
             tabBarLabel: '主页',
             tabBarIcon: ({tintColor}) => (
