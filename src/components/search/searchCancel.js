@@ -20,7 +20,7 @@ class Search extends Component {
 
         return (
             <View style={styles.searchView}>
-                <SearchInput autoFocus={true} onSubmit={(e) => this.onSubmit(e)}/>
+                <SearchInput {...this.props} autoFocus={true} onSubmit={(e) => this.onSubmit(e)}/>
                 <TouchableOpacity style={styles.searchCancel} onPress={() => this.props.navigation.goBack()}>
                     <Text style={{color: colors.blue}}>取消</Text>
                 </TouchableOpacity>

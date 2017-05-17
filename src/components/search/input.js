@@ -29,7 +29,7 @@ class Search extends Component {
                            placeholder='输入关键词'
                            keyboardType="numeric"
                            placeholderTextColor={Colors.inputColor}
-                           value={this.props.value}
+                           defaultValue={this.props.value}
                            returnKeyType="search"
                            onSubmitEditing={this.props.onSubmit}/>
             </Image>

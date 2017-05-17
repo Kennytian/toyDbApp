@@ -11,7 +11,7 @@ import HotContent from './../../../components/common/hotContent';
 
 class PageComponent extends Component {
     static navigationOptions = (({navigation}) => {
-        const {state} = navigation;
+        const {state = {params: {}}} = navigation;
         return {
             header: <Search navigation={navigation} value={state.params.q}/>
         };

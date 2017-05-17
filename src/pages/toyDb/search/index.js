@@ -26,7 +26,7 @@ class PageComponent extends Component {
 
         return (
             <FlatList contentContainerStyle={pageStyles.list} data={data}
-                      renderItem={this._renderItem} refreshing={false} onRefresh={this._onRefresh}/>
+                      renderItem={(item) => this._renderItem(item)} refreshing={false} onRefresh={this._onRefresh}/>
         );
     }
 
@@ -42,11 +42,11 @@ class PageComponent extends Component {
             itemStyle = [itemStyle, pageStyles.itemTopBorder];
         }
         return (
-            <View style={itemStyle}>
+            <TouchableOpacity style={itemStyle} onPress={() => this._navTo('SearchResult', {q: item.title})}>
                 <View style={index % 2 === 0 ? pageStyles.itemRightBorder : {flex: 1}}>
                     <Text style={pageStyles.text}>{item.title}</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }
