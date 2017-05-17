@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    View,
+    View
 } from 'react-native';
 import SearchInput from './input';
 import SearchScan from './scan';

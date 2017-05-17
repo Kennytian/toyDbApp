@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     TouchableOpacity,
-    Image,
+    Image
 } from 'react-native';
 
 import imageSource from './../../constants/imageSource';
