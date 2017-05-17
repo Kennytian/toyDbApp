@@ -20,10 +20,10 @@ import SearchFilter from '../pages/toyDb/search/filter';
 import SearchResult from '../pages/toyDb/search/result';
 
 const PageConfigs = StackNavigator({
-    // Main: {
-    //     screen: Login
-    // },
     Main: {
+        screen: Login
+    },
+    Home: {
         screen: HomeTabRouter,
         navigationOptions: {
             headerStyle: {

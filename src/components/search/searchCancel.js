@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import SearchInput from './input';
 import styles from './style';
-import colors from '../../constants/colors'
+import colors from '../../constants/colors';
 
 
 class Search extends Component {

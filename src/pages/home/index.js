@@ -96,7 +96,7 @@ export default class Home extends Component {
         );
     }
 
-    toNav(name) {
+    _navTo(name) {
         this.props.navigation.navigate(name);
     }
 
@@ -105,7 +105,7 @@ export default class Home extends Component {
             <HotContent
                 HotImg={data.source}
                 onPress={() => {
-                    this.toNav('SpecialDetail');
+                    this._navTo('SpecialDetail');
                 }}
                 hotText={this.state.hotText}
                 number={this.state.number}
