@@ -3,12 +3,13 @@ import colors from '../../constants/colors';
 
 const styles = {
     searchView: {
-        marginTop: Platform.select({ios: 25, android: 8}),
+        paddingTop: Platform.select({ios: 25, android: 8}),
         flexDirection: 'row',
         alignItems: 'center',
         paddingBottom: 10,
         paddingLeft: 15,
-        paddingRight: 15
+        paddingRight: 15,
+        backgroundColor: 'white'
     },
     inputImg: {
         flexDirection: 'row',

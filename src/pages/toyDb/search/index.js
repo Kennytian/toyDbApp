@@ -30,9 +30,9 @@ class PageComponent extends Component {
         );
     }
 
-    _navTo(name) {
+    _navTo(name, params) {
         const {navigate} = this.props.navigation;
-        navigate(name);
+        navigate(name, params);
     }
 
     _renderItem(json) {
