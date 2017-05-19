@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android-build": "cd android && ./gradlew assembleRelease",
-    "android-install": "cd android && ./gradlew installRelease",
+    "android-build": "cd android && ./gradlew assembleWantongRelease",
+    "android-install": "cd android && ./gradlew installWantongRelease",
     "configureJPush": "node node_modules/jpush-react-native/JPushConfiguration.js",
     "lint": "eslint --ext .js ./src --fix",
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -28,7 +28,9 @@
     "react-native": "0.44.0",
     "react-native-animatable": "^1.2.0",
     "react-native-camera": "^0.8.0",
+    "react-native-code-push": "^2.0.3-beta",
     "react-native-root-toast": "^1.1.2",
+    "react-native-swiper": "^1.5.4",
     "react-navigation": "^1.0.0-beta.9",
     "react-redux": "^5.0.5",
     "redux": "^3.6.0",
@@ -37,7 +39,6 @@
     "redux-persist": "^4.8.0",
     "redux-persist-immutable": "^4.3.0",
     "redux-promise": "^0.5.3",
-    "redux-saga": "^0.15.3",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
   },
