@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import colors from '../../constants/colors';
+import { getWidth, getHeight } from '../../utils/size';
 
 const styles = {
     searchView: {
@@ -13,18 +13,22 @@ const styles = {
     },
     inputImg: {
         flexDirection: 'row',
-        alignItems: 'center',
         marginRight: 12,
-        flex: 1
+        alignItems: 'center',
+        flex: 1,
+        width: getWidth(594),
+        height: getHeight(594, 58)
     },
     sourceImg: {
-        marginLeft: 15
+        marginLeft: 15,
+        width: 16,
+        height: 16
     },
     textInputView: {
-        marginLeft: 13,
         flex: 1,
-        height: 30,
-        marginRight: 13
+        height: Platform.select({ios: 30, android: 32}),
+        fontSize: 13,
+        paddingLeft: 10
     },
     searchCancel: {}
 };
