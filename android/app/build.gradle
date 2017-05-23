@@ -93,8 +93,8 @@ android {
         applicationId "com.toyDbApp"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 1030
-        versionName "1.0.3"
+        versionCode 1040
+        versionName "1.0.4"
         multiDexEnabled true
         ndk {
             abiFilters "armeabi-v7a", "x86"
