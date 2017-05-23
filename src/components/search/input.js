@@ -18,7 +18,7 @@ class Search extends Component {
     render() {
 
         return (
-            <Image style={styles.inputImg} source={imageSource.home.input}>
+            <Image style={styles.inputImg} source={imageSource.home.input} resizeMode='contain'>
                 <TouchableOpacity>
                     <Image style={styles.sourceImg} source={imageSource.home.search}/>
                 </TouchableOpacity>
