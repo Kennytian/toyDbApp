@@ -9,7 +9,7 @@ export default class AppInit {
   }
 
   appDidMount() {
-    // this._offlineChecking();
+
   }
 
   appWillUnmount() {
@@ -19,8 +19,6 @@ export default class AppInit {
   _catchError() {
     ErrorUtils.setGlobalHandler((err) => {
       __DEV__ && console.warn('JS出现严重错误:', JSON.stringify(err));
-
-      // TODO 后期记录到统计平台
     });
   }
 

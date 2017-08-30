@@ -5,7 +5,6 @@
   "scripts": {
     "android-build": "cd android && ./gradlew assembleWantongRelease",
     "android-install": "cd android && ./gradlew installWantongRelease",
-    "configureJPush": "node node_modules/jpush-react-native/JPushConfiguration.js",
     "lint": "eslint --ext .js ./src --fix --cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "react-native run-ios",
