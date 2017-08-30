@@ -4,7 +4,6 @@ import Colors from './../../../constants/colors';
 let pageStyles = {
   list: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
     paddingLeft: 10
   },
   filter: {

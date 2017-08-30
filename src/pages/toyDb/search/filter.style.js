@@ -17,8 +17,7 @@ export default {
       marginBottom: 10
     },
     optionBox: {
-      flexDirection: 'row',
-      flexWrap: 'wrap'
+      flexDirection: 'row'
     },
     option: {
       borderRadius: 6,

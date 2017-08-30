@@ -12,7 +12,6 @@ export default {
   list: {
     backgroundColor: 'white',
     flexDirection: 'row',
-    flexWrap: 'wrap',
     paddingLeft: 10,
     paddingRight: 10
   },
