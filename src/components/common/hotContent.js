@@ -45,7 +45,7 @@ class hotContent extends Component {
             <Text style={{color: Colors.gray9}}>{this.props.releaseTime}</Text>
             <Text style={{marginLeft: 10, color: Colors.gray9}}>{this.props.Time}</Text>
             <Image source={ImageSource.components.zan} hitSlop={{top: 8, left: 8, right: 8, bottom: 8}}
-                   style={{marginLeft: 30}}/>
+              style={{marginLeft: 30}}/>
             <Text style={{marginLeft: 5, color: Colors.gray9}}>{this.props.number}</Text>
           </View>
         </View>

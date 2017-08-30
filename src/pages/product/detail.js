@@ -107,7 +107,7 @@ class ProductDetail extends Component {
           }} style={[pageStyles.ctrl.btn, pageStyles.ctrl.btnPrimary]}>
             <Text style={pageStyles.ctrl.text}>立即购买</Text></TouchableOpacity>
           <TouchableOpacity onPress={() => this._navTo('ManufacturerDetail')}
-                            style={[pageStyles.ctrl.btn]}>
+            style={[pageStyles.ctrl.btn]}>
             <Text style={pageStyles.ctrl.text}>厂商频道</Text>
           </TouchableOpacity>
         </View>

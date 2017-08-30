@@ -27,22 +27,22 @@ class PersonalChange extends Component {
 
   render(){
     return(
-        <View style={styles.personalChange}>
-          <View style={styles.main}>
-            <InformationList
-              press={this.ccc}
-              icon={ImageSource.personal}
-              text="头像更改"
-              rightBtn={ImageSource.myCenter.rightBtn}
-            />
-            <InformationList
-              press={this.ccc}
-              icon={ImageSource.change}
-              text="名称更改"
-              rightBtn={ImageSource.myCenter.rightBtn}
-            />
-          </View>
+      <View style={styles.personalChange}>
+        <View style={styles.main}>
+          <InformationList
+            press={this.ccc}
+            icon={ImageSource.personal}
+            text="头像更改"
+            rightBtn={ImageSource.myCenter.rightBtn}
+          />
+          <InformationList
+            press={this.ccc}
+            icon={ImageSource.change}
+            text="名称更改"
+            rightBtn={ImageSource.myCenter.rightBtn}
+          />
         </View>
+      </View>
     );
   }
 

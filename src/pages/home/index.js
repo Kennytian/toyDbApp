@@ -91,7 +91,7 @@ export default class Home extends Component {
     return (
       <TouchableOpacity onPress={() => this.props.navigation.navigate('SpecialDetail')}>
         <ImageCard width={140} height={70} hasMask={false} text={data.text} titlePosition="center"
-                   style={{marginLeft: 10, marginBottom: 10, marginTop: 10}} source={data.source}/>
+          style={{marginLeft: 10, marginBottom: 10, marginTop: 10}} source={data.source}/>
       </TouchableOpacity>
     );
   }

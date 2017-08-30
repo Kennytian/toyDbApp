@@ -21,7 +21,7 @@ class ReviewList extends Component {
 
     return (
       <FlatList contentContainerStyle={{backgroundColor: 'white'}} data={data}
-                renderItem={ReviewListItem} refreshing={false} onRefresh={this._onRefresh}/>
+        renderItem={ReviewListItem} refreshing={false} onRefresh={this._onRefresh}/>
     );
   }
 

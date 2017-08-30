@@ -64,3 +64,4 @@ android/gradle/wrapper
 __tests__/__snapshots__
 
 
+/.eslintcache

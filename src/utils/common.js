@@ -51,7 +51,7 @@ export const isPhoneNumber = (data) => {
 
 // 6-20位数字，符号，字母任意两种组合的密码
 export const isValidPassword = (data) => {
-  return /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-zA-Z]|[0-9]){6,20}$/.test(data);
+  return /^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[()])+$)([^(0-9a-zA-Z)]|[()]|[a-zA-Z]|[0-9]){6,20}$/.test(data);
 };
 
 export const isIdCard = (data) => {

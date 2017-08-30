@@ -25,8 +25,8 @@ class SpecialList extends Component {
     var {navigation} = this.props;
     return (
       <FlatList contentContainerStyle={{alignItems: 'center'}} data={data}
-                renderItem={({item}) => specialListItem(item, navigation)}
-                refreshing={false} onRefresh={this._onRefresh}/>
+        renderItem={({item}) => specialListItem(item, navigation)}
+        refreshing={false} onRefresh={this._onRefresh}/>
     );
   }
 

@@ -30,12 +30,12 @@ export default class extends Component {
         <StatusBar barStyle='light-content' />
         <Image source={require('./img/bg.jpg')}>
           <Swiper style={styles.wrapper}
-                  dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
-                  activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
-                  paginationStyle={{
-                    bottom: 70
-                  }}
-                  loop={false}>
+            dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
+            activeDot={<View style={{backgroundColor: '#fff', width: 13, height: 13, borderRadius: 7, marginLeft: 7, marginRight: 7}} />}
+            paginationStyle={{
+              bottom: 70
+            }}
+            loop={false}>
             <View style={styles.slide}>
               <Image style={styles.image} source={require('./../assets/welcome/welcome1.jpg')} />
             </View>

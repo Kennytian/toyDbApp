@@ -33,7 +33,7 @@ class ImageCard extends Component {
       return (
         <View style={[styles.imageCard.title.mask, maskStyle]}>
           <Text style={[textStyle, {'textAlign': titlePosition}]}
-                ellipsizeMode={'tail'} numberOfLines={1}>{this.props.text}</Text>
+            ellipsizeMode={'tail'} numberOfLines={1}>{this.props.text}</Text>
         </View>
       );
     }

@@ -42,7 +42,7 @@ class Exponent extends Component {
               </View>
             </View>
             <TouchableOpacity onPress={() => this._navTo('ManufacturerDetail')}
-                              style={[pageStyles.grade.ctrl.btn]}>
+              style={[pageStyles.grade.ctrl.btn]}>
               <Text style={pageStyles.grade.ctrl.btnText}>参与评分</Text>
             </TouchableOpacity>
           </View>
