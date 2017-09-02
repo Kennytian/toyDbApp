@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   TouchableOpacity,
   Image,
@@ -9,9 +9,11 @@ import imageSource from './../../constants/imageSource';
 import Colors from './../../constants/colors';
 import styles from './style';
 
+type Props = {};
+type State = {};
 
-class Search extends Component {
-  constructor(props) {
+class Search extends PureComponent<void, Props, State> {
+  constructor(props: Props) {
     super(props);
   }
 

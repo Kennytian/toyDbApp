@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View
 } from 'react-native';
@@ -8,20 +8,24 @@ import SearchInput from './input';
 import SearchScan from './scan';
 import styles from './style';
 
-class Search extends Component {
-  constructor(props) {
-    super(props);
-  }
+type Props = {};
+type State = {};
 
+class Search extends PureComponent<void, Props, State> {
   static propTypes = {
     navigation: React.PropTypes.object
   };
 
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
+    let { navigate } = this.props.navigation;
     return (
       <View style={styles.searchView}>
-        <SearchInput onFocus={() => this.props.navigation.navigate('Search')}/>
-        <SearchScan onPress={() => this.props.navigation.navigate('ScanPreview')}/>
+        <SearchInput onFocus={() => navigate('Search')} />
+        <SearchScan onPress={() => navigate('ScanPreview')} />
       </View>
     );
   }
